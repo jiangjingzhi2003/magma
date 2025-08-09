@@ -215,13 +215,18 @@ allocate_workers()
 export -f allocate_workers
 
 # set up a RAM-backed fs for fast processing of canaries and crashes
-if [ -z $CACHE_ON_DISK ]; then
-    echo_time "Obtaining sudo permissions to mount tmpfs"
-    if mountpoint -q -- "$CACHEDIR"; then
-        sudo umount -f "$CACHEDIR"
-    fi
-    sudo mount -t tmpfs -o size=$TMPFS_SIZE,uid=$(id -u $USER),gid=$(id -g $USER) \
-        tmpfs "$CACHEDIR"
+#if [ -z $CACHE_ON_DISK ]; then
+#    echo_time "Obtaining sudo permissions to mount tmpfs"
+#    if mountpoint -q -- "$CACHEDIR"; then
+#        sudo umount -f "$CACHEDIR"
+#    fi
+#    sudo mount -t tmpfs -o size=$TMPFS_SIZE,uid=$(id -u $USER),gid=$(id -g $USER) \
+#        tmpfs "$CACHEDIR"
+#fi
+
+if [ -z "$CACHE_ON_DISK" ]; then
+    echo_time "No sudo/ramfs: using disk cache at $CACHEDIR"
+    export CACHE_ON_DISK=1
 fi
 
 cleanup()
@@ -240,10 +245,10 @@ cleanup()
         fi
     done
 
-    if [ -z $CACHE_ON_DISK ]; then
-        echo_time "Obtaining sudo permissions to umount tmpfs"
-        sudo umount "$CACHEDIR"
-    fi
+    #if [ -z $CACHE_ON_DISK ]; then
+    #    echo_time "Obtaining sudo permissions to umount tmpfs"
+    #    sudo umount "$CACHEDIR"
+    #fi
 }
 
 trap cleanup EXIT
