@@ -18,6 +18,7 @@ if [ -z $WORKDIR ] || [ -z $REPEAT ]; then
     echo '$WORKDIR and $REPEAT must be specified as environment variables.'
     exit 1
 fi
+
 MAGMA=${MAGMA:-"$(cd "$(dirname "${BASH_SOURCE[0]}")/../../" >/dev/null 2>&1 \
     && pwd)"}
 export MAGMA
@@ -34,6 +35,19 @@ export CAMPAIGN_WORKERS=${CAMPAIGN_WORKERS:-1}
 TMPFS_SIZE=${TMPFS_SIZE:-50g}
 export POLL=${POLL:-5}
 export TIMEOUT=${TIMEOUT:-1m}
+
+
+# MULTIPLE CORPUS CHANGE
+
+export WORKDIR_NAME="$WORKDIR"
+for CORPUS_DIR in "${CORPORA[@]}"; do
+	echo "Corpus Directory: $CORPUS_DIR"
+        export CORPUS="$CORPUS_DIR"
+	export WORKDIR="$CORPUS_DIR/$WORKDIR_NAME"
+	mkdir -p "$CORPUS_DIR"
+	mkdir -p "$WORKDIR"
+
+# END
 
 WORKDIR="$(realpath "$WORKDIR")"
 export ARDIR="$WORKDIR/ar"
@@ -267,3 +281,7 @@ for FUZZER in "${FUZZERS[@]}"; do
         done
     done
 done
+
+# MULTIPLE CORPUS CHANGE
+done
+# END

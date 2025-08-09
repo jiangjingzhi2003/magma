@@ -25,7 +25,7 @@ mkdir -p "$MONITOR"
 cd "$SHARED"
 
 # prune the seed corpus for any fault-triggering test-cases
-for seed in "$TARGET/corpus/$PROGRAM"/*; do
+for seed in "$TARGET/$CORPUS/$PROGRAM"/*; do
     out="$("$MAGMA"/runonce.sh "$seed")"
     code=$?
 
