@@ -29,3 +29,5 @@ FUZZER_BIN: /out/libpng_read_fuzzer
 ```bash
 docker compose up -p <any name you want> up afl-<program_name>-main
 ```
+
+Then your minimized corpus will be in corpus_min
