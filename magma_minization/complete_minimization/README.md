@@ -6,10 +6,10 @@
    ```
    then copy the corpus you want to minimize into corpus/ directory
 ## Step 2: build docker image
-directory name is <program_name>_quick_minimization 
+directory name is <program_name>
 run 
 ```bash
-docker build -f Dockerfile.min -t fuzz-<program_name>-quickmin .
+docker build -t fuzz-<program_name> .
 ```
 
 ## Step 3: change docker-compose.yaml to point to fuzzing harness
@@ -27,5 +27,5 @@ FUZZER_BIN: /out/libpng_read_fuzzer
 
 ## Step 4: run minimization
 ```bash
-docker compose up -p <any name you want> up afl-<program_name>-quickmin
+docker compose up -p <any name you want> up afl-<program_name>-main
 ```
