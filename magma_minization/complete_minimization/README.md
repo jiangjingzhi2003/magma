@@ -1,4 +1,4 @@
-# Quick Minimization
+# Complete Minimization
 
 ## Step 1: goes into the fuzzing target directory
 ```bash
