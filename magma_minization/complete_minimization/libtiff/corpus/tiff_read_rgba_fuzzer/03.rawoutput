@@ -1,0 +1,67 @@
+<result>satellite imagery uncompressed baseline tiff filetype:tif</result>
+<result>medical xray scan raw tiff image filetype:tif</result>
+<result>archival map high resolution uncompressed tiff filetype:tif</result><result>satellite imagery lzw compressed tiff filetype:tif</result>
+<result>geological map scan lzw tiff download filetype:tif</result>
+<result>historical aerial photo archive lzw compression tiff filetype:tif</result><result>scanned historical map PackBits compressed tiff filetype:tif</result>
+<result>engineering drawing PackBits compression sample tiff filetype:tif</result>
+<result>archival document PackBits tiff image filetype:tif</result><result>satellite imagery tiff zip compressed filetype:tif</result>
+<result>scanned map archive deflate compression tiff filetype:tif</result>
+<result>remote sensing data geotiff zip compression filetype:tif</result><result>aerial imagery tiff jpeg compression satellite filetype:tif</result>
+<result>medical scan lossy tiff jpeg compressed filetype:tif</result>
+<result>archived newspaper scanned tiff jpeg lossy filetype:tif</result><result>scanned engineering blueprints multipage tiff filetype:tif</result>
+<result>historical newspaper archives multipage tiff download filetype:tif</result>
+<result>medical imaging report multi page tiff filetype:tif</result><result>scanned blueprint black and white tiff filetype:tif</result>
+<result>old newspaper archive 1 bit tiff filetype:tif</result>
+<result>engineering drawing monochrome tiff filetype:tif</result><result>medical xray scan 8 bit grayscale image filetype:tif</result>
+<result>satellite imagery urban area 8 bit grayscale tif filetype:tif</result>
+<result>microscopy sample 8 bit grayscale image data filetype:tif</result><result>medical imaging 16 bit grayscale tiff filetype:tif</result>
+<result>satellite elevation map 16 bit greyscale tiff filetype:tif</result>
+<result>microscope scan raw 16 bit grayscale image filetype:tif</result><result>satellite imagery 24 bit rgb tiff filetype:tif</result>
+<result>microscopy sample 24 bit color image filetype:tif</result>
+<result>artwork scan 24 bit rgb color tiff filetype:tif</result><result>satellite imagery 32 bit rgba alpha channel filetype:tif</result>
+<result>geospatial map export transparent background 32 bit tiff filetype:tif</result>
+<result>medical imaging scan 32 bit rgba tiff with alpha filetype:tif</result><result>magazine cover cmyk tiff filetype:tif</result>
+<result>print ready brochure artwork cmyk color tiff filetype:tif</result>
+<result>packaging design cmyk tiff sample filetype:tif</result><result>artwork scan tiff icc profile filetype:tif</result>
+<result>photography color managed tiff sample filetype:tif</result>
+<result>museum digitization tiff embedded color profile filetype:tif</result><result>satellite imagery tiled tiff download filetype:tif</result>
+<result>geospatial tiled image sample tiff filetype:tif</result>
+<result>remote sensing tiled raster tiff example filetype:tif</result><result>satellite imagery tiff strip storage filetype:tif</result>
+<result>scanned map archive strip-based tiff filetype:tif</result>
+<result>medical imaging scan tiff strips filetype:tif</result><result>satellite imagery bigtiff large file download filetype:tif</result>
+<result>geospatial raster data bigtiff lidar filetype:tif</result>
+<result>remote sensing bigtiff multi gigabyte filetype:tif</result><result>drone imagery tiff with xmp metadata filetype:tif</result>
+<result>geospatial satellite image tiff xmp embedded filetype:tif</result>
+<result>museum archival scan tiff xmp metadata filetype:tif</result><result>drone aerial imagery tiff exif metadata filetype:tif</result>
+<result>satellite image geotiff with exif info filetype:tif</result>
+<result>microscopy sample tiff exif data filetype:tif</result><result>satellite imagery tiff custom metadata private tags filetype:tif</result>
+<result>microscopy scan tiff with proprietary tags filetype:tif</result>
+<result>remote sensing geotiff custom private tags filetype:tif</result><result>land cover geotiff download filetype:tif</result>
+<result>satellite imagery georeferenced tiff filetype:tif</result>
+<result>digital elevation model geotiff filetype:tif</result><result>satellite imagery tiff with embedded thumbnail filetype:tif</result>
+<result>medical scan tiff preview image embedded filetype:tif</result>
+<result>digital camera raw tiff with thumbnail image filetype:tif</result><result>satellite imagery tiff transparency mask filetype:tif</result>
+<result>geospatial map with alpha channel tiff filetype:tif</result>
+<result>remote sensing land cover tiff with mask filetype:tif</result><result>geological map palette indexed color tiff filetype:tif</result>
+<result>satellite land cover classification palette tiff filetype:tif</result>
+<result>urban planning zoning map indexed color tiff filetype:tif</result><result>fax transmission report tiff g3 filetype:tif</result>
+<result>scanned invoice fax group 3 compression filetype:tif</result>
+<result>medical records faxed tiff g3 compression filetype:tif</result><result>fax transmission log tiff g4 compression filetype:tif</result>
+<result>scanned utility bill fax g4 tiff filetype:tif</result>
+<result>medical records faxed image g4 compressed tiff filetype:tif</result><result>satellite imagery pyramidal tiff download filetype:tif</result>
+<result>whole slide image pathology multi resolution tiff filetype:tif</result>
+<result>geospatial raster data pyramidal tiff filetype:tif</result><result>medical imaging scan tiff with annotations filetype:tif</result>
+<result>geological map tiff annotated layers filetype:tif</result>
+<result>architectural drawing blueprint tiff with markup layers filetype:tif</result><result>engineering drawing tiff with embedded vector graphics filetype:tif</result>
+<result>scanned map mixed raster content tiff filetype:tif</result>
+<result>architectural blueprint tiff vector overlay filetype:tif</result><result>satellite image YCbCr color tif filetype:tif</result>
+<result>digital camera raw sample YCbCr tiff filetype:tif</result>
+<result>medical imaging scan YCbCr color space tiff filetype:tif</result><result>multispectral satellite image planar tiff filetype:tif</result>
+<result>medical imaging mri separate color planes tiff filetype:tif</result>
+<result>remote sensing aerial photo planar configuration tiff filetype:tif</result><result>satellite imagery tif contiguous planar configuration filetype:tif</result>
+<result>multispectral image sample contiguous planar configuration filetype:tif</result>
+<result>medical scan mri tiff contiguous planar filetype:tif</result><result>geospatial satellite imagery little endian tiff filetype:tif</result>
+<result>medical imaging mri scan intel byte order tiff filetype:tif</result>
+<result>remote sensing data little endian geotiff filetype:tif</result><result>satellite imagery tiff big endian motorola filetype:tif</result>
+<result>medical imaging scan tiff motorola byte order filetype:tif</result>
+<result>geospatial elevation data tiff big endian filetype:tif</result>

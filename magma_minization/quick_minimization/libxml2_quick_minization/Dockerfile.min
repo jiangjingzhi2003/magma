@@ -1,0 +1,14 @@
+FROM aflplusplus/aflplusplus:latest
+
+USER root
+
+# Set noninteractive mode for apt-get
+ENV DEBIAN_FRONTEND=noninteractive
+
+COPY minimize.sh /minimize.sh
+COPY quick_minimize.sh /quick_minimize.sh
+RUN chmod +x /minimize.sh /quick_minimize.sh
+COPY out /out/
+
+WORKDIR /
+ENTRYPOINT ["/quick_minimize.sh"]
