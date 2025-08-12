@@ -51,12 +51,15 @@ if [ ! -z "$SHARED" ]; then
     flag_volume="--volume=$SHARED:/magma_shared"
 fi
 
+echo "$CORPUS"
+
 if [ -t 1 ]; then
     docker run -it $flag_volume \
         --cap-add=SYS_PTRACE --security-opt seccomp=unconfined \
         --env=PROGRAM="$PROGRAM" --env=ARGS="$ARGS" \
         --env=FUZZARGS="$FUZZARGS" --env=POLL="$POLL" --env=TIMEOUT="$TIMEOUT" \
-        $flag_aff $flag_ep "$IMG_NAME"
+        --env=CORPUS="$CORPUS" \
+	$flag_aff $flag_ep "$IMG_NAME"
 else
     container_id=$(
     docker run -dt $flag_volume \
@@ -64,6 +67,7 @@ else
         --env=PROGRAM="$PROGRAM" --env=ARGS="$ARGS" \
         --env=FUZZARGS="$FUZZARGS" --env=POLL="$POLL" --env=TIMEOUT="$TIMEOUT" \
         --network=none \
+	--env=CORPUS="$CORPUS" \
         $flag_aff $flag_ep "$IMG_NAME"
     )
     container_id=$(cut -c-12 <<< $container_id)

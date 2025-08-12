@@ -66,6 +66,9 @@ USER magma:magma
 RUN ${TARGET}/fetch.sh
 RUN ${MAGMA}/apply_patches.sh
 
+ARG CORPUS
+ENV CORPUS ${CORPUS}
+
 ## Configuration parameters
 ARG isan
 ARG harden
