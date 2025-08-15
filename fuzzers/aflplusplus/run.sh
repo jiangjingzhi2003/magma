@@ -25,18 +25,6 @@ export AFL_NO_UI=1
 export AFL_MAP_SIZE=256000
 export AFL_DRIVER_DONT_DEFER=1
 
-MINIMIZED_DIR="$SHARED/min_corpus"
-TMP_INPUT_DIR="$SHARED/tmp_origin_corpus"
-
-mkdir -p "$MINIMIZED_DIR"
-mkdir -p "$TMP_INPUT_DIR"
-
-# Copy input corpus to a temp dir on the same filesystem
-cp -r "$TARGET/$CORPUS/$PROGRAM"/* "$TMP_INPUT_DIR/"
-AFL_DEBUG=1 "$FUZZER/repo/afl-cmin" -i "$TMP_INPUT_DIR" -o "$MINIMIZED_DIR" -t 1000 -- "$OUT/afl/$PROGRAM" @@
-
-echo "$FUZZER/repo/afl-fuzz"
-
 "$FUZZER/repo/afl-fuzz" -i "$TARGET/$CORPUS/$PROGRAM" -o "$SHARED/findings" \
     "${flag_cmplog[@]}" -d \
     $FUZZARGS -- "$OUT/afl/$PROGRAM" $ARGS 2>&1
