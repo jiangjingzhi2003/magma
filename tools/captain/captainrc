@@ -10,7 +10,7 @@
 WORKDIR=./workdir
 
 # REPEAT: number of campaigns to run per program (per fuzzer)
-REPEAT=10
+REPEAT=1
 
 # [WORKER_MODE]: defines the type of CPU resources to allocate (default: 1)
 # - 1: logical cores (possibly SMT-enabled)
@@ -71,12 +71,12 @@ ISAN=1
 ###
 
 # FUZZERS: an array of fuzzer names (from magma/fuzzers/*) to evaluate
-FUZZERS=(afl)
+FUZZERS=(aflplusplus)
 
 # [fuzzer_TARGETS]: an array of target names (from magma/targets/*) to fuzz with
 # `fuzzer`. The `fuzzer` prefix is a fuzzer listed in the FUZZERS array
 # (default: all targets)
-afl_TARGETS=(libpng libsndfile libtiff libxml2 lua openssl php poppler sqlite3)
+aflplusplus_TARGETS=(libpng libtiff)
 
 CORPORA=(corpus_1 corpus_2 corpus_3)
 
