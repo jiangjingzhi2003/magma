@@ -37,6 +37,6 @@ AFL_DEBUG=1 "$FUZZER/repo/afl-cmin" -i "$TMP_INPUT_DIR" -o "$MINIMIZED_DIR" -t 1
 
 echo "$FUZZER/repo/afl-fuzz"
 
-"$FUZZER/repo/afl-fuzz" -i "$TARGET/corpus/$PROGRAM" -o "$SHARED/findings" \
+"$FUZZER/repo/afl-fuzz" -i "$TARGET/$CORPUS/$PROGRAM" -o "$SHARED/findings" \
     "${flag_cmplog[@]}" -d \
     $FUZZARGS -- "$OUT/afl/$PROGRAM" $ARGS 2>&1
