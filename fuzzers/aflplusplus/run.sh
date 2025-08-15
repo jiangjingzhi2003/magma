@@ -32,7 +32,7 @@ mkdir -p "$MINIMIZED_DIR"
 mkdir -p "$TMP_INPUT_DIR"
 
 # Copy input corpus to a temp dir on the same filesystem
-cp -r "$TARGET/corpus/$PROGRAM"/* "$TMP_INPUT_DIR/"
+cp -r "$TARGET/$CORPUS/$PROGRAM"/* "$TMP_INPUT_DIR/"
 AFL_DEBUG=1 "$FUZZER/repo/afl-cmin" -i "$TMP_INPUT_DIR" -o "$MINIMIZED_DIR" -t 1000 -- "$OUT/afl/$PROGRAM" @@
 
 echo "$FUZZER/repo/afl-fuzz"
