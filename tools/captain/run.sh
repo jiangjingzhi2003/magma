@@ -238,6 +238,7 @@ for FUZZER in "${FUZZERS[@]}"; do
     done
 done
 
+<<<<<<< HEAD
 export LOCKDIR="$WORKDIR_NAME/lock"
 mkdir -p "$LOCKDIR"
 
@@ -251,22 +252,42 @@ for CORPUS_DIR in "${CORPORA[@]}"; do
 	export WORKDIR="$CORPUS_DIR/$WORKDIR_NAME"
 	mkdir -p "$CORPUS_DIR"
 	mkdir -p "$WORKDIR"
+=======
+for CORPUS_DIR in "${CORPORA[@]}"; do
+        echo "Corpus Directory: $CORPUS_DIR"
+        export CORPUS="$CORPUS_DIR"
+        export WORKDIR="$CORPUS_DIR/$WORKDIR_NAME"
+        mkdir -p "$CORPUS_DIR"
+        mkdir -p "$WORKDIR"
+>>>>>>> 367c8579ce08260022e07824a6ae130d62b12c02
 
 WORKDIR="$(realpath "$WORKDIR")"
 export ARDIR="$WORKDIR/ar"
 export CACHEDIR="$WORKDIR/cache"
 export LOGDIR="$WORKDIR/log"
 export POCDIR="$WORKDIR/poc"
+<<<<<<< HEAD
 #export LOCKDIR="$WORKDIR/lock"
+=======
+export LOCKDIR="$WORKDIR/lock"
+>>>>>>> 367c8579ce08260022e07824a6ae130d62b12c02
 mkdir -p "$ARDIR"
 mkdir -p "$CACHEDIR"
 mkdir -p "$LOGDIR"
 mkdir -p "$POCDIR"
+<<<<<<< HEAD
 #mkdir -p "$LOCKDIR"
 
 #shopt -s nullglob
 #rm -f "$LOCKDIR"/*
 #shopt -u nullglob
+=======
+mkdir -p "$LOCKDIR"
+
+shopt -s nullglob
+rm -f "$LOCKDIR"/*
+shopt -u nullglob
+>>>>>>> 367c8579ce08260022e07824a6ae130d62b12c02
 
 # schedule campaigns
 for FUZZER in "${FUZZERS[@]}"; do
@@ -294,7 +315,7 @@ for FUZZER in "${FUZZERS[@]}"; do
             fi
 
 	fi
-        PROGRAMS=($(get_var_or_default $FUZZER $TARGET 'PROGRAMS'))
+	PROGRAMS=($(get_var_or_default $FUZZER $TARGET 'PROGRAMS'))
         for PROGRAM in "${PROGRAMS[@]}"; do
             export PROGRAM
             export ARGS="$(get_var_or_default $FUZZER $TARGET $PROGRAM 'ARGS')"
@@ -309,6 +330,4 @@ for FUZZER in "${FUZZERS[@]}"; do
     done
 done
 
-# MULTIPLE CORPUS CHANGE
 done
-# END

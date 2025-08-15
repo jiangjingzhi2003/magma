@@ -1,0 +1,48 @@
+services:
+  # AFL++ with minimization
+  afl-sqlite3-main:
+    image: fuzz-sqlite3
+    privileged: true
+    container_name: "${COMPOSE_PROJECT_NAME:-default}-afl-sqlite3"
+    environment:
+      CORPUS_DIR: /corpus
+      OUTPUT_DIR: /afl-output
+      OUT: /out
+      MINIMIZED_DIR: /corpus_min
+      FUZZER_ID: master
+      FUZZER_BIN: /out/sqlite3_fuzz
+    volumes:
+      - ./corpus:/corpus:rw
+      - output-volume:/afl-output:rw
+      - ./out:/out:rw
+      - ./corpus_min:/corpus_min:rw
+    entrypoint: ["/entrypoint.sh", "minimize"]
+    tty: true
+    stdin_open: true
+    restart: "no"
+  # AFL++ without minimization
+  afl-sqlite3-quickmin:
+    image: fuzz-sqlite3-quickmin
+    privileged: true
+    container_name: "${COMPOSE_PROJECT_NAME:-default}-afl-sqlite3-quickmin"
+    environment:
+      CORPUS_DIR: /corpus
+      OUTPUT_DIR: /afl-output
+      OUT: /out
+      MINIMIZED_DIR: /corpus_min
+      FUZZER_ID: master
+      FUZZER_BIN: /out/sqlite3_fuzz
+    volumes:
+      - ./corpus:/corpus:rw
+      - ./corpus_min:/corpus_min:rw
+    # entrypoint: ["/quick_minimize.sh"]
+    tty: true
+    stdin_open: true
+    restart: "no"
+volumes:
+  # AFL output for minimized AFL run
+  output-volume:
+  # AFL output for unminimized AFL run
+  unmin-output-volume:
+  # Minimized corpus for minimized AFL run
+  minimized-corpus-volume:
