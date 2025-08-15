@@ -36,35 +36,6 @@ TMPFS_SIZE=${TMPFS_SIZE:-50g}
 export POLL=${POLL:-5}
 export TIMEOUT=${TIMEOUT:-1m}
 
-
-# MULTIPLE CORPUS CHANGE
-
-export WORKDIR_NAME="$WORKDIR"
-for CORPUS_DIR in "${CORPORA[@]}"; do
-	echo "Corpus Directory: $CORPUS_DIR"
-        export CORPUS="$CORPUS_DIR"
-	export WORKDIR="$CORPUS_DIR/$WORKDIR_NAME"
-	mkdir -p "$CORPUS_DIR"
-	mkdir -p "$WORKDIR"
-
-# END
-
-WORKDIR="$(realpath "$WORKDIR")"
-export ARDIR="$WORKDIR/ar"
-export CACHEDIR="$WORKDIR/cache"
-export LOGDIR="$WORKDIR/log"
-export POCDIR="$WORKDIR/poc"
-export LOCKDIR="$WORKDIR/lock"
-mkdir -p "$ARDIR"
-mkdir -p "$CACHEDIR"
-mkdir -p "$LOGDIR"
-mkdir -p "$POCDIR"
-mkdir -p "$LOCKDIR"
-
-shopt -s nullglob
-rm -f "$LOCKDIR"/*
-shopt -u nullglob
-
 export MUX_TAR=magma_tar
 export MUX_CID=magma_cid
 
@@ -253,6 +224,43 @@ cleanup()
 
 trap cleanup EXIT
 
+export WORKDIR_NAME="$WORKDIR"
+
+### Remove existing Docker images for rebuilding
+for FUZZER in "${FUZZERS[@]}"; do
+    TARGETS=($(get_var_or_default "$FUZZER" 'TARGETS'))
+    for TARGET in "${TARGETS[@]}"; do
+        IMG_NAME="magma/$FUZZER/$TARGET"
+        if docker image inspect "$IMG_NAME" &>/dev/null; then
+            echo_time "Removing existing image: $IMG_NAME"
+            docker rmi -f "$IMG_NAME" &>/dev/null || echo_time "Failed to remove $IMG_NAME"
+        fi
+    done
+done
+
+for CORPUS_DIR in "${CORPORA[@]}"; do
+        echo "Corpus Directory: $CORPUS_DIR"
+        export CORPUS="$CORPUS_DIR"
+        export WORKDIR="$CORPUS_DIR/$WORKDIR_NAME"
+        mkdir -p "$CORPUS_DIR"
+        mkdir -p "$WORKDIR"
+
+WORKDIR="$(realpath "$WORKDIR")"
+export ARDIR="$WORKDIR/ar"
+export CACHEDIR="$WORKDIR/cache"
+export LOGDIR="$WORKDIR/log"
+export POCDIR="$WORKDIR/poc"
+export LOCKDIR="$WORKDIR/lock"
+mkdir -p "$ARDIR"
+mkdir -p "$CACHEDIR"
+mkdir -p "$LOGDIR"
+mkdir -p "$POCDIR"
+mkdir -p "$LOCKDIR"
+
+shopt -s nullglob
+rm -f "$LOCKDIR"/*
+shopt -u nullglob
+
 # schedule campaigns
 for FUZZER in "${FUZZERS[@]}"; do
     export FUZZER
@@ -265,13 +273,20 @@ for FUZZER in "${FUZZERS[@]}"; do
 
         # build the Docker image
         IMG_NAME="magma/$FUZZER/$TARGET"
-        echo_time "Building $IMG_NAME"
-        if ! "$MAGMA"/tools/captain/build.sh &> \
-            "${LOGDIR}/${FUZZER}_${TARGET}_build.log"; then
-            echo_time "Failed to build $IMG_NAME. Check build log for info."
-            continue
-        fi
 
+        ### Skip building existed images to avoid timeout issues
+
+        if docker image inspect "$IMG_NAME" &>/dev/null; then
+            echo_time "Image $IMG_NAME already exists. Skipping build."
+        else
+            echo_time "Building $IMG_NAME"
+            if ! "$MAGMA"/tools/captain/build.sh &> \
+                "${LOGDIR}/${FUZZER}_${TARGET}_build.log"; then
+                echo_time "Failed to build $IMG_NAME. Check build log for info."
+                continue
+            fi
+
+        fi
         PROGRAMS=($(get_var_or_default $FUZZER $TARGET 'PROGRAMS'))
         for PROGRAM in "${PROGRAMS[@]}"; do
             export PROGRAM
@@ -287,6 +302,4 @@ for FUZZER in "${FUZZERS[@]}"; do
     done
 done
 
-# MULTIPLE CORPUS CHANGE
 done
-# END
