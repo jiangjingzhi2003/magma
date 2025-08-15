@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    
+
+    <title>File Forensics (TIF)</title>
+
+    <script src="/jquery.min.js" type="text/javascript"></script>
+
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" media="screen" />
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+
+    <script src="/Content/bootstrap.min.js" type="text/javascript"></script>
+
+    <script src="/Scripts/MicrosoftAjax.debug.js"
+            type="text/javascript"></script>
+
+    
+
+    <link href="/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/1.css" rel="stylesheet" type="text/css" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KX6DK1KK2X"></script>
+    <script>window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-KX6DK1KK2X');</script>
+
+</head>
+
+
+<body >
+<div id="page-wrap">
+    
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+
+
+    <div class="w3-container">
+
+        <div id="header" class="row">
+            <div id="title"></div>
+            <div id="logindisplay">
+                
+
+<text><strong>Welcome to Asecuritysite.com</strong></text>
+
+
+
+
+
+
+
+            </div>
+
+            <div id="tabs_container">
+
+
+                <div class="invertedshiftdown">
+                    <ul>
+                        <li ><a href="/">Home</a></li>
+
+                        <li ><a href="/index">Index</a></li>
+
+                        <li ><a href="/challenges">Cipher</a></li>
+                        <li ><a href="/blogs">Blogs</a></li>
+                        <li ><a href="/ip">IP</a></li>
+
+
+
+                        <li >
+                            <a href="/ids">IDS</a>
+
+
+                        <li class=current>
+                            <a href="/magic">Magic</a>
+
+                        <li >
+                            <a href="/forensics">Net</a>
+
+                            <!--  <li ><a href="/forensics">DigF</a></li>
+    -->
+                                 <li ><a href="/Cisco">Cisco</a></li> 
+
+
+
+
+<li ><a href="/cyberdata">Cyber</a></li>
+
+                        <li ><a href="/tests">Test</a></li>
+
+                        <li ><a href="/fun">Fun</a></li>
+                        <li ><a href="/subjects">Subj</a></li>
+
+
+
+                        <li ><a href="/Home/About">About</a></li>
+
+
+                    </ul>
+                </div>
+            </div>
+         
+            <div id="main" class="row">
+
+
+                
+
+<script src="/Scripts/jquery.unobtrusive-ajax.js" type="text/javascript"></script>
+<script src="/Scripts/jquery.validate.js" type="text/javascript"></script>
+<!--  -->
+
+
+<table width="100%" border="1" cellpadding="0" cellspacing="0">
+    <tr><td colspan="2"><h1 id="logo">TIF File</h1><p><script type="text/javascript">function UpdateMyStores() {
+
+        var oSubmitButton = document.getElementById('mybutton');
+        oSubmitButton.click();
+
+    }</script>
+
+<style>
+    div#home {
+        background-color: #5A0676;
+        color: #ffffff;
+        padding: 12px;
+    }
+
+        div#home a {
+            background-color: #5A0676;
+            color: #ffffff;
+        }
+
+            div#home a:link {
+                color: #ffffff;
+            }
+
+            div#home a:visited {
+                color: #ffffff;
+            }
+
+            div#home a:hover {
+                color: #aaaaaa;
+            }
+
+            div#home a:active {
+                color: #ffffff;
+            }
+
+    h2 {
+        background-image: none;
+        background-color: #5A0676;
+        color: #ffffff;
+        padding-right: 20px;
+        width: max-content;
+        margin-bottom: 16px;
+    }
+</style>
+
+
+<div id="home">
+    <img src="/public/header_magic.gif" align="right" width="200px" hspace=10 vspace="-5" alt="Pigpen" class="has-border" /><b>[<a href="/magic/index">Magic Home</a>][<a href="/" target="_top">Home</a>]</b>
+
+
+                                                                                                                                             <select name="sample" onchange="location = this.value;">
+
+                                                                                                                                                 <option value="#">-- Select a file type</option>
+                                                                                                                                                 <option value="/magic/ai">AI (Adobe Illustrator)</option>
+                                                                                                                                                 <option value="/magic/avi">AVI (Audio/Video Interleave)</option>
+                                                                                                                                                 <option value="/magic/bmp">BMP (Bitmap)</option>
+                                                                                                                                                 <option value="/magic/cab">CAB (Microsoft Cabinet)</option>
+                                                                                                                                                 <option value="/magic/cls">CLASS (Java Class)</option>
+                                                                                                                                                 <option value="/magic/dll">DLL (Dynamic Library)</option>
+                                                                                                                                                 <option value="/magic/doc">DOC (Microsoft DOC)</option>
+                                                                                                                                                 <option value="/magic/docx">DOCX (Microsoft DOCX)</option>
+                                                                                                                                                 <option value="/magic/elf">ELF (Exectable and Linkable File)</option>
+                                                                                                                                                 <option value="/magic/eps">EPS (Encapsulated PostScript)</option>
+
+                                                                                                                                                 <option value="/magic/exe">EXE</option>
+                                                                                                                                                 <option value="/magic/flv">FLV (Flash Video)</option>
+                                                                                                                                                 <option value="/magic/gif">GIF (Image format)</option>
+                                                                                                                                                 <option value="/magic/gz">GZ (Compressed Zip)</option>
+                                                                                                                                                 <option value="/magic/hlp">HLP (Help file)</option>
+                                                                                                                                                 <option value="/magic/ico">ICO (Icon)</option>
+                                                                                                                                                 <option value="/magic/indd">INDD (Adobe InDesign)</option>
+                                                                                                                                                 <option value="/magic/jar">JAR (Java Archive)</option>
+                                                                                                                                                 <option value="/magic/jp2">JP2 (JPEG 2000)</option>
+                                                                                                                                                 <option value="/magic/jpeg">JPEG (JPEG Image)</option>
+                                                                                                                                                 <option value="/magic/mdb">MDB (Microsoft Database)</option>
+                                                                                                                                                 <option value="/magic/mid">MID (Midi file)</option>
+                                                                                                                                                 <option value="/magic/mov">MOV (Apple Movie)</option>
+                                                                                                                                                 <option value="/magic/mp3">MP3</option>
+                                                                                                                                                 <option value="/magic/mp4">MP4</option>
+                                                                                                                                                 <option value="/magic/mpp">MPP (Microsoft Project)</option>
+                                                                                                                                                 <option value="/magic/msg">MSG (Outlook Message)</option>
+                                                                                                                                                 <option value="/magic/msi">MSI (Microsoft Installer)</option>
+                                                                                                                                                 <option value="/magic/obj">OBJ (Object Code)</option>
+                                                                                                                                                 <option value="/magic/pdf">PDF (Portable Document Format)</option>
+                                                                                                                                                 <option value="/magic/ppt">PPT (Microsoft PowerPoint)</option>
+                                                                                                                                                 <option value="/magic/pptx">PPTX (Microsoft PowerPoint)</option>
+                                                                                                                                                 <option value="/magic/png">PNG (Image format)</option>
+                                                                                                                                                 <option value="/magic/psd">PSD (Photoshop Design)</option>
+                                                                                                                                                 <option value="/magic/pst">PST (Post Office File)</option>
+                                                                                                                                                 <option value="/magic/ps">PS (PostScript)</option>
+
+                                                                                                                                                 <option value="/magic/raw">RAW</option>
+                                                                                                                                                 <option value="/magic/rtf">RTF (Rich Text Format)</option>
+                                                                                                                                                 <option value="/magic/sdf">SDF (SQL Server Compact)</option>
+                                                                                                                                                 <option value="/magic/sln">SLN (Microsoft Solution)</option>
+                                                                                                                                                 <option value="/magic/swf">SWF (Shockwave Flash)</option>
+
+                                                                                                                                                 <option value="/magic/sys">SYS</option>
+
+                                                                                                                                                 <option value="/magic/tar">TAR</option>
+                                                                                                                                                 <option value="/magic/tif">TIF</option>
+                                                                                                                                                 <option value="/magic/vm">VMDK (VMWare Disk)</option>
+                                                                                                                                                 <option value="/magic/vsd">VSD (Visio File)</option>
+                                                                                                                                                 <option value="/magic/wav">WAV</option>
+
+                                                                                                                                                 <option value="/magic/wma">WMA (Windows Audio)</option>
+
+                                                                                                                                                 <option value="/magic/vmf">WMF</option>
+                                                                                                                                                 <option value="/magic/wmv">WMV (Windows Movie)</option>
+                                                                                                                                                 <option value="/magic/xls">XLS</option>
+                                                                                                                                                 <option value="/magic/xlsx">XLSX</option>
+
+                                                                                                                                                 <option value="/magic/zip">ZIP</option>
+
+                                                                                                                                                 <option value="/magic/zlib">ZLIB</option>
+
+                                                                                                                                             </select>
+</div>
+ This is a page for TIF file analysis.</td></tr>
+
+    <tr>
+        <td width="25%" valign="top">
+
+<form action="/magic/tif?file=g12.tif" data-ajax="true" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#dx_partial" id="form0" method="post">        <p>
+            File: <select id="p" name="p" onchange="UpdateMyStores()"><option value="#">-- Select file --</option>
+<option value="pics_cisco_graphic_side.tif">File 1</option>
+<option value="g11.tif">File 2</option>
+<option value="g12.tif">File 3</option>
+<option value="Patch_GrayScale_best_resized.tif">File 4</option>
+<option value="ScanMacbeth.TIF">File 5</option>
+</select>
+        </p>
+                        <h2>Try an example</h2> <ul>
+                            <li><strong>File 1</strong>. <a href="/magic/tif?file=pics_cisco_graphic_side.tif">File 1</a> <a target="_blank" href="/log/pics_cisco_graphic_side.tif">View</a></li>
+
+                            <li><strong>File 2</strong>. <a href="/magic/tif?file=g11.tif">File 2</a> <a target="_blank" href="/log/g11.tif">View</a></li>
+                            <li><strong>File 3</strong>. <a href="/magic/tif?file=g12.tif">File 3</a> <a target="_blank" href="/log/g12.tif">View</a></li>
+                         
+                            <li><strong>File 5</strong>. <a href="/magic/tif?file=ColorPatch_GrayScale_best_resized.tif">File 4</a> <a target="_blank" href="http://www.carlmcmillan.com/images/Test/ColorPatch_GrayScale_best_resized.tif">View</a></li>
+                            <li><strong>File 6</strong>. <a href="/magic/tif?file=ScanMacbeth.TIF">File 5</a> <a target="_blank" href="http://www.carlmcmillan.com/images/Test/ScanMacbeth.TIF">View</a></li>
+                            <li><strong>File 7</strong>. <a href="/magic/tif?file=sample.tif">File 6</a> <a target="_blank" href="http://www.alternatiff.com/sample.tif">View</a></li>
+
+
+
+                        </ul>
+                                        <img src="/log/g12.tif" width="100px" />
+                                                        <h2>What are we looking for?</h2>
+                                                                        <p>For a TIF file, we look for the byte sequence <b>4949</b> or the ASCII sequence of <b>II</b></p>
+<script>function keypressevent() {
+        document.getElementById("mybutton").click();
+    }</script>
+
+<style>
+    button {
+        visibility: hidden;
+    }
+</style>
+
+<div id="target">  <form action="" method="get"><button id="mybutton" name="mybutton" type="submit" onclick="$('#target').toggle();" class="btn btn-primary btn-lg" data-container="body">Determine</button> </form></div></form>
+
+        </td>
+        <td width="75%" valign="top">
+
+         
+
+            <div id="dx_partial">
+                <p>Starting tag (should be II - Big Indian): II<br/>Version: 2A<br/><h2>File signature analysis (Header analysis)</h2>TIF file (Starts with 0x49 0x49)<BR/><h2>Additional scanning signature analysis</h2><p>Possible: [TIF files, sig: 4949] Count: 1<BR/>Possible: [TIF graphics, sig: 4949] Count: 1<BR/></p><h2>File hex characters</h2><pre>[00000000] 49 49 2A 00 CC 3A 01 00 80 2C 60 46 C8 21 CA 0C   II*..:...,`F.!..<BR/>[00000016] 70 84 42 61 50 B8 64 36 1D 0F 88 44 62 51 38 A4   p.BaP.d6...DbQ8.<BR/>[00000032] 56 2D 17 8C 46 63 51 B8 E4 76 3D 1F 90 48 64 52   V-..FcQ..v=..HdR<BR/>[00000048] 39 24 96 4D 27 94 4A 65 52 B9 64 B6 5D 2F 98 4C   9$.M'.JeR.d.]/.L<BR/>[00000064] 66 53 39 A4 D6 6D 37 9C 4E 67 53 B9 E4 F6 7D 2A   fS9..m7.NgS...}*<BR/>[00000080] 83 1C 8D B4 35 1D 15 FF 47 A4 52 69 54 BA 65 36   ....5...G.RiT.e6<BR/>[00000096] 91 04 36 2A AA 4D 2A A3 46 AD 57 AC 56 6B 55 BA   ..6*.M*.F.W.VkU.<BR/>[00000112] E5 76 BD 5F B0 58 6C 56 3B 25 96 CD 67 B4 5A 6D   .v._.XlV;%..g.Zm<BR/>[00000128] 56 BB 65 B6 DD 6F B8 5C 6E 57 3B A5 D6 ED 77 BC   V.e..o.\nW;...w.<BR/>[00000144] 5E 6F 57 BB E5 F6 FD 7F C0 60 70 58 3C 26 17 0D   ^oW......`pX&lt;&amp;..<BR/>[00000160] 87 C4 62 71 58 BC 65 E2 A8 D2 5A 64 4C 19 3A 76   ..bqX.e...ZdL.:v<BR/>[00000176] 57 2D 4E 38 E6 5B 19 BC BE 77 3D 9F D0 68 74 5A   W-N8.[...w=..htZ<BR/>[00000192] 3D 26 97 4D A7 D4 6A 75 5A BD 66 B7 5D AF D8 6C   =&amp;.M..juZ.f.]..l<BR/>[00000208] 76 5B 3D A6 D7 6D B7 DC 6E 77 5B BD E6 F7 7D BF   v[=..m..nw[...}.<BR/>[00000224] E0 70 78 5C 3E 27 17 8D C7 E4 72 78 6E 4E 61 9F   .px\&gt;'....rxnNa.<BR/>[00000240] 9D B7 84 B4 3A 5C AE A7 57 AD D7 EC 76 7B 5D BE   ....:\..W...v{].<BR/>[00000256] E7 77 BD DF F0 78 7C 5E 3F 27 97 CD E7 F4 7A 78   .w...x|^?'....zx<BR/>[00000272] 6D CF 61 9B DD D0 84 74 9A 1E AF A7 D7 ED F7 FC   m.a....t........<BR/>[00000288] 7E 7F 5F BF E7 F7 FC FF C0 10 0C 05 01 C0 8D 5B   ~._............[<BR/>[00000304] D8 6E 3D C3 33 E0 38 3E 50 2C 1D 07 C2 10 8C 25   .n=.3.8&gt;P,.....%<BR/>[00000320] 09 C2 90 AC 2D 0B C3 10 CC 35 0D B8 10 3C 12 7C   ....-....5...&lt;.|<BR/>[00000336] 44 11 0C 45 11 9F 31 29 F5 13 C5 07 DC 54 7E 45   D..E..1).....T~E<BR/>[00000352] 87 F4 5D 17 A9 0E 8B A7 0E 46 91 AC 6D 1B C7 11   ..]......F..m...<BR/>[00000368] CC 75 1D C7 91 EC 7D 1F BC D0 F3 DC 75 C8 92 2C   .u....}.....u..,<BR/>[00000384] 8D 23 9D 92 49 DD 25 9E 12 69 E7 27 9E F2 8C 50   .#..I.%..i.'...P<BR/>[00000400] 7E CA 91 7C 64 F9 C8 12 CC B5 2D CB 92 EC BD 2F   ~..|d.....-..../<BR/>[00000416] CC 13 0C C5 31 B7 F2 10 CC 6B CD 13 4C D5 35 9B   ....1....k..L.5.<BR/>[00000432] 33 6C 0E 70 CE 07 44 E4 77 CE 87 B4 ED 14 45 E8   3l.p..D.w.....E.<BR/>[00000448] 08 80 1C 20 4D 08 23 FE 0D 07 84 42 61 50 B8 64   ....M.#....BaP.d<BR/>[00000464] 36 1D 0F 88 44 62 51 38 A4 56 2D 17 8C 46 63 51   6...DbQ8.V-..FcQ<BR/>[00000480] B8 E4 76 3D 1F 90 48 64 52 39 24 96 4D 27 94 4A   ..v=..HdR9$.M'.J<BR/>[00000496] 65 52 B9 64 B6 5D 2F 98 4C 66 53 39 A4 D6 6D 37   eR.d.]/.LfS9..m7<BR/>[00000512] <br/>-- Sector 1 -- Assuming 512 Bytes ---<br/>[00000512] 9C 4E 67 53 B9 E4 B9 B9 3F 33 50 57 B4 3A 25 16   .NgS....?3PW.:%.<BR/>[00000528] 8C C0 A4 31 69 4C DA 63 5E 9C E5 A8 3B EA 4F 7A   ...1iL.c^...;.Oz<BR/>[00000544] A3 F2 AD 02 38 41 1A 13 DA E5 76 BD 5F B0 58 6C   ....8A....v._.Xl<BR/>[00000560] 56 3B 25 96 CD 67 B4 5A 6D 56 BB 65 B6 DD 6F B8   V;%..g.ZmV.e..o.<BR/>[00000576] 5C 6D 93 F6 E5 04 CC 9B BC 5E 6F 57 B5 05 F5 51   \m.......^oW...Q<BR/>[00000592] 7F 5A 60 58 98 3A 73 5D D1 87 79 E2 5F 78 BA C5   .Z`X.:s]..y._x..<BR/>[00000608] 6A E5 8F C8 64 72 59 3C A6 57 2D 97 CC 66 73 59   j...drY&lt;.W-..fsY<BR/>[00000624] BC E6 77 3D 9F 98 DD 2E C8 1D 26 97 4D A7 43 EA   ..w=......&amp;.M.C.<BR/>[00000640] 52 1A BB EA 81 67 AF A6 33 5C 3B 37 8E D5 F5 B7   R....g..3\;7....<BR/>[00000656] C6 C1 74 1B BD E6 F7 7D BF E0 70 78 5C 3E 27 17   ..t....}..px\&gt;'.<BR/>[00000672] 8D C7 E4 58 34 54 13 6F 37 9D CF E8 1D 3A 47 FE   ...X4T.o7....:G.<BR/>[00000688] A2 47 AD 7F 54 52 98 B7 47 77 77 6E FA DC D6 F9   .G..TR..Gwwn....<BR/>[00000704] 3E 3F 27 97 CD E7 F4 7A 7D 5E BF 67 B7 DD 98 E5   &gt;?'....z}^.g....<BR/>[00000720] 99 8C 1F 3F A7 D7 EC 67 FC 1C FF 5A 94 3E B6 90   ...?...g...Z.&gt;..<BR/>[00000736] 60 1B 30 09 DB 01 9F 30 2B C2 F7 C1 10 4C 15 05   `.0....0+....L..<BR/>[00000752] C1 90 6C 1D 07 C2 10 8C 24 AF 3E 22 CC 2D 0B C3   ..l.....$.&gt;".-..<BR/>[00000768] 10 CB E8 E7 34 AB CA 88 C2 9D 71 09 F1 11 C0 F0   ....4.....q.....<BR/>[00000784] 9C 4D 13 C5 11 4C 55 15 C5 91 6C 5D 17 AC 50 AC   .M...LU...l]..P.<BR/>[00000800] 33 19 C2 F0 DB 9B 0E AF 10 FA 9D 10 9D 71 19 F1   3............q..<BR/>[00000816] 12 C6 12 0C 85 21 C8 92 2C 8D 23 C9 12 4B 7B 19   .....!..,.#..K{.<BR/>[00000832] 46 91 9C 6C 36 C7 04 DC 74 6B C7 91 F2 02 80 1C   F..l6...tk......<BR/>[00000848] 20 4D 08 23 FE 0D 07 84 42 61 50 B8 64 36 1D 0F   .M.#....BaP.d6..<BR/>[00000864] 88 44 62 51 38 A4 56 2D 17 8C 46 63 51 B8 E4 76   .DbQ8.V-..FcQ..v<BR/>[00000880] 3D 1F 90 48 64 52 39 24 96 4D 27 94 4A 65 52 B9   =..HdR9$.M'.JeR.<BR/>[00000896] 64 B6 5D 2F 98 4C 66 53 39 A4 D6 6D 37 9C 4E 67   d.]/.LfS9..m7.Ng<BR/>[00000912] 53 B9 E4 B9 B9 3F 33 50 4B 34 3A 25 16 8C 60 A4   S....?3PK4:%..`.<BR/>[00000928] 1B 69 48 1A 62 6E 9C BD A8 35 EA 4E BA A3 E2 AD   .iH.bn...5.N....<BR/>[00000944] 02 38 41 1A 13 DA E5 76 BD 5F B0 58 6C 56 3B 25   .8A....v._.XlV;%<BR/>[00000960] 96 CD 67 B4 5A 6D 56 BB 65 B6 DD 6F B8 5C 6D 93   ..g.ZmV.e..o.\m.<BR/>[00000976] F6 E5 04 CD 46 BC 51 69 06 0A 51 B6 98 81 A7 26   ....F.Qi..Q....&amp;<BR/>[00000992] EA 0B DA 93 5E A8 EB AB 3E 2B 15 AB 96 37 1D 8F   ....^...&gt;+...7..<BR/>[00001008] C8 64 72 59 3C A6 57 2D 97 CC 66 73 59 BC E6 76<br/>-- Sector 2 -- Assuming 512 Bytes ---<br/>[00001024] 63 74 BB 5E 74 57 BB ED FF 03 83 C2 E1 F1 38 B8   ct.^tW........8.<BR/>[00001040] 2E 7B 5D AF D8 6C 76 5B 3D A6 D7 6D B7 DC 6E 77   .{]..lv[=..m..nw<BR/>[00001056] 5B BB 06 82 85 A2 BC 69 29 74 DA 7D 46 A7 55 AB   [......i)t.}F.U.<BR/>[00001072] C0 F5 BB CE 67 37 9D CF E8 74 7A 5D 3E A7 57 AD   ....g7...tz]&gt;.W.<BR/>[00001088] D7 CA EF AE FC 0A 3D 27 87 80 E2 E1 38 F8 8E 4D   ......='....8..M<BR/>[00001104] 67 97 D8 F4 7A 7D 5E BF 67 B7 DD EF F8 7C 7E 53   g...z}^.g....|~S<BR/>[00001120] DE D7 73 BB 7C EF E9 F8 D8 6E 46 2B 94 AD BE 70   ..s.|....nF+...p<BR/>[00001136] 0C 05 01 C0 90 2C 0D 03 C1 10 4C 14 B1 3E AF B2   .....,....L..&gt;..<BR/>[00001152] 88 E1 2F CE 23 04 FD B5 4F 2B 19 05 C3 10 CC 35   ../.#...O+.....5<BR/>[00001168] 0D C3 90 EC 3D 0F C4 0D 8C 1B 07 0B 30 83 4C F0   ....=.......0.L.<BR/>[00001184] B5 2F EA 02 80 1C 20 4D 08 23 FE 0D 07 84 42 61   ./.....M.#....Ba<BR/>[00001200] 50 B8 64 36 1D 0F 88 44 62 51 38 A4 56 2D 17 8C   P.d6...DbQ8.V-..<BR/>[00001216] 46 63 51 B8 E4 76 3D 1F 90 48 64 52 39 24 96 4D   FcQ..v=..HdR9$.M<BR/>[00001232] 27 94 4A 65 52 B9 64 B6 5D 2F 98 4C 66 53 39 A4   '.JeR.d.]/.LfS9.<BR/>[00001248] D6 6D 37 9C 4E 67 53 B9 E4 B9 B9 3F 33 50 4B 34   .m7.NgS....?3PK4<BR/>[00001264] 3A 25 16 8C 60 A4 1B 69 48 1A 62 6E 9C BD A8 35   :%..`..iH.bn...5<BR/>[00001280] EA 4E BA A3 E2 AD 02 38 41 1A 13 DA E5 76 BD 5F   .N.....8A....v._<BR/>[00001296] B0 58 6C 56 3B 25 96 CD 67 B4 5A 6D 56 BB 65 B6   .XlV;%..g.ZmV.e.<BR/>[00001312] DD 6F B8 5C 6D 93 F6 E5 04 CD 46 BC 51 69 06 0A   .o.\m.....F.Qi..<BR/>[00001328] 51 B6 98 81 A7 26 EA 0B DA 93 5E A8 EB AB 3E 2B   Q....&amp;....^...&gt;+<BR/>[00001344] 15 AB 96 37 1D 8F C8 64 72 59 3C A6 57 2D 97 CC   ...7...drY&lt;.W-..<BR/>[00001360] 66 73 59 BC E6 76 63 74 BB 5E 74 57 BB ED FF 03   fsY..vct.^tW....<BR/>[00001376] 83 C2 E1 F1 38 B8 2E 7B 5D AF D8 6C 76 5B 3D A6   ....8..{]..lv[=.<BR/>[00001392] D7 6D B7 DC 6E 77 5B BB 06 82 85 A2 BC 69 29 74   .m..nw[......i)t<BR/>[00001408] DA 7D 46 A7 55 AB C0 F5 BB CE 67 37 9D CF E8 74   .}F.U.....g7...t<BR/>[00001424] 7A 5D 3E A7 57 AD D7 CA EF AE FC 0A 3D 27 87 80   z]&gt;.W.......='..<BR/>[00001440] E2 E1 38 F8 8E 4D 67 97 D8 F4 7A 7D 5E BF 67 B7   ..8..Mg...z}^.g.<BR/>[00001456] DD EF F8 7C 7E 53 DE D7 73 BB 7C EF E9 F8 D8 6E   ...|~S..s.|....n<BR/>[00001472] 46 2B 94 AD BE 70 0C 05 01 C0 90 2C 0D 03 C1 10   F+...p.....,....<BR/>[00001488] 4C 14 B1 3E AF B2 88 E1 2F CE 23 04 FD B5 4F 2B   L..&gt;..../.#...O+<BR/>[00001504] 19 05 C3 10 CC 35 0D C3 90 EC 3D 0F C4 0D 8C 1B   .....5....=.....<BR/>[00001520] 07 0B 30 83 4C F0 B5 2F EA 02 80 1C 20 4D 08 23   ..0.L../.....M.#<BR/>[00001536] <br/>-- Sector 3 -- Assuming 512 Bytes ---<br/>[00001536] FE 0D 07 84 42 61 50 B8 64 36 1D 0F 88 44 62 51   ....BaP.d6...DbQ<BR/>[00001552] 38 A4 56 2D 17 8C 46 63 51 B8 E4 76 3D 1F 90 48   8.V-..FcQ..v=..H<BR/>[00001568] 64 52 39 24 96 4D 27 94 4A 65 52 B9 64 B6 5D 2F   dR9$.M'.JeR.d.]/<BR/>[00001584] 98 4C 66 53 39 A4 D6 6D 37 9C 4E 67 53 B9 E4 B9   .LfS9..m7.NgS...<BR/>[00001600] B9 3F 33 50 4B 34 3A 25 16 8C 60 A4 1B 69 48 1A   .?3PK4:%..`..iH.<BR/>[00001616] 62 6E 9C BD A8 35 EA 4E BA A3 E2 AD 02 38 41 1A   bn...5.N.....8A.<BR/>[00001632] 13 DA E5 76 BD 5F B0 58 6C 56 3B 25 96 CD 67 B4   ...v._.XlV;%..g.<BR/>[00001648] 5A 6D 56 BB 65 B6 DD 6F B8 5C 6D 93 F6 E5 04 CD   ZmV.e..o.\m.....<BR/>[00001664] 46 BC 51 69 06 0A 51 B6 98 81 A7 26 EA 0B DA 93   F.Qi..Q....&amp;....<BR/>[00001680] 5E A8 EB AB 3E 2B 15 AB 96 37 1D 8F C8 64 72 59   ^...&gt;+...7...drY<BR/>[00001696] 3C A6 57 2D 97 CC 66 73 59 BC E6 76 63 74 BB 5E   &lt;.W-..fsY..vct.^<BR/>[00001712] 74 57 BB ED FF 03 83 C2 E1 F1 38 B8 2E 7B 5D AF   tW........8..{].<BR/>[00001728] D8 6C 76 5B 3D A6 D7 6D B7 DC 6E 77 5B BB 06 82   .lv[=..m..nw[...<BR/>[00001744] 85 A2 BC 69 29 74 DA 7D 46 A7 55 AB C0 F5 BB CE   ...i)t.}F.U.....<BR/>[00001760] 67 37 9D CF E8 74 7A 5D 3E A7 57 AD D7 CA EF AE   g7...tz]&gt;.W.....<BR/>[00001776] FC 0A 3D 27 87 80 E2 E1 38 F8 8E 4D 67 97 D8 F4   ..='....8..Mg...<BR/>[00001792] 7A 7D 5E BF 67 B7 DD EF F8 7C 7E 53 DE D7 73 BB   z}^.g....|~S..s.<BR/>[00001808] 7C EF E9 F8 D8 6E 46 2B 94 AD BE 70 0C 05 01 C0   |....nF+...p....<BR/>[00001824] 90 2C 0D 03 C1 10 4C 14 B1 3E AF B2 88 E1 2F CE   .,....L..&gt;..../.<BR/>[00001840] 23 04 FD B5 4F 2B 19 05 C3 10 CC 35 0D C3 90 EC   #...O+.....5....<BR/>[00001856] 3D 0F C4 0D 8C 1B 07 0B 30 83 4C F0 B5 2F EA 02   =.......0.L../..<BR/>[00001872] 80 1C 20 4D 08 23 FE 0D 07 84 42 61 50 B8 64 36   ...M.#....BaP.d6<BR/>[00001888] 1D 0F 88 44 62 51 38 A4 56 2D 17 8C 46 63 51 B8   ...DbQ8.V-..FcQ.<BR/>[00001904] E4 76 3D 1F 90 48 64 52 39 24 96 4D 27 94 4A 65   .v=..HdR9$.M'.Je<BR/>[00001920] 52 B9 64 B6 5D 2F 98 4C 66 53 39 A4 D6 6D 37 9C   R.d.]/.LfS9..m7.<BR/>[00001936] 4E 67 53 B9 E4 B9 B9 3F 33 50 4B 34 3A 25 16 8C   NgS....?3PK4:%..<BR/>[00001952] 60 A4 1B 69 48 1A 62 6E 9C BD A8 35 EA 4E BA A3   `..iH.bn...5.N..<BR/>[00001968] E2 AD 02 38 41 1A 13 DA E5 76 BD 5F B0 58 6C 56   ...8A....v._.XlV<BR/>[00001984] 3B 25 96 CD 67 B4 5A 6D 56 BB 65 B6 DD 6F B8 5C   ;%..g.ZmV.e..o.\<BR/>[00002000] 6D 93 F6 E5 04 CD 46 BC 51 69 06 0A 51 B6 98 81   m.....F.Qi..Q...<BR/>[00002016] A7 26 EA 0B DA 93 5E A8 EB AB 3E 2B 15 AB 96 37   .&amp;....^...&gt;+...7<BR/>[00002032] 1D 8F C8 64 72 59 3C A6 57 2D 97 CC 66 73 59 BC   ...drY&lt;.W-..fsY.<BR/>[00002048] <br/>-- Sector 4 -- Assuming 512 Bytes ---<br/>[00002048] E6 76 63 74 BB 5E 74 57 BB ED FF 03 83 C2 E1 F1   .vct.^tW........<BR/>[00002064] 38 B8 2E 7B 5D AF D8 6C 76 5B 3D A6 D7 6D B7 DC   8..{]..lv[=..m..<BR/>[00002080] 6E 77 5B BB 06 82 85 A2 BC 69 29 74 DA 7D 46 A7   nw[......i)t.}F.<BR/>[00002096] 55 AB C0 F5 BB CE 67 37 9D CF E8 74 7A 5D 3E A7   U.....g7...tz]&gt;.<BR/>[00002112] 57 AD D7 CA EF AE FC 0A 3D 27 87 80 E2 E1 38 F8   W.......='....8.<BR/>[00002128] 8E 4D 67 97 D8 F4 7A 7D 5E BF 67 B7 DD EF F8 7C   .Mg...z}^.g....|<BR/>[00002144] 7E 53 DE D7 73 BB 7C EF E9 F8 D8 6E 46 2B 94 AD   ~S..s.|....nF+..<BR/>[00002160] BE 70 0C 05 01 C0 90 2C 0D 03 C1 10 4C 14 B1 3E   .p.....,....L..&gt;<BR/>[00002176] AF B2 88 E1 2F CE 23 04 FD B5 4F 2B 19 05 C3 10   ..../.#...O+....<BR/>[00002192] CC 35 0D C3 90 EC 3D 0F C4 0D 8C 1B 07 0B 30 83   .5....=.......0.<BR/>[00002208] 4C F0 B5 2F EA 02 80 1C 20 4D 08 23 FE 0D 07 84   L../.....M.#....<BR/>[00002224] 42 61 50 B8 64 36 1D 0F 88 44 62 51 38 A4 56 2D   BaP.d6...DbQ8.V-<BR/>[00002240] 17 8C 46 63 51 B8 E4 76 3D 1F 90 48 64 52 39 24   ..FcQ..v=..HdR9$<BR/>[00002256] 96 4D 27 94 4A 65 52 B9 64 B6 5D 2F 98 4C 66 53   .M'.JeR.d.]/.LfS<BR/>[00002272] 39 A4 D6 6D 37 9C 4E 67 53 B9 E4 B9 B9 3F 33 50   9..m7.NgS....?3P<BR/>[00002288] 4B 34 3A 25 16 8C 60 A4 1B 69 48 1A 62 6E 9C BD   K4:%..`..iH.bn..<BR/>[00002304] A8 35 EA 4E BA A3 E2 AD 02 38 41 1A 13 DA E5 76   .5.N.....8A....v<BR/>[00002320] BD 5F B0 58 6C 56 3B 25 96 CD 67 B4 5A 6D 56 BB   ._.XlV;%..g.ZmV.<BR/>[00002336] 65 B6 DD 6F B8 5C 6D 93 F6 E5 04 CD 46 BC 51 69   e..o.\m.....F.Qi<BR/>[00002352] 06 0A 51 B6 98 81 A7 26 EA 0B DA 93 5E A8 EB AB   ..Q....&amp;....^...<BR/>[00002368] 3E 2B 15 AB 96 37 1D 8F C8 64 72 59 3C A6 57 2D   &gt;+...7...drY&lt;.W-<BR/>[00002384] 97 CC 66 73 59 BC E6 76 63 74 BB 5E 74 57 BB ED   ..fsY..vct.^tW..<BR/>[00002400] FF 03 83 C2 E1 F1 38 B8 2E 7B 5D AF D8 6C 76 5B   ......8..{]..lv[<BR/>[00002416] 3D A6 D7 6D B7 8B 3B DE AF 96 D3 A5 E0 C9 6F BA   =..m..;.......o.<BR/>[00002432] 99 1C 16 CE F9 FD C7 DC 72 79 5C B8 F6 82 85 A2   ........ry\.....<BR/>[00002448] BC 69 29 74 DA 7D 46 A7 55 AB C0 F5 BC CE E7 77   .i)t.}F.U......w<BR/>[00002464] BD DF F0 78 7C 5E 3C A3 FA 0C B5 6A 38 8C 0A 26   ...x|^&lt;....j8..&amp;<BR/>[00002480] 08 BD 0A AD 06 9C 53 E0 73 72 77 E8 9D 02 1B 13   ......S.srw.....<BR/>[00002496] 85 74 EA F5 D0 78 9E CF 24 05 01 B3 8E 72 EE E8   .t...x..$....r..<BR/>[00002512] 28 EA 4B A6 C0 3A AC 23 AE C4 3B 2A CB B7 02 42   (.K..:.#..;*...B<BR/>[00002528] 90 AC 2D 0B C3 10 CC 34 DA 9E 87 C9 F4 50 18 E6   ..-....4.....P..<BR/>[00002544] C8 7C 47 16 6F C9 38 00 0C C4 C0 06 36 13 60 50   .|G.o.8.....6.`P<BR/>[00002560] <br/>-- Sector 5 -- Assuming 512 Bytes ---<br/>[00002560] E0 4F 01 71 7C 62 4F 01 23 79 3D 14 13 01 69 08   .O.q|bO.#y=...i.<BR/>[00002576] 56 1B A7 59 E5 0D C8 12 0A BD 03 41 10 4A F9 05   V..Y.......A.J..<BR/>[00002592] B4 EE B3 0C EC 31 4E D2 B7 21 4A 12 8C A5 29 CA   .....1N..!J...).<BR/>[00002608] 92 AC AC 89 1D C7 A9 F0 44 17 46 80 50 41 15 51   ........D.F.PA.Q<BR/>[00002624] C0 00 35 13 51 71 3C 06 3E 53 41 3F 35 4D 93 4C   ..5.Qq&lt;.&gt;SA?5M.L<BR/>[00002640] DC 4F 80 03 39 30 1F 91 E5 A1 DE 7B 1F 12 BC F5   .O..90.....{....<BR/>[00002656] 3D A3 92 24 8A A2 3A 4B F3 A8 C1 49 4D 54 22 C6   =..$..:K...IMT".<BR/>[00002672] 4F 94 4D 15 45 D1 94 6D 1C B9 1D 67 A1 EE 08 8E   O.M.E..m...g....<BR/>[00002688] 85 10 00 2F 12 40 30 DA 4E 4D B3 5C DF 4E D4 13   .../<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="614f21514f2f2c">[email&#160;protected]</a>.\.N..<BR/>[00002704] 78 00 31 92 A4 09 6A 66 D1 F5 4D 17 3F 4F E2 CD   x.1...jf..M.?O..<BR/>[00002720] 02 D3 41 AD 4C 98 80 80 80 1C 20 4D 08 23 FE 0D   ..A.L......M.#..<BR/>[00002736] 07 84 42 61 50 B8 64 36 1D 0F 88 44 62 51 38 A4   ..BaP.d6...DbQ8.<BR/>[00002752] 56 2D 17 8C 46 63 51 B8 E4 76 3D 1F 90 48 64 52   V-..FcQ..v=..HdR<BR/>[00002768] 39 24 96 4D 27 94 4A 65 52 B9 64 B6 5D 2F 98 4C   9$.M'.JeR.d.]/.L<BR/>[00002784] 66 53 38 53 39 C4 EC 33 29 58 42 13 EA 9C 00 6A   fS8S9..3)XB....j<BR/>[00002800] 4D 03 0E 29 FA 15 12 87 45 A4 51 E9 54 64 F8 00   M..)....E.Q.Td..<BR/>[00002816] CA 97 31 28 D8 33 4A A5 56 AD 57 AC 56 6B 53 36   ..1(.3J.V.W.VkS6<BR/>[00002832] E5 74 CD 5F 2C D8 6C 56 3B 21 82 CC 6D B4 20 6D   .t._,.lV;!..m..m<BR/>[00002848] 49 BB 62 F6 DC D7 B8 3A EE 4F 8B A4 08 E1 04 68   I.b....:.O.....h<BR/>[00002864] 56 EF 57 BB E5 F6 FD 7F C0 60 70 58 3C 26 17 0D   V.W......`pX&lt;&amp;..<BR/>[00002880] 87 C4 46 9F D0 97 6B D1 F0 F1 7B BE 5E 8F 97 DE   ..F...k...{.^...<BR/>[00002896] 3B 2A F8 CB E6 72 D9 BC C6 73 35 9D D0 67 F3 2F   ;*...r...s5..g./<BR/>[00002912] 27 C3 EB 30 FC 91 1E D6 4C B3 FA D5 9A 57 4E 2F   '..0....L....WN/<BR/>[00002928] 00 E6 E4 E8 2C E0 9E A4 D3 37 3B 90 01 9D 32 58   ....,....7;...2X<BR/>[00002944] 4E AF 71 3C 3E 27 17 8D C7 88 57 5B 95 F3 35 93   N.q&lt;&gt;'....W[..5.<BR/>[00002960] 9D 63 B3 18 2D 06 DB 52 06 D8 9B B7 2F 6E 0D 7B   .c..-..R..../n.{<BR/>[00002976] 93 AE E8 F8 BB 5E 39 1E 3F 27 97 CD E7 F4 7A 7D   .....^9.?'....z}<BR/>[00002992] 5E BF 67 B6 56 C7 6F BA 4F CB 46 60 58 EE A3 D9   ^.g.V.o.O.F`X...<BR/>[00003008] A7 41 5B 7F DA 7B FA FF BF 90 0B FD 01 40 10 1C   .A[..{.......@..<BR/>[00003024] 0D 02 BF A0 20 DA 4E 03 0F B9 52 66 9B A7 E1 FA   ......N...Rf....<BR/>[00003040] C5 A3 61 31 00 54 80 6A 79 20 5F 1A 61 51 04 55   ..a1.T.jy._.aQ.U<BR/>[00003056] BF 2D DA 97 11 29 A3 51 36 21 92 25 A4 25 0A 3D   .-...).Q6!.%.%.=<BR/>[00003072] <br/>-- Sector 6 -- Assuming 512 Bytes ---<br/>[00003072] D1 6C 5D 17 BD 8E 53 98 E7 C6 8E 8B A6 EA BA EE   .l]...S.........<BR/>[00003088] CB B6 EE BB EF 0A 0B 18 48 12 0C 85 21 C8 92 2C   ........H...!..,<BR/>[00003104] 8D 23 C9 0A D0 BA 50 17 E2 E4 98 4C 98 66 B8 A6   .#....P....L.f..<BR/>[00003120] 4D 17 43 01 44 60 4A D2 C4 AF 2C CB 92 DC BD 2D   M.C.D`J...,....-<BR/>[00003136] 4C 12 EC C3 2F CB 23 0C AE E0 17 A3 49 4E 62 1D   L.../.#.....INb.<BR/>[00003152] 47 99 EE 8C 9D A7 A9 F0 14 C3 E0 00 BA 49 10 A5   G............I..<BR/>[00003168] C1 9C 1A 11 25 70 0C DA 44 94 0A 86 00 C4 C1 E9   ....%p..D.......<BR/>[00003184] 1C 59 1F 30 94 93 45 D1 94 6A 4D 19 2C 11 A3 9D   .Y.0..E..jM.,...<BR/>[00003200] 1B 2D 2B 5A DA B7 AE 2B 9A EA 81 C7 F4 75 3D 4F   .-+Z...+.....u=O<BR/>[00003216] D4 15 0D 45 51 D4 95 2A 46 32 14 86 10 00 2D 11   ...EQ..*F2....-.<BR/>[00003232] E4 61 78 68 9D 07 91 EC 62 9B 87 41 8C 6F 1D 35   .axh....b..A.o.5<BR/>[00003248] BD 73 5C 57 55 ED 79 5F D7 76 0D 7D 61 58 15 D1   .s\WU.y_.v.}aX..<BR/>[00003264] 8F 5C 18 26 D9 CE 5B 1A 87 11 CC 78 9E C8 B1 B4   .\.&amp;..[....x....<BR/>[00003280] 75 1E 04 C4 A2 01 8C E4 C1 0C 5C 19 E1 79 0C 56   u.........\..y.V<BR/>[00003296] 80 03 41 32 01 8D 84 E3 6C DC 44 77 4A 9A 33 13   ..A2....l.DwJ.3.<BR/>[00003312] 03 1D 53 53 5E 17 8D 17 48 39 B4 92 CA B3 D2 AE   ..SS^...H9......<BR/>[00003328] B5 2E ED 53 2E F5 36 BB D3 B7 96 05 81 E0 98 2E   ...S..6.........<BR/>[00003344] 0D 83 E1 0A A8 CE 53 18 60 00 BC 49 8E 05 61 8E   ......S.`..I..a.<BR/>[00003360] 2A B6 20 00 B8 48 B7 A4 C0 00 34 93 38 DE 3B 8E   *....H....4.8.;.<BR/>[00003376] 63 D9 0E 41 91 E3 F9 2E 45 93 64 99 08 C6 4B 63   c..A....E.d...Kc<BR/>[00003392] 25 89 A4 70 A2 67 B9 F4 7E 0B C5 09 7E 36 15 46   %..p.g..~...~6.F<BR/>[00003408] 28 20 3A 14 22 21 24 5A 8F A5 99 98 1B 91 25 78   (.:."!$Z......%x<BR/>[00003424] 76 46 96 40 48 DE 4F 69 57 43 74 A5 A9 C4 B8 DE   <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="afd9e981efe781e0c6f8ecdb">[email&#160;protected]</a>.....<BR/>[00003440] 55 98 D8 4E AD AB B1 37 A5 ED 7B BA 57 CC 73 4C   U..N...7..{.W.sL<BR/>[00003456] 3B 94 D3 C1 4E 2F 3A C6 CD B3 ED 1B 4E D5 B5 C8   ;...N/:.....N...<BR/>[00003472] F8 5E 1A 2F 92 63 A9 5E 64 CA 65 D8 7C 47 16 64   .^./.c.^d.e.|G.d<BR/>[00003488] 81 7E 69 90 4D 71 04 5B 19 DB FF 03 C0 70 5C 2F   .~i.Mq.[.....p\/<BR/>[00003504] 09 C3 F0 7C 4F 0D C5 70 04 41 72 67 E8 26 60 1C   ...|O..p.Arg.&amp;`.<BR/>[00003520] 39 94 05 9E 5E 89 9D 55 90 30 3C 14 80 06 56 05   9...^..U.0&lt;...V.<BR/>[00003536] A8 60 30 DA 4E 8B 65 01 7C 3C 16 06 49 06 5B 99   .`0.N.e.|&lt;..I.[.<BR/>[00003552] D9 A9 7F D1 13 94 12 9A A7 E7 06 2E D9 DB F7 09   ................<BR/>[00003568] 76 B5 AD AC 54 A3 A9 4B 3B 1B 04 79 7F BC 5D CF   v...T..K;..y..].<BR/>[00003584] <br/>-- Sector 7 -- Assuming 512 Bytes ---<br/>[00003584] 8D E3 F9 1E 4F 95 E5 A4 9B 70 01 B8 6E 46 48 9C   ....O....p..nFH.<BR/>[00003600] 4B 97 23 51 50 62 0B 24 F9 7A 0E 0F 45 28 46 3F   K.#QPb.$.z..E(F?<BR/>[00003616] 95 1E FF C3 F0 7C 5F 2F C9 F3 FC 7F 4F CD F5 7C   .....|_/....O..|<BR/>[00003632] 01 08 F8 53 92 45 F9 A8 11 0F C5 41 62 68 9C 08   ...S.E.....Abh..<BR/>[00003648] B1 30 61 1A C0 08 D2 26 9D 01 4C 64 25 3C 00 06   .0a....&amp;..Ld%&lt;..<BR/>[00003664] 21 2A 20 45 A8 CE 07 62 30 59 28 41 34 03 4A 1C   !*.E...b0Y(A4.J.<BR/>[00003680] 01 01 26 DC FC 8B C1 B0 39 1E 64 19 83 47 24 AF   ..&amp;.....9.d..G$.<BR/>[00003696] 29 17 78 16 5D F2 38 5F 68 ED B1 10 10 80 1C 20   ).x.].8_h.......<BR/>[00003712] 4D 08 23 FE 0D 07 84 42 61 50 B8 64 36 1D 0F 88   M.#....BaP.d6...<BR/>[00003728] 44 62 51 38 A4 56 2D 17 8C 46 63 51 B8 E4 76 3D   DbQ8.V-..FcQ..v=<BR/>[00003744] 1F 90 48 64 52 39 24 96 4D 27 94 4A 65 52 B9 64   ..HdR9$.M'.JeR.d<BR/>[00003760] B6 5D 2F 98 4C 61 46 75 33 0C 00 5F 49 9D 55 EC   .]/.LaFu3.._I.U.<BR/>[00003776] 92 7A 61 74 62 51 B0 47 C8 F5 98 00 D2 9A 04 1B   .zatbQ.G........<BR/>[00003792] 93 B4 9A 5D 2A 99 4F A7 54 69 B5 3A 85 52 94 03   ...]*.O.Ti.:.R..<BR/>[00003808] 35 A6 CF EB 46 60 88 FC A8 58 B4 5C 11 66 33 75   5...F`...X.\.f3u<BR/>[00003824] D0 07 37 A7 81 26 F4 E8 30 E2 9F B7 5C 2D E0 43   ..7..&amp;..0...\-.C<BR/>[00003840] 6A 70 62 86 56 9F AB 80 B3 82 78 06 6C 4D 81 8D   jpb.V.....x.lM..<BR/>[00003856] C9 C0 01 8D 2A 52 4D 2E A6 58 BC 66 37 1D 8F C8   ....*RM..X.f7...<BR/>[00003872] 64 72 51 06 E6 54 CD 97 2C E6 73 59 BC E1 83 3C   drQ..T..,.sY...&lt;<BR/>[00003888] 6D D0 20 74 49 BD 22 F7 4C D7 D4 3A F5 4F 8D 64   m..tI.".L..:.O.d<BR/>[00003904] 08 E1 04 68 64 F6 5B 3D A6 D7 6D B7 DC 6E 77 5B   ...hd.[=..m..nw[<BR/>[00003920] BD E6 F7 7D BF E0 4B 66 93 69 C4 EA 79 3E A0 30   ...}..Kf.i..y&gt;.0<BR/>[00003936] 48 49 15 A0 10 D8 9C B8 F4 6D FD 2B 97 57 A9 D7   HI.......m.+.W..<BR/>[00003952] E9 F6 53 F4 C4 0A D5 9B 5E B0 58 A2 CD B7 53 C4   ..S.....^.X...S.<BR/>[00003968] 3C 7C 53 81 6E BD 8E A8 00 D4 9A 1E 23 56 48 85   &lt;|S.n.......#VH.<BR/>[00003984] CB 40 DC AA 62 AA 19 8D D5 CB 59 C6 6F 9D A7 93   <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b997f99797db9797979797e097d6">[email&#160;protected]</a>...<BR/>[00004000] 83 01 C0 90 2C 0D 03 A3 2C A9 B8 CB 8C CC E4 1C   ....,...,.......<BR/>[00004016] CD B3 C3 03 40 36 B4 44 0B 48 4D B4 C5 EB 50 6B   <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="250b0b0b0b65130b610b6d680b0b0b754e">[email&#160;protected]</a><BR/>[00004032] B5 47 5B 58 7C 35 CD 84 11 11 C4 91 2C 4D 13 C5   .G[X|5......,M..<BR/>[00004048] 11 4C 55 15 C5 91 6B 1E E1 A6 E9 CA 76 9E A7 EA   .LU...k.....v...<BR/>[00004064] 0B 96 E6 B9 EF 64 74 ED 47 6E B2 DE EE 3B CF 02   .....dt.Gn...;..<BR/>[00004080] C2 B1 A3 01 99 10 57 80 03 41 33 1E 81 AB 78 04   ......W..A3...x.<BR/>[00004096] <br/>-- Sector 8 -- Assuming 512 Bytes ---<br/>[00004096] AC 82 43 A1 42 35 95 06 29 2E 61 1A C2 D1 3E 5F   ..C.B5..).a...&gt;_<BR/>[00004112] 08 C4 91 6A 41 16 C6 6C 5D 31 CC 93 2C CC 84 41   ...jA..l]1..,..A<BR/>[00004128] 50 64 1F 35 C2 30 9C 2B 0B C3 30 DC 3B 0F C4 28   Pd.5.0.+..0.;..(<BR/>[00004144] 2C CF 3B CF 13 CC F5 3D CF 93 EC FD 3F B2 71 83   ,.;....=....?.q.<BR/>[00004160] 8B 19 B9 11 B3 98 E7 3A 11 E5 15 1F 51 91 EA E3   .......:....Q...<BR/>[00004176] 20 3B EA FC 86 8C 89 44 B1 71 24 93 20 00 CE 4C   .;.....D.q$....L<BR/>[00004192] 30 44 EC 9A EA 81 4B EB D4 4E 31 05 D8 F0 58 19   0D....K..N1...X.<BR/>[00004208] 40 B8 EE 51 80 03 31 2F 4C 00 03 21 2C 30 14 46   @..Q..1/L..!,0.F<BR/>[00004224] 01 D2 79 9E D4 05 75 5D D7 89 1C D2 CC 4D 70 74   ..y...u].....Mpt<BR/>[00004240] DA D0 B4 6D 2B 4E D4 B5 6D 6A 07 3B 57 B6 6D 9D   ...m+N..mj.;W.m.<BR/>[00004256] 67 DA 16 8D A5 69 DA 89 1D 05 19 38 F1 AB 95 43   g....i.....8...C<BR/>[00004272] C7 34 5D 1D 6F 5C 0E DA 94 EE D2 2F 0C 88 8B 9E   .4].o\...../....<BR/>[00004288] 47 B9 F4 5D 1A C7 20 E6 56 98 E0 C8 F2 52 00 2A   G..]....V....R.*<BR/>[00004304] C8 16 B7 BD C4 D8 BF 5A 8D 85 49 8B 51 80 CB AD   .......Z..I.Q...<BR/>[00004320] 3E B8 AF 84 FD 34 4C 05 C4 29 5A 61 1B 87 3D AB   &gt;....4L..)Za..=.<BR/>[00004336] 87 E2 13 C5 7F 06 D8 2C EB 3F 62 42 D6 34 35 64   .......,.?bB.45d<BR/>[00004352] 43 D6 53 5F 66 62 39 0C FA 79 64 86 C6 4C 67 E5   C.S_fb9..yd..Lg.<BR/>[00004368] 06 8E 54 5F E5 85 9E 5C 63 66 19 16 65 99 E6 99   ..T_...\cf..e...<BR/>[00004384] AD 02 9A C6 2E 34 68 E4 C6 F4 45 BF 46 DC 2F 65   .....4h...E.F./e<BR/>[00004400] 21 21 3C 49 09 8C 6F 1D 00 E0 F4 53 30 A4 B0 84   !!&lt;I..o....S0...<BR/>[00004416] 48 16 B5 39 92 A3 13 2B 59 3D 9F A8 C4 D0 04 F7   H..9...+Y=......<BR/>[00004432] 91 25 D1 A3 9B 6C 1B 0B 73 89 E2 B8 B4 25 8C 4E   .%...l..s....%.N<BR/>[00004448] 16 3C 39 64 C4 16 5B 63 B1 6E 10 2E 48 79 11 9B   .&lt;9d..[c.n..Hy..<BR/>[00004464] A8 E3 BB 8F 5B C9 1D BD 91 BB E9 23 BF 94 3C 09   ....[......#..&lt;.<BR/>[00004480] 31 C1 96 1C 2A 20 4E 71 03 E7 15 C1 93 05 67 1C   1...*.Nq......g.<BR/>[00004496] 61 F2 07 87 25 B8 F2 9C AF 2D 67 DA F9 D5 0B 6D   a...%....-g....m<BR/>[00004512] C7 14 4E 81 CF E7 EE A6 87 49 68 A9 19 70 FF 03   ..N......Ih..p..<BR/>[00004528] C3 C9 4A 43 17 06 78 30 3C 14 60 3A 95 D0 AD F4   ..JC..x0&lt;.`:....<BR/>[00004544] FD 11 80 93 8F E9 C7 CB F7 9D EA 4B B2 6C AC D5   ...........K.l..<BR/>[00004560] 87 0A 58 B0 C6 D5 39 E3 D1 17 7D E5 A4 E7 E7 9C   ..X...9...}.....<BR/>[00004576] D8 12 FE 89 5F E9 A1 B0 F9 C3 EB 9E BE CA 4A 7E   ...._.........J~<BR/>[00004592] FB 87 4F BC 64 7C 05 37 C4 4A FC 83 FF CD F3 FC   ..O.d|.7.J......<BR/>[00004608] <br/>-- Sector 9 -- Assuming 512 Bytes ---<br/>[00004608] 45 31 BB F5 F9 9F 6F DD F7 B7 9C CD 09 6D 67 B6   E1....o......mg.<BR/>[00004624] EF 41 A0 FF 0E AF 47 73 25 05 E9 B2 39 4B B8 AD   .A....Gs%...9K..<BR/>[00004640] 6B 2C 0D FC 9D 45 3E 93 C4 D0 26 10 02 A8 76 8F   k,...E&gt;...&amp;...v.<BR/>[00004656] 51 F0 FC 20 84 11 20 EF 01 E0 85 97 86 9B D8 D2   Q...............<BR/>[00004672] 72 6D 84 04 80 1C 20 4D 08 23 FE 0D 07 84 42 61   rm.....M.#....Ba<BR/>[00004688] 50 B8 64 36 1D 0F 88 44 62 51 38 A4 56 2D 17 8C   P.d6...DbQ8.V-..<BR/>[00004704] 46 63 51 B8 E4 35 A5 1F 47 48 4E F2 34 14 95 5B   FcQ..5..GHN.4..[<BR/>[00004720] 27 77 4A 63 B2 B8 9B E2 5C DE 98 29 E6 49 19 A4   'wJc....\..).I..<BR/>[00004736] B9 F1 2C 9C 4E 67 53 B9 E4 F6 7D 3F A0 50 68 54   ..,.NgS...}?.PhT<BR/>[00004752] 3A 25 16 8D 47 A1 19 D4 CC 30 01 7D 26 75 57 B2   :%..G....0.}&amp;uW.<BR/>[00004768] 49 E9 85 D1 89 46 C1 21 24 56 80 43 62 70 18 71   I....F.!$V.Cbp.q<BR/>[00004784] 4F D7 EC 36 0B 15 96 C9 67 B1 DA 6C D6 AB 00 20   O..6....g..l....<BR/>[00004800] DC 9D 40 AD 59 A2 23 F2 A1 62 D1 70 4F 5D EF 67   <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c0eeee80ee99">[email&#160;protected]</a>.#..b.pO].g<BR/>[00004816] C9 31 2C B8 00 1A 53 36 BC 25 A3 0B 69 06 9C 93   .1,...S6.%..i...<BR/>[00004832] E0 03 42 65 40 C8 6C D2 32 59 3C A6 57 2D 97 CC   <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a08e8ee2c5e08ecc8e92f9">[email&#160;protected]</a>&lt;.W-..<BR/>[00004848] 66 61 AD CC E1 9B 3C 59 D0 68 74 5A 33 06 94 DB   fa....&lt;Y.htZ3...<BR/>[00004864] A7 40 EA 53 7A B5 EE B5 AF AF 75 EC 66 D0 23 84   <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6f412f413c1541414141411a4109">[email&#160;protected]</a>.#.<BR/>[00004880] 11 A1 9A DC 6E 77 5B B8 EB D7 7D 27 56 9D B8 47   ....nw[...}'V..G<BR/>[00004896] AE 22 CF 8C E7 E4 6F 27 2F DE 64 29 F3 CF 72 74   ."....o'/.d)..rt<BR/>[00004912] 79 5D 3E A7 57 AD D7 EC 76 7B 5B 8A 55 32 9D 50   y]&gt;.W...v{[.U2.P<BR/>[00004928] A9 55 2A CC 11 DA 35 62 00 33 A6 00 66 C4 DF AF   .U*...5b.3..f...<BR/>[00004944] DB EC F7 7C 7E 1F 3F 7F D7 E5 F6 F6 63 13 27 E5   ...|~.?.....c.'.<BR/>[00004960] 9B 30 46 BA AE EB CA 78 39 15 A6 40 00 32 12 CC   <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ac829cea82828282d4958282ec829e">[email&#160;protected]</a>..<BR/>[00004976] 3C 14 C3 41 8B 4B F4 A9 97 2E DC 25 09 C2 90 AC   &lt;..A.K.....%....<BR/>[00004992] 2C 8B 33 86 E3 3C 33 34 70 EB 44 D2 8C 0D 38 DA   ,.3..&lt;34p.D...8.<BR/>[00005008] D4 90 2D 59 36 D6 97 AD 79 AE D8 9D 6D 9A 06 82   ..-Y6...y...m...<BR/>[00005024] C2 F1 8C 65 0A 1F D1 A9 2B 1B 90 D1 C9 AD 1D C6   ...e....+.......<BR/>[00005040] 69 C2 6C 44 C8 04 54 84 E8 9C 91 EC 8D 23 C9 12   i.lD..T......#..<BR/>[00005056] 4C 95 25 B2 A2 E9 42 60 00 02 D1 20 3B 16 06 48   L.%...B`....;..H<BR/>[00005072] 9A 4B 97 23 51 50 62 4B 46 20 62 43 15 C1 C1 16   .K.#QPbKF.bC....<BR/>[00005088] 58 4C 53 24 C7 32 CD 13 3C D5 33 4D 93 4C DB 31   XLS$.2..&lt;.3M.L.1<BR/>[00005104] 86 C4 49 5E 4C 98 66 B8 43 00 2F 09 D1 5C 67 9B   ..I^L.f.C./..\g.<BR/>[00005120] <br/>-- Sector 10 -- Assuming 512 Bytes ---<br/>[00005120] E0 10 D4 4D 01 03 79 3D 05 AD 94 2D 08 01 8D 64   ...M..y=...-...d<BR/>[00005136] D8 50 41 15 47 61 E8 7B C9 94 8D 25 49 D2 88 3C   .PA.Ga.{...%I..&lt;<BR/>[00005152] 33 0D C3 D4 CC 41 11 44 91 34 51 15 45 91 73 6B   3....A.D.4Q.E.sk<BR/>[00005168] 18 52 B5 2D 4C 8D 46 A7 F5 4E 96 17 75 68 EB 57   .R.-L.F..N..uh.W<BR/>[00005184] 93 D5 89 ED 59 D5 75 AD 6D 5B D7 15 CA 74 61 9B   ....Y.u.m[...ta.<BR/>[00005200] 47 20 24 39 14 03 29 4A 61 AA 65 D0 4E 40 15 23   G.$9..)Ja.e.N@.#<BR/>[00005216] BC AA 37 95 46 30 DE 55 D9 D6 85 9F 68 DA 96 9D   ..7.F0.U....h...<BR/>[00005232] AD 69 5B 16 AD B3 69 8E 85 71 90 2F 94 46 00 05   .i[...i..q./.F..<BR/>[00005248] 44 C0 29 61 F4 7E 1F B3 89 5E C0 93 20 6C 1B 42   D.)a.~...^...l.B<BR/>[00005264] 5E 0B 40 16 38 13 F7 19 34 62 1B 87 44 96 E4 1C   ^<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f3ddb3ddcbddddddc791ddddb7">[email&#160;protected]</a>...<BR/>[00005280] E8 F9 A5 15 60 18 0C 76 6B 1A 78 29 DB 83 D7 49   ....`..vk.x)...I<BR/>[00005296] FD 66 7B 60 A6 99 B1 87 D5 38 4C 8D 4B B3 F4 CC   .f{`.....8L.K...<BR/>[00005312] 3B 4D B5 0D 53 58 D7 36 0D 92 5C DA 36 D8 96 45   ;M..SX.6..\.6..E<BR/>[00005328] 23 99 D9 29 A9 93 E4 69 C1 F9 95 94 D9 68 E9 97   #..)...i.....h..<BR/>[00005344] 96 F9 8E 53 99 E6 99 AE 6C ED 9D 07 91 EC 5C 1A   ...S....l.....\.<BR/>[00005360] 46 F1 C6 76 1E 05 13 20 36 95 66 40 3A 3D 95 01   F..v....6.f@:=..<BR/>[00005376] 29 04 56 04 E4 19 5B A6 E9 FA 76 A1 A9 EA 5A AE   ).V...[...v...Z.<BR/>[00005392] A3 AB EA 9A C6 AD A8 04 04 01 56 14 10 65 61 7A   ..........V..eaz<BR/>[00005408] 6C 9C A9 61 B4 74 9E 00 78 E6 50 50 24 ED E3 43   l..a.t..x.PP$..C<BR/>[00005424] 5D FB 8B 16 33 13 04 91 80 6A 49 63 C6 F4 00 6F   ]...3....jIc...o<BR/>[00005440] 9B EE FD BF F0 04 5F 04 96 26 C5 0F 0C 92 90 55   ......_..&amp;.....U<BR/>[00005456] C9 93 C5 EF A1 2F 1D 88 E6 F0 96 29 0E 62 CD 23   ...../.....).b.#<BR/>[00005472] 4D 8C C4 B8 DC 53 8E C5 B8 FC 5E DB F2 3D 0B 72   M....S....^..=.r<BR/>[00005488] 7D F4 84 A7 4C 39 75 11 57 44 8E 9D 3D 69 01 D7   }...L9u.WD..=i..<BR/>[00005504] 90 BD 8E 17 D5 F6 9D AF 6D DB A2 A7 59 E6 7B 82   ........m...Y.{.<BR/>[00005520] C3 B9 46 43 96 E6 72 0C 7F 1E A7 71 D6 77 9C E7   ..FC..r....q.w..<BR/>[00005536] 19 DE 74 1C A7 87 99 E7 79 BE 67 97 E8 FA 9E 87   ..t.....y.g.....<BR/>[00005552] AD E7 FB 1E AF B3 EB 9C A7 71 CC 71 9F 27 99 E1   .........q.q.'..<BR/>[00005568] 1A A7 04 A1 82 6A 80 43 49 34 05 EE 5B 7F DC B0   .....j.CI4..[...<BR/>[00005584] 30 24 D0 96 BF C9 6E 20 F5 BE 86 9F CF 50 39 44   0$....n......P9D<BR/>[00005600] 5F EB 4E 1B 20 00 C2 80 44 B0 58 40 56 FA 15 60   _.N.....D.X@V..`<BR/>[00005616] 42 B9 19 50 2D BE 82 A8 1C EE 0E BB 93 72 AE 59   B..P-........r.Y<BR/>[00005632] <br/>-- Sector 11 -- Assuming 512 Bytes ---<br/>[00005632] 10 B9 85 3C C7 11 5B 1E 1F 0C 81 52 41 08 3C 4F   ...&lt;..[....RA.&lt;O<BR/>[00005648] 18 78 D8 0D D0 8C 50 42 57 21 07 C8 D8 9D 85 4A   .x....PBW!.....J<BR/>[00005664] C4 4F 42 88 5D 0B E1 82 B9 1C E3 C0 7A 81 90 F2   .OB.].......z...<BR/>[00005680] 29 10 38 97 16 43 48 70 09 F1 80 34 03 F0 AC 18   ).8..CHp...4....<BR/>[00005696] 22 08 57 0C 38 89 11 A2 2C 47 89 42 BC 61 88 41   ".W.8...,G.B.a.A<BR/>[00005712] 60 31 22 74 50 89 F1 46 2A 45 38 AC 31 04 2C 4F   `1"tP..F*E8.1.,O<BR/>[00005728] 0F 22 A4 5F 87 31 4C 2F 62 C8 C3 14 43 10 69 93   ."._.1L/b...C.i.<BR/>[00005744] A3 BA 00 03 30 97 7D ED C2 36 18 75 EC 0A 84 18   ....0.}..6.u....<BR/>[00005760] AB 1F 03 EC 7E 24 80 F7 1D DB E8 88 8F 44 58 6E   ....~$.......DXn<BR/>[00005776] C7 D8 58 71 85 98 FA 90 44 1C 77 C8 52 64 29 E0   ..Xq....D.w.Rd).<BR/>[00005792] 28 B0 1B 52 2C 33 C8 D6 FA 10 64 83 31 16 E4 D8   (..R,3....d.1...<BR/>[00005808] 83 9C F1 F2 2B A4 C0 9C 93 42 A2 4E 12 91 DC 42   ....+....B.N...B<BR/>[00005824] A3 E8 DD 14 B2 8C 6F CA 51 9B 29 D1 30 D9 95 43   ......o.Q.).0..C<BR/>[00005840] 6E 56 32 D1 4D 20 87 D0 D5 96 48 98 51 4B 54 88   nV2.M.....H.QKT.<BR/>[00005856] 43 5D 68 E9 90 F0 B0 4F CB D8 16 32 88 54 BF 6F   C]h....O...2.T.o<BR/>[00005872] A0 AE 62 43 13 75 04 A0 99 A1 63 08 8D 8D 22 78   ..bC.u....c..."x<BR/>[00005888] 30 A8 5C F2 A3 74 13 1A 6A 11 21 6B 35 E4 68 67   0.\..t..j.!k5.hg<BR/>[00005904] 64 33 54 DE 9B E9 B9 37 E7 04 E1 3A E2 38 5E 8D   d3T....7...:.8^.<BR/>[00005920] 21 54 33 46 E8 55 13 82 F0 00 06 17 4C F9 C0 78   !T3F.U......L..x<BR/>[00005936] 74 14 2A 2C 55 86 61 4C 31 02 F0 A2 18 33 E6 7D   t.*,U.aL1....3.}<BR/>[00005952] CF A0 CB 3D CF 28 B3 00 01 78 49 94 D1 28 00 03   ...=.(...xI..(..<BR/>[00005968] 00 95 A1 14 2A 84 D0 BA 1C 18 28 38 5F 12 80 9C   ....*.....(8_...<BR/>[00005984] 41 0A B0 A2 26 85 E0 82 16 E3 3C 3F 8B 21 98 31   A...&amp;.....&lt;?.!.1<BR/>[00006000] 86 F0 E9 23 83 BC 7A 8F 93 FE 2A 00 30 6E 2B CF   ...#..z...*.0n+.<BR/>[00006016] B6 96 46 D4 1B 4A 44 E8 12 0E A2 88 66 8E 11 D7   ..F..JD.....f...<BR/>[00006032] 1D A3 C3 7C 7F 63 A2 9E 0E 5A 7D 4F D2 20 E6 A8   ...|.c...Z}O....<BR/>[00006048] 4A A6 45 8D A0 17 51 DB EC 2C 20 E1 42 A6 37 D4   J.E...Q..,..B.7.<BR/>[00006064] 44 70 1C 03 80 1E 35 4E 42 8E F9 20 10 6A 8B 7C   Dp....5NB....j.|<BR/>[00006080] 05 D5 6C 70 55 D2 0E 8D E8 53 7C 7F 20 D0 02 56   ..lpU....S|....V<BR/>[00006096] 56 FA 28 EB 41 34 12 2D F4 31 D6 D0 1D 5B DC 00   V.(.A4.-.1...[..<BR/>[00006112] 24 AE 52 DC 83 2F E0 37 5D EA C8 00 00 B5 ED 13   $.R../.7].......<BR/>[00006128] 10 71 97 5F E6 1C C5 9C 46 52 64 4C 90 B3 32 D4   .q._....FRdL..2.<BR/>[00006144] <br/>-- Sector 12 -- Assuming 512 Bytes ---<br/>[00006144] EB 9A 54 10 68 80 80 80 1C 20 4D 08 23 FE 0D 07   ..T.h.....M.#...<BR/>[00006160] 84 42 61 50 B8 64 36 1D 0F 88 44 62 51 38 A4 56   .BaP.d6...DbQ8.V<BR/>[00006176] 2D 17 8C 46 63 51 54 C4 74 F5 1F 78 48 63 72 39   -..FcQT.t..xHcr9<BR/>[00006192] 24 96 4D 27 94 4A 65 52 B9 64 B6 5D 2F 98 4C 66   $.M'.JeR.d.]/.Lf<BR/>[00006208] 53 39 A4 D6 6D 37 88 BD 5F 2F B2 A2 6D 78 36 44   S9..m7.._/..mx6D<BR/>[00006224] AC 1E D3 B7 85 0C 82 8F 59 A7 D8 ED 92 DA 7D 7C   ........Y.....}|<BR/>[00006240] 4A 4A AD CC 0A 26 01 79 42 BF AB 56 2A E5 FA A4   JJ...&amp;.yB..V*...<BR/>[00006256] F5 78 3A 46 2C 6C 0B 11 DD 86 CB 64 B3 5A 56 43   .x:F,l.....d.ZVC<BR/>[00006272] 64 42 BE A6 C0 3D 2C 99 66 85 3B 10 56 83 55 80   dB...=,.f.;.V.U.<BR/>[00006288] 0C 89 70 39 B9 3A 7B 59 B2 D9 8E 17 5B 51 CA EE   ..p9.:{Y....[Q..<BR/>[00006304] 75 BC DE EC 56 EB A1 64 D2 70 AB DA 0E 06 53 81   u...V..d.p....S.<BR/>[00006320] D4 A6 65 B7 00 26 A4 D8 30 E2 9F CF 68 33 FA 1D   ..e..&amp;..0...h3..<BR/>[00006336] 26 8F 4D A2 D4 69 75 3A 7D 08 2F 3E 00 33 A6 15   &amp;.M..iu:}./&gt;.3..<BR/>[00006352] 6C D6 EC E2 5E 7B DC 00 37 40 5D E0 2F 7C 08 E0   l...^{..7@]./|..<BR/>[00006368] 70 78 22 9E 23 E7 8D 07 5D F2 77 40 00 B7 34 E7   px".#...]<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="46683106686872">[email&#160;protected]</a>.<BR/>[00006384] CF E5 89 3A 4F 8E A3 C7 AC 66 EC 72 C7 7D B5 AF   ...:O....f.r.}..<BR/>[00006400] 76 0E 61 F0 72 CD DE 36 DF 95 2F E7 E5 95 7D 50   v.a.r..6../...}P<BR/>[00006416] 74 F7 B7 97 CB 35 FC 52 3F 37 57 D5 1F F7 E5 84   t....5.R?7W.....<BR/>[00006432] FF 4B AF E3 3F FC 13 C0 0E 59 29 01 A0 E4 54 0C   .K..?....Y)...T.<BR/>[00006448] E6 82 C4 4C 14 70 C1 85 84 1C E5 84 70 8A 0E 82   ...L.p......p...<BR/>[00006464] 1A 0E 58 57 0B B6 D0 CC 34 9A 9B 90 EB B0 33 0B   ..XW....4.....3.<BR/>[00006480] 31 0C 45 11 C4 83 04 4C 36 C5 04 0C 54 4D C5 85   1.E....L6...TM..<BR/>[00006496] EC 5C 6B C6 07 5C 64 EA 1F 08 10 E1 0A 43 71 CC   .\k..\d......Cq.<BR/>[00006512] 75 1D C7 88 69 FD 1F BC E4 BC 0C 45 47 B2 2C 8C   u...i......EG.,.<BR/>[00006528] 86 9D 12 49 8B 25 C8 F2 6C 9D 27 CA 12 8C A5 29   ...I.%..l.'....)<BR/>[00006544] CA 89 31 88 6E 9C E1 71 0A 56 9D A7 A9 F0 85 27   ..1.n..q.V.....'<BR/>[00006560] 47 D9 A0 72 1D A4 89 7E 69 92 45 F9 A8 42 16 E6   G..r...~i.E..B..<BR/>[00006576] 71 04 5B 19 A4 19 6C 67 0F AC 08 F8 B9 4E 46 71   q.[...lg.....NFq<BR/>[00006592] 0E 5C 99 E4 61 78 68 CF 66 79 10 5C 9A 04 59 76   .\..axh.fy.\..Yv<BR/>[00006608] 68 91 54 39 0A 5C 19 E4 C1 84 6B 15 2D A0 EA 57   h.T9.\....k.-..W<BR/>[00006624] 99 06 4B 2C 4F 29 60 40 DE 4E 80 63 61 38 00 0C   ..K,O)`@.N.ca8..<BR/>[00006640] C4 B8 00 30 12 61 18 FC 54 10 33 80 09 4F 00 03   ...0.a..T.3..O..<BR/>[00006656] <br/>-- Sector 13 -- Assuming 512 Bytes ---<br/>[00006656] 41 32 BD 12 C3 C9 60 65 06 44 39 5B 55 B3 AD 65   A2....`e.D9[U..e<BR/>[00006672] 74 D5 D7 8D 55 7D 5D B4 20 00 CA 4B 11 85 D9 A5   t...U}]....K....<BR/>[00006688] 2A A2 6D C0 F6 E5 83 B6 68 6F 67 86 B6 8D A4 19   *.m.....hog.....<BR/>[00006704] 5A 82 8D AC 7D 5B 08 50 ED 6D BD ED D0 29 6F 99   Z...}[.P.m...)o.<BR/>[00006720] 57 0A 14 53 5C 8E 5C 4C 30 20 EE 31 F2 0D 5D 8E   W..S\.\L0..1..].<BR/>[00006736] 59 9D 77 9E 97 89 DB 79 83 77 AB 96 90 9E 05 3D   Y.w....y.w.....=<BR/>[00006752] F4 E5 85 F7 EA 1A 42 E0 0F 83 E2 85 0F D8 2B 96   ......B.......+.<BR/>[00006768] 37 E1 08 51 F7 85 9D F8 69 AB 87 90 18 88 03 89   7..Q....i.......<BR/>[00006784] C2 21 1C 26 82 42 D0 C5 91 8D C3 30 E9 B9 0F C4   .!.&amp;.B.....0....<BR/>[00006800] 99 0C 47 73 C5 03 6C 54 40 C5 84 DC 5C 5E C6 06   ..Gs..lT@...\^..<BR/>[00006816] BC 64 75 C6 91 B4 71 8E 66 99 AC 78 7E 67 06 9E   .du...q.f..x~g..<BR/>[00006832] 75 9B 67 89 5D F0 3A E8 19 5E 7B A1 E8 9A 2E 8D   u.g.].:..^{.....<BR/>[00006848] A3 E9 09 69 A0 71 9D 85 F9 B2 73 1C A7 81 EA 7F   ...i.q....s.....<BR/>[00006864] 21 85 59 9C 6F 06 24 31 5D 50 12 EA 81 70 23 92   !.Y.o.$1]P...p#.<BR/>[00006880] 65 B0 8E 4A 16 E3 D1 62 65 10 25 A9 9A 32 94 A6   e..J...be.%..2..<BR/>[00006896] 16 D8 61 07 EA 40 CE 53 18 62 B1 38 5E 07 C4 71   <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fcd2d29dd2d2bcd2afd29ed2c4">[email&#160;protected]</a>^..q<BR/>[00006912] 66 26 92 E5 CA 7A 5D 8A E4 E9 7A 51 19 26 D1 4E   f&amp;...z]...zQ.&amp;.N<BR/>[00006928] 65 9B A5 71 9E 6F 8A 64 D9 76 04 2F C0 88 E8 50   e..q.o.d.v./...P<BR/>[00006944] 83 A3 D9 4C 27 13 05 CB 24 70 0B 65 01 7C 00 0B   ...L'...$p.e.|..<BR/>[00006960] C4 9D 60 28 93 45 D0 EC 57 99 35 69 34 06 D8 1D   ..`(.E..W.5i4...<BR/>[00006976] 6D 7B D7 57 F5 E7 54 2C 93 C5 F4 7F AA 68 B6 53   m{.W..T,.....h.S<BR/>[00006992] 96 3F F7 89 19 E5 DF DB E0 A3 96 26 78 88 69 39   .?.........&amp;x.i9<BR/>[00007008] E3 B9 62 D7 94 83 9C DE 68 25 E7 BF 2F D0 33 E9   ..b.....h%../.3.<BR/>[00007024] C1 0E 08 05 EB 9C 5E C9 55 ED B9 62 BF BC 86 90   ......^.U..b....<BR/>[00007040] DF 0B 97 80 10 A8 54 86 E5 E4 A8 39 B5 F5 8C FF   ......T....9....<BR/>[00007056] 6F 9E 09 01 9F 88 45 F9 80 7F A8 4D FB E2 F0 AB   o.....E....M....<BR/>[00007072] 75 0B 85 7A 4F FC 46 18 F3 20 64 4C 89 92 22 94   u..zO.F...dL..".<BR/>[00007088] 56 8B 51 7A 31 46 67 51 99 10 57 FF 03 E0 84 11   V.Qz1FgQ..W.....<BR/>[00007104] 82 44 8D 7C 3E D0 CE CB 60 9C 19 83 50 6E 0E 41   .D.|&gt;...`...Pn.A<BR/>[00007120] D2 46 39 9A 92 89 1A 20 18 35 89 B3 60 26 14 30   .F9......5..`&amp;.0<BR/>[00007136] D1 20 EE E0 4B 8C 31 AC 1F DB 50 15 0E C2 88 B1   ....K.1...P.....<BR/>[00007152] 89 A1 8A 35 C4 A8 C1 52 06 D1 3B 8C B1 20 2F 86   ...5...R..;.../.<BR/>[00007168] <br/>-- Sector 14 -- Assuming 512 Bytes ---<br/>[00007168] A0 AD 1A 03 78 4F 0C 61 B2 2A 86 68 DE 6A C3 7A   ....xO.a.*.h.j.z<BR/>[00007184] 1C 8D 50 F6 5C 85 28 CB 1B 62 84 64 0D A8 60 33   ..P.\.(..b.d..`3<BR/>[00007200] 04 1A 6D 87 A3 24 6F 8E 91 70 35 47 18 CB 1C 23   ..m..$o..p5G...#<BR/>[00007216] A8 5F 0D 91 CA 1A C5 20 C2 1E 03 DC 7D 09 D1 8C   ._..........}...<BR/>[00007232] 36 01 90 86 15 A1 25 B2 28 E1 AC 05 03 A8 A1 2F   6.....%.(....../<BR/>[00007248] A2 75 D8 C7 D7 61 1F DD 78 9F 00 70 94 18 25 B1   .u...a..x..p..%.<BR/>[00007264] F4 3F 07 EB 46 77 46 E9 F2 12 30 E3 23 D6 E8 00   .?..FwF...0.#...<BR/>[00007280] 62 60 05 07 0B 02 14 CA 4E 58 5F 93 44 1D DF 8F   b`......NX_.D...<BR/>[00007296] 23 F4 04 DE B8 02 17 92 8C 6B 4A 56 1E 35 46 A4   #........kJV.5F.<BR/>[00007312] A9 94 A3 58 7E CA D1 3F 2B CE 58 58 96 4F 81 F1   ...X~..?+.XX.O..<BR/>[00007328] 1B A6 52 42 84 3C B9 39 72 3C 38 90 70 95 2F CE   ..RB.&lt;.9r&lt;8.p./.<BR/>[00007344] 58 78 98 4F 34 73 0E 49 8D 28 5F 98 22 7F 2C 65   Xx.O4s.I.(_.".,e<BR/>[00007360] FE C1 E8 27 00 4E C4 03 80 88 9E 03 32 88 10 CB   ...'.N......2...<BR/>[00007376] 20 53 30 81 84 0E 07 4C E9 BD 37 E7 02 54 1B 13   .S0....L..7..T..<BR/>[00007392] 8C 2F 4E 55 F1 38 67 44 E9 9D 53 AD 27 0A 81 98   ./NU.8gD..S.'...<BR/>[00007408] 37 61 B0 D8 0C 42 8C 60 83 68 E4 E0 45 E9 45 1F   7a...B.`.h..E.E.<BR/>[00007424] 24 1C 7E A3 F1 68 34 C7 08 70 15 83 1C 00 06 31   $.~..h4..p.....1<BR/>[00007440] 2C 15 5B B8 B8 1A C3 92 77 0D D0 B2 E0 9A E0 1A   ,.[.....w.......<BR/>[00007456] 0F 42 94 1A 88 91 5E 04 03 98 A0 0F 02 C0 64 8C   .B....^.......d.<BR/>[00007472] 11 B6 39 C3 CB 67 0F E2 D0 66 09 75 1E 24 45 F0   ..9..g...f.u.$E.<BR/>[00007488] D3 0E 54 0D 36 0C E0 D2 2A 06 20 8E 17 A3 48 3A   ..T.6...*.....H:<BR/>[00007504] 8A E1 90 9D 46 58 0A 2F C0 94 3E 8A 73 13 1B 24   ....FX./..&gt;.s..$<BR/>[00007520] 40 F8 1F 43 F4 20 89 01 68 AB 44 CB AC 90 31 FA   @..C....h.D...1.<BR/>[00007536] A5 C8 07 62 01 03 68 9C 03 E1 F0 53 8F 18 D9 22   ...b..h....S..."<BR/>[00007552] 8D C9 BA 5C E3 06 AE 0C 0A BD 57 EA F9 FC 17 52   ...\......W....R<BR/>[00007568] 9C 83 CA 31 78 72 C0 E5 69 77 81 FC E5 A0 81 D3   ...1xr..iw......<BR/>[00007584] 5B C8 38 9A AE 47 2C 23 D7 54 18 38 58 58 FB 08   [.8..G,#.T.8XX..<BR/>[00007600] 35 ED 01 20 42 0C 32 2C 01 DB 07 61 72 C2 3B 71   5...B.2,...ar.;q<BR/>[00007616] 43 61 DE EB DF 21 8F 84 43 1C B4 83 2E 25 D1 BA   Ca...!..C....%..<BR/>[00007632] 68 01 D4 83 81 8B 2C 72 D9 98 FF 12 D6 6C E5 A0   h.....,r.....l..<BR/>[00007648] 00 4F 32 DF DB 1A 9D 8D 16 68 22 09 A4 89 66 A3   .O2......h"...f.<BR/>[00007664] 26 80 EC AA 04 B2 E8 16 8D 66 E0 D0 B4 76 CC 9B   &amp;........f...v..<BR/>[00007680] <br/>-- Sector 15 -- Assuming 512 Bytes ---<br/>[00007680] 8B 9B 6C 2F AD C5 B4 82 62 C6 DE 11 F0 F5 6E AE   ..l/....b.....n.<BR/>[00007696] 05 C1 B8 57 0C 89 0F 69 0E D2 C7 60 FB 95 A3 CA   ...W...i...`....<BR/>[00007712] A1 0E C1 E8 3E 07 78 F6 1F 0E E2 7E 23 F3 06 3A   ....&gt;.x....~#..:<BR/>[00007728] C3 F0 B3 19 8D CC 61 88 A1 74 34 44 30 B7 19 F1   ......a..t4D0...<BR/>[00007744] 70 75 02 50 FE 2A 40 08 6B 13 4A 76 13 06 61 30   pu.P.*@.k.Jv..a0<BR/>[00007760] 14 84 D0 BB 17 A3 60 72 A8 B1 9F 76 46 65 DE 1A   ......`r...vFe..<BR/>[00007776] 30 A6 91 8C C5 06 34 29 C5 FA 0F A5 CA 99 0D 20   0.....4)........<BR/>[00007792] E3 40 C2 63 61 12 83 00 6A 90 7C 16 35 55 00 98   <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="311f711f52501f1f1f5b">[email&#160;protected]</a>.|.5U..<BR/>[00007808] 35 D5 37 0A 54 CC 2C AE E3 DC 32 14 43 58 73 8E   5.7.T.,...2.CXs.<BR/>[00007824] F6 8C 8D A4 8E 21 C4 41 4B 12 0E 5C 4C 70 4E 58   .....!.AK..\LpNX<BR/>[00007840] A9 C5 44 1C 27 E2 D3 96 0F B1 80 F3 C6 43 0F 1A   ..D.'........C..<BR/>[00007856] 49 13 78 01 46 96 39 19 98 EC 08 63 D3 96 BD 40   I.x.F.9....c...@<BR/>[00007872] DC 91 97 22 1F 07 20 33 96 12 72 41 0D 0F 99 2C   ..."...3..rA...,<BR/>[00007888] E5 88 EC 9C 42 83 EE 51 39 61 8F 2A 10 76 10 1B   ....B..Q9a.*.v..<BR/>[00007904] DE 88 13 07 19 6D 04 00 4C BC FD 40 1A F1 1E 8B   .....m..L..@....<BR/>[00007920] BC 67 1C B5 D8 06 AE 23 34 B4 B6 9E D4 06 06 4A   .g.....#4......J<BR/>[00007936] C9 D9 4B 2B 65 AC BD 98 DB 1C D3 9D C8 D8 DF CF   ..K+e...........<BR/>[00007952] 47 C4 35 D6 F1 D3 9E 1F F5 6B 17 1A 0F 40 68 5D   G.5......k...@h]<BR/>[00007968] 0D A1 E7 53 B7 BA 84 32 A0 0D 81 D0 3B EE 45 C8   ...S...2....;.E.<BR/>[00007984] 1B A3 AC 79 03 F6 F4 00 A1 29 A1 2F A2 78 0D 07   ...y.....)./.x..<BR/>[00008000] 91 48 29 06 50 DB D1 C3 C0 6F 0E C1 E4 35 F4 78   .H).P....o...5.x<BR/>[00008016] D3 1C A3 B4 6A 0E 61 DC 34 B5 5E AD 1D C3 45 32   ....j.a.4.^...E2<BR/>[00008032] 6B 2D 68 3B 46 C8 E9 1E 03 73 4A 0D B1 D4 3C 46   k-h;F....sJ...&lt;F<BR/>[00008048] B0 E6 1D E0 60 3B 8A 30 0B 54 70 BE 15 A9 DB 2C   ....`;.0.Tp....,<BR/>[00008064] 4F 80 50 DC 27 00 C8 79 14 A3 8C 77 8F 46 8C 31   O.P.'..y...w.F.1<BR/>[00008080] F6 C0 88 DB 48 28 44 ED AD BD B7 F6 F5 8C 17 FB   ....H(D.........<BR/>[00008096] 8D 96 B1 11 01 5C 84 D1 0A CF C2 33 76 56 BA EE   .....\.....3vV..<BR/>[00008112] 41 F4 F8 A4 B0 81 73 3E 4C 61 C8 41 C6 CE F9 64   A.....s&gt;La.A...d<BR/>[00008128] EB 58 28 86 9D FD 8D 06 19 0A 94 F9 0C EE 8B 52   .X(............R<BR/>[00008144] 1A 31 B8 46 43 67 43 4C 85 70 81 8D 63 1A 11 06   .1.FCgCL.p..c...<BR/>[00008160] 1E FC 4C F9 89 10 A9 C5 E5 E1 E5 1B 76 F0 58 D8   ..L.........v.X.<BR/>[00008176] C1 D9 C7 D7 98 ED DB 8F 1C 4E 3B 7D 10 93 B3 5E   .........N;}...^<BR/>[00008192] <br/>-- Sector 16 -- Assuming 512 Bytes ---<br/></pre><h2>Base-64 conversion</h2><pre>SUkqAMw6AQCALGBGyCHKDHCEQmFQuGQ2HQ+IRGJROKRWLReMRmNRuOR2PR+QSGRSOSSWTSeU<br/>SmVSuWS2XS+YTGZTOaTWbTecTmdTueT2fSqDHI20NR0V/0ekUmlUumU2kQQ2KqpNKqNGrVes<br/>VmtVuuV2vV+wWGxWOyWWzWe0Wm1Wu2W23W+4XG5XO6XW7Xe8Xm9Xu+X2/X/AYHBYPCYXDYfE<br/>YnFYvGXiqNJaZEwZOnZXLU445lsZvL53PZ/QaHRaPSaXTafUanVavWa3Xa/YbHZbPabXbbfc<br/>bndbveb3fb/gcHhcPicXjcfkcnhuTmGfnbeEtDpcrqdXrdfsdntdvud3vd/weHxePyeXzef0<br/>enhtz2Gb3dCEdJoer6fX7ff8fn9fv+f3/P/AEAwFAcCNW9huPcMz4Dg+UCwdB8IQjCUJwpCs<br/>LQvDEMw1DbgQPBJ8RBEMRRGfMSn1E8UH3FR+RYf0XRepDounDkaRrG0bxxHMdR3Hkex9H7zQ<br/>89x1yJIsjSOdkkndJZ4SaecnnvKMUH7KkXxk+cgSzLUty5LsvS/MEwzFMbfyEMxrzRNM1TWb<br/>M2wOcM4HROR3zoe07RRF6AiAHCBNCCP+DQeEQmFQuGQ2HQ+IRGJROKRWLReMRmNRuOR2PR+Q<br/>SGRSOSSWTSeUSmVSuWS2XS+YTGZTOaTWbTecTmdTueS5uT8zUFe0OiUWjMCkMWlM2mNenOWo<br/>O+pPeqPyrQI4QRoT2uV2vV+wWGxWOyWWzWe0Wm1Wu2W23W+4XG2T9uUEzJu8Xm9XtQX1UX9a<br/>YFiYOnNd0Yd54l94usVq5Y/IZHJZPKZXLZfMZnNZvOZ3PZ+Y3S7IHSaXTadD6lIau+qBZ6+m<br/>M1w7N47V9bfGwXQbveb3fb/gcHhcPicXjcfkWDRUE283nc/oHTpH/qJHrX9UUpi3R3d3bvrc<br/>1vk+PyeXzef0en1ev2e33ZjlmYwfP6fX7Gf8HP9alD62kGAbMAnbAZ8wK8L3wRBMFQXBkGwd<br/>B8IQjCSvPiLMLQvDEMvo5zSryojCnXEJ8RHA8JxNE8URTFUVxZFsXResUKwzGcLw25sOrxD6<br/>nRCdcRnxEsYSDIUhyJIsjSPJEkt7GUaRnGw2xwTcdGvHkfICgBwgTQgj/g0HhEJhULhkNh0P<br/>iERiUTikVi0XjEZjUbjkdj0fkEhkUjkklk0nlEplUrlktl0vmExmUzmk1m03nE5nU7nkubk/<br/>M1BLNDolFoxgpBtpSBpibpy9qDXqTrqj4q0COEEaE9rldr1fsFhsVjslls1ntFptVrtltt1v<br/>uFxtk/blBM1GvFFpBgpRtpiBpybqC9qTXqjrqz4rFauWNx2PyGRyWTymVy2XzGZzWbzmdmN0<br/>u150V7vt/wODwuHxOLgue12v2Gx2Wz2m12233G53W7sGgoWivGkpdNp9RqdVq8D1u85nN53P<br/>6HR6XT6nV63Xyu+u/Ao9J4eA4uE4+I5NZ5fY9Hp9Xr9nt93v+Hx+U97Xc7t87+n42G5GK5St<br/>vnAMBQHAkCwNA8EQTBSxPq+yiOEvziME/bVPKxkFwxDMNQ3DkOw9D8QNjBsHCzCDTPC1L+oC<br/>gBwgTQgj/g0HhEJhULhkNh0PiERiUTikVi0XjEZjUbjkdj0fkEhkUjkklk0nlEplUrlktl0v<br/>mExmUzmk1m03nE5nU7nkubk/M1BLNDolFoxgpBtpSBpibpy9qDXqTrqj4q0COEEaE9rldr1f<br/>sFhsVjslls1ntFptVrtltt1vuFxtk/blBM1GvFFpBgpRtpiBpybqC9qTXqjrqz4rFauWNx2P<br/>yGRyWTymVy2XzGZzWbzmdmN0u150V7vt/wODwuHxOLgue12v2Gx2Wz2m12233G53W7sGgoWi<br/>vGkpdNp9RqdVq8D1u85nN53P6HR6XT6nV63Xyu+u/Ao9J4eA4uE4+I5NZ5fY9Hp9Xr9nt93v<br/>+Hx+U97Xc7t87+n42G5GK5StvnAMBQHAkCwNA8EQTBSxPq+yiOEvziME/bVPKxkFwxDMNQ3D<br/>kOw9D8QNjBsHCzCDTPC1L+oCgBwgTQgj/g0HhEJhULhkNh0PiERiUTikVi0XjEZjUbjkdj0f<br/>kEhkUjkklk0nlEplUrlktl0vmExmUzmk1m03nE5nU7nkubk/M1BLNDolFoxgpBtpSBpibpy9<br/>qDXqTrqj4q0COEEaE9rldr1fsFhsVjslls1ntFptVrtltt1vuFxtk/blBM1GvFFpBgpRtpiB<br/>pybqC9qTXqjrqz4rFauWNx2PyGRyWTymVy2XzGZzWbzmdmN0u150V7vt/wODwuHxOLgue12v<br/>2Gx2Wz2m12233G53W7sGgoWivGkpdNp9RqdVq8D1u85nN53P6HR6XT6nV63Xyu+u/Ao9J4eA<br/>4uE4+I5NZ5fY9Hp9Xr9nt93v+Hx+U97Xc7t87+n42G5GK5StvnAMBQHAkCwNA8EQTBSxPq+y<br/>iOEvziME/bVPKxkFwxDMNQ3DkOw9D8QNjBsHCzCDTPC1L+oCgBwgTQgj/g0HhEJhULhkNh0P<br/>iERiUTikVi0XjEZjUbjkdj0fkEhkUjkklk0nlEplUrlktl0vmExmUzmk1m03nE5nU7nkubk/<br/>M1BLNDolFoxgpBtpSBpibpy9qDXqTrqj4q0COEEaE9rldr1fsFhsVjslls1ntFptVrtltt1v<br/>uFxtk/blBM1GvFFpBgpRtpiBpybqC9qTXqjrqz4rFauWNx2PyGRyWTymVy2XzGZzWbzmdmN0<br/>u150V7vt/wODwuHxOLgue12v2Gx2Wz2m12233G53W7sGgoWivGkpdNp9RqdVq8D1u85nN53P<br/>6HR6XT6nV63Xyu+u/Ao9J4eA4uE4+I5NZ5fY9Hp9Xr9nt93v+Hx+U97Xc7t87+n42G5GK5St<br/>vnAMBQHAkCwNA8EQTBSxPq+yiOEvziME/bVPKxkFwxDMNQ3DkOw9D8QNjBsHCzCDTPC1L+oC<br/>gBwgTQgj/g0HhEJhULhkNh0PiERiUTikVi0XjEZjUbjkdj0fkEhkUjkklk0nlEplUrlktl0v<br/>mExmUzmk1m03nE5nU7nkubk/M1BLNDolFoxgpBtpSBpibpy9qDXqTrqj4q0COEEaE9rldr1f<br/>sFhsVjslls1ntFptVrtltt1vuFxtk/blBM1GvFFpBgpRtpiBpybqC9qTXqjrqz4rFauWNx2P<br/>yGRyWTymVy2XzGZzWbzmdmN0u150V7vt/wODwuHxOLgue12v2Gx2Wz2m1223izver5bTpeDJ<br/>b7qZHBbO+f3H3HJ5XLj2goWivGkpdNp9RqdVq8D1vM7nd73f8Hh8Xjyj+gy1ajiMCiYIvQqt<br/>BpxT4HNyd+idAhsThXTq9dB4ns8kBQGzjnLu6CjqS6bAOqwjrsQ7Ksu3AkKQrC0LwxDMNNqe<br/>h8n0UBjmyHxHFm/JOAAMxMAGNhNgUOBPAXF8Yk8BI3k9FBMBaQhWG6dZ5Q3IEgq9A0EQSvkF<br/>tO6zDOwxTtK3IUoSjKUpypKsrIkdx6nwRBdGgFBBFVHAADUTUXE8Bj5TQT81TZNM3E+AAzkw<br/>H5Hlod57HxK89T2jkiSKojpL86jBSU1UIsZPlE0VRdGUbRy5HWeh7giOhRAALxJAMNpOTbNc<br/>307UE3gAMZKkCWpm0fVNFz9P4s0C00GtTJiAgIAcIE0II/4NB4RCYVC4ZDYdD4hEYlE4pFYt<br/>F4xGY1G45HY9H5BIZFI5JJZNJ5RKZVK5ZLZdL5hMZlM4UznE7DMpWEIT6pwAak0DDin6FRKH<br/>RaRR6VRk+ADKlzEo2DNKpVatV6xWa1M25XTNXyzYbFY7IYLMbbQgbUm7Yvbc17g67k+LpAjh<br/>BGhW71e75fb9f8BgcFg8JhcNh8RGn9CXa9Hw8Xu+Xo+X3jsq+Mvmctm8xnM1ndBn8y8nw+sw<br/>/JEe1kyz+tWaV04vAObk6CzgnqTTNzuQAZ0yWE6vcTw+JxeNx4hXW5XzNZOdY7MYLQbbUgbY<br/>m7cvbg17k67o+LteOR4/J5fN5/R6fV6/Z7ZWx2+6T8tGYFjuo9mnQVt/2nv6/7+QC/0BQBAc<br/>DQK/oCDaTgMPuVJmm6fh+sWjYTEAVIBqeSBfGmFRBFW/LdqXESmjUTYhkiWkJQo90WxdF72O<br/>U5jnxo6Lpuq67su27rvvCgsYSBIMhSHIkiyNI8kK0LpQF+LkmEyYZrimTRdDAURgStLEryzL<br/>kty9LUwS7MMvyyMMruAXo0lOYh1Hme6Mnaep8BTD4AC6SRClwZwaESVwDNpElAqGAMTB6RxZ<br/>HzCUk0XRlGpNGSwRo50bLSta2reuK5rqgcf0dT1P1BUNRVHUlSpGMhSGEAAtEeRheGidB5Hs<br/>YpuHQYxvHTW9c1xXVe15X9d2DX1hWBXRj1wYJtnOWxqHEcx4nsixtHUeBMSiAYzkwQxcGeF5<br/>DFaAA0EyAY2E42zcRHdKmjMTAx1TU14XjRdIObSSyrPSrrUu7VMu9Ta707eWBYHgmC4Ng+EK<br/>qM5TGGAAvEmOBWGOKrYgALhIt6TAADSTON47jmPZDkGR4/kuRZNkmQjGS2MliaRwome59H4L<br/>xQl+NhVGKCA6FCIhJFqPpZmYG5EleHZGlkBI3k9pV0N0panEuN5VmNhOrauxN6Xte7pXzHNM<br/>O5TTwU4vOsbNs+0bTtW1yPheGi+SY6leZMpl2HxHFmSBfmmQTXEEWxnb/wPAcFwvCcPwfE8N<br/>xXAEQXJn6CZgHDmUBZ5eiZ1VkDA8FIAGVgWoYDDaTotlAXw8FgZJBluZ2al/0ROUEpqn5wYu<br/>2dv3CXa1raxUo6lLOxsEeX+8Xc+N4/keT5XlpJtwAbhuRkicS5cjUVBiCyT5eg4PRShGP5Ue<br/>/8PwfF8vyfP8f0/N9XwBCPhTkkX5qBEPxUFiaJwIsTBhGsAI0iadAUxkJTwABiEqIEWozgdi<br/>MFkoQTQDShwBASbc/IvBsDkeZBmDRySvKRd4Fl3yOF9o7bEQEIAcIE0II/4NB4RCYVC4ZDYd<br/>D4hEYlE4pFYtF4xGY1G45HY9H5BIZFI5JJZNJ5RKZVK5ZLZdL5hMYUZ1MwwAX0mdVeySemF0<br/>YlGwR8j1mADSmgQbk7SaXSqZT6dUabU6hVKUAzWmz+tGYIj8qFi0XBFmM3XQBzengSb06DDi<br/>n7dcLeBDanBihlafq4CzgngGbE2BjcnAAY0qUk0upli8Zjcdj8hkclEG5lTNlyzmc1m84YM8<br/>bdAgdEm9IvdM19Q69U+NZAjhBGhk9ls9ptdtt9xud1u95vd9v+BLZpNpxOp5PqAwSEkVoBDY<br/>nLj0bf0rl1ep1+n2U/TECtWbXrBYos23U8Q8fFOBbr2OqADUmh4jVkiFy0DcqmKqGY3Vy1nG<br/>b52nk4MBwJAsDQOjLKm4y4zM5BzNs8MDQDa0RAtITbTF61BrtUdbWHw1zYQREcSRLE0TxRFM<br/>VRXFkWse4abpynaep+oLlua572R07Udust7uO88CwrGjAZkQV4ADQTMegat4BKyCQ6FCNZUG<br/>KS5hGsLRPl8IxJFqQRbGbF0xzJMszIRBUGQfNcIwnCsLwzDcOw/EKCzPO88TzPU9z5Ps/T+y<br/>cYOLGbkRs5jnOhHlFR9RkerjIDvq/IaMiUSxcSSTIADOTDBE7JrqgUvr1E4xBdjwWBlAuO5R<br/>gAMxL0wAAyEsMBRGAdJ5ntQFdV3XiRzSzE1wdNrQtG0rTtS1bWoHO1e2bZ1n2haNpWnaiR0F<br/>GTjxq5VDxzRdHW9cDtqU7tIvDIiLnke59F0axyDmVpjgyPJSACrIFre9xNi/Wo2FSYtRgMut<br/>PrivhP00TAXEKVphG4c9q4fiE8V/Btgs6z9iQtY0NWRD1lNfZmI5DPp5ZIbGTGflBo5UX+WF<br/>nlxjZhkWZZnmma0CmsYuNGjkxvRFv0bcL2UhITxJCYxvHQDg9FMwpLCESBa1OZKjEytZPZ+o<br/>xNAE95El0aObbBsLc4niuLQljE4WPDlkxBZbY7FuEC5IeRGbqOO7j1vJHb2Ru+kjv5Q8CTHB<br/>lhwqIE5xA+cVwZMFZxxh8geHJbjynK8tZ9r51QttxxROgc/n7qaHSWipGXD/A8PJSkMXBngw<br/>PBRgOpXQrfT9EYCTj+nHy/ed6kuybKzVhwpYsMbVOePRF33lpOfnnNgS/olf6aGw+cPrnr7K<br/>Sn77h0+8ZHwFN8RK/IP/zfP8RTG79fmfb933t5zNCW1ntu9BoP8Or0dzJQXpsjlLuK1rLA38<br/>nUU+k8TQJhACqHaPUfD8IIQRIO8B4IWXhpvY0nJthASAHCBNCCP+DQeEQmFQuGQ2HQ+IRGJR<br/>OKRWLReMRmNRuOQ1pR9HSE7yNBSVWyd3SmOyuJviXN6YKeZJGaS58SycTmdTueT2fT+gUGhU<br/>OiUWjUehGdTMMAF9JnVXsknphdGJRsEhJFaAQ2JwGHFP1+w2CxWWyWex2mzWqwAg3J1ArVmi<br/>I/KhYtFwT13vZ8kxLLgAGlM2vCWjC2kGnJPgA0JlQMhs0jJZPKZXLZfMZmGtzOGbPFnQaHRa<br/>MwaU26dA6lN6te61r6917GbQI4QRoZrcbndbuOvXfSdWnbhHriLPjOfkbycv3mQp889ydHld<br/>PqdXrdfsdntbilUynVCpVSrMEdo1YgAzpgBmxN+v2+z3fH4fP3/X5fb2YxMn5ZswRrqu68p4<br/>ORWmQAAyEsw8FMNBi0v0qZcu3CUJwpCsLIszhuM8MzRw60TSjA042tSQLVk21petea7YnW2a<br/>BoLC8YxlCh/RqSsbkNHJrR3GacJsRMgEVITonJHsjSPJEkyVJbKi6UJgAALRIDsWBkiaS5cj<br/>UVBiS0YgYkMVwcEWWExTJMcyzRM81TNNk0zbMYbESV5MmGa4QwAvCdFcZ5vgENRNAQN5PQWt<br/>lC0IAY1k2FBBFUdh6HvJlI0lSdKIPDMNw9TMQRFEkTRRFUWRc2sYUrUtTI1Gp/VOlhd1aOtX<br/>k9WJ7VnVda1tW9cVynRhm0cgJDkUAylKYapl0E5AFSO8qjeVRjDeVdnWhZ9o2padrWlbFq2z<br/>aY6FcZAvlEYABUTAKWH0fh+ziV7AkyBsG0JeC0AWOBP3GTRiG4dEluQc6PmlFWAYDHZrGngp<br/>24PXSf1me2CmmbGH1ThMjUuz9Mw7TbUNU1jXNg2SXNo22JZFI5nZKamT5GnB+ZWU2Wjpl5b5<br/>jlOZ5pmubO2dB5HsXBpG8cZ2HgUTIDaVZkA6PZUBKQRWBOQZW6bp+nahqeparqOr6prGragE<br/>BAFWFBBlYXpsnKlhtHSeAHjmUFAk7eNDXfuLFjMTBJGAakljxvQAb5vu/b/wBF8ElibFDwyS<br/>kFXJk8XvoS8diObwlikOYs0jTYzEuNxTjsW4/F7b8j0Lcn30hKdMOXURV0SOnT1pAdeQvY4X<br/>1fadr23boqdZ5nuCw7lGQ5bmcgx/Hqdx1nec5xnedBynh5nneb5nl+j6noet5/ser7PrnKdx<br/>zHGfJ5nhGqcEoYJqgENJNAXuW3/csDAk0Ja/yW4g9b6Gn89QOURf604bIADCgESwWEBW+hVg<br/>QrkZUC2+gqgc7g67k3KuWRC5hTzHEVseHwyBUkEIPE8YeNgN0IxQQlchB8jYnYVKxE9CiF0L<br/>4YK5HOPAeoGQ8ikQOJcWQ0hwCfGANAPwrBgiCFcMOIkRoixHiUK8YYhBYDEidFCJ8UYqRTis<br/>MQQsTw8ipF+HMUwvYsjDFEMQaZOjugADMJd97cI2GHXsCoQYqx8D7H4kgPcd2+iIj0RYbsfY<br/>WHGFmPqQRBx3yFJkKeAosBtSLDPI1voQZIMxFuTYg5zx8iukwJyTQqJOEpHcQqPo3RSyjG/K<br/>UZsp0TDZlUNuVjLRTSCH0NWWSJhRS1SIQ11o6ZDwsE/L2BYyiFS/b6CuYkMTdQSgmaFjCI2N<br/>IngwqFzyo3QTGmoRIWs15GhnZDNU3pvpuTfnBOE64jhejSFUM0boVROC8AAGF0z5wHh0FCos<br/>VYZhTDEC8KIYM+Z9z6DLPc8oswABeEmU0SgAAwCVoRQqhNC6HBgoOF8SgJxBCrCiJoXgghbj<br/>PD+LIZgxhvDpI4O8eo+T/ioAMG4rz7aWRtQbSkToEg6iiGaOEdcdo8N8f2Oing5afU/SIOao<br/>SqZFjaAXUdvsLCDhQqY31ERwHAOAHjVOQo75IBBqi3wF1WxwVdIOjehTfH8g0AJWVvoo60E0<br/>Ei30MdbQHVvcACSuUtyDL+A3XerIAAC17RMQcZdf5hzFnEZSZEyQszLU65pUEGiAgIAcIE0I<br/>I/4NB4RCYVC4ZDYdD4hEYlE4pFYtF4xGY1FUxHT1H3hIY3I5JJZNJ5RKZVK5ZLZdL5hMZlM5<br/>pNZtN4i9Xy+yom14NkSsHtO3hQyCj1mn2O2S2n18SkqtzAomAXlCv6tWKuX6pPV4OkYsbAsR<br/>3YbLZLNaVkNkQr6mwD0smWaFOxBWg1WADIlwObk6e1my2Y4XW1HK7nW83uxW66Fk0nCr2g4G<br/>U4HUpmW3ACak2DDin89oM/odJo9NotRpdTp9CC8+ADOmFWzW7OJee9wAN0Bd4C98COBweCKe<br/>I+eNB13yd0AAtzTnz+WJOk+Oo8esZuxyx321r3YOYfByzd4235Uv5+WVfVB097eXyzX8Uj83<br/>V9Uf9+WE/0uv4z/8E8AOWSkBoORUDOaCxEwUcMGFhBzlhHCKDoIaDlhXC7bQzDSam5DrsDML<br/>MQxFEcSDBEw2xQQMVE3Fhexca8YHXGTqHwgQ4QpDccx1HceIaf0fvOS8DEVHsiyMhp0SSYsl<br/>yPJsnSfKEoylKcqJMYhunOFxCladp6nwhSdH2aByHaSJfmmSRfmoQhbmcQRbGaQZbGcPrAj4<br/>uU5GcQ5cmeRheGjPZnkQXJoEWXZokVQ5ClwZ5MGEaxUtoOpXmQZLLE8pYEDeToBjYTgADMS4<br/>ADASYRj8VBAzgAlPAANBMr0Sw8lgZQZEOVtVs61ldNXXjVV9XbQgAMpLEYXZpSqibcD25YO2<br/>aG9nhraNpBlago2sfVsIUO1tve3QKW+ZVwoUU1yOXEwwIO4x8g1djlmdd56Xidt5g3erlpCe<br/>BT305YX36hpC4A+D4oUP2CuWN+EIUfeFnfhpq4eQGIgDicIhHCaCQtDFkY3DMOm5D8SZDEdz<br/>xQNsVEDFhNxcXsYGvGR1xpG0cY5mmax4fmcGnnWbZ4ld8DroGV57oeiaLo2j6QlpoHGdhfmy<br/>cxyngep/IYVZnG8GJDFdUBLqgXAjkmWwjkoW49FiZRAlqZoylKYW2GEH6kDOUxhisTheB8Rx<br/>ZiaS5cp6XYrk6XpRGSbRTmWbpXGeb4pk2XYEL8CI6FCDo9lMJxMFyyRwC2UBfAALxJ1gKJNF<br/>0OxXmTVpNAbYHW1711f151Qsk8X0f6potlOWP/eJGeXf2+CjliZ4iGk547li15SDnN5oJee/<br/>L9Az6cEOCAXrnF7JVe25Yr+8hpDfC5eAEKhUhuXkqDm19Yz/b54JAZ+IRfmAf6hN++Lwq3UL<br/>hXpP/EYY8yBkTImSIpRWi1F6MUZnUZkQV/8D4IQRgkSNfD7QzstgnBmDUG4OQdJGOZqSiRog<br/>GDWJs2AmFDDRIO7gS4wxrB/bUBUOwoixiaGKNcSowVIG0TuMsSAvhqCtGgN4TwxhsiqGaN5q<br/>w3ocjVD2XIUoyxtihGQNqGAzBBpth6Mkb46RcDVHGMscI6hfDZHKGsUgwh4D3H0J0Yw2AZCG<br/>FaElsijhrAUDqKEvonXYx9dhH914nwBwlBglsfQ/B+tGd0bp8hIw4yPW6ABiYAUHCwIUyk5Y<br/>X5NEHd+PI/QE3rgCF5KMa0pWHjVGpKmUo1h+ytE/K85YWJZPgfEbplJChDy5OXI8OJBwlS/O<br/>WHiYTzRzDkmNKF+YIn8sZf7B6CcATsQDgIieAzKIEMsgUzCBhA4HTOm9N+cCVBsTjC9OVfE4<br/>Z0TpnVOtJwqBmDdhsNgMQoxgg2jk4EXpRR8kHH6j8Wg0xwhwFYMcAAYxLBVbuLgaw5J3DdCy<br/>4JrgGg9ClBqIkV4EA5igDwLAZIwRtjnDy2cP4tBmCXUeJEXw0w5UDTYM4NIqBiCOF6NIOorh<br/>kJ1GWAovwJQ+inMTGyRA+B9D9CCJAWirRMuskDH6pcgHYgEDaJwD4fBTjxjZIo3JulzjBq4M<br/>Cr1X6vn8F1Kcg8oxeHLA5Wl3gfzloIHTW8g4mq5HLCPXVBg4WFj7CDXtASBCDDIsAdsHYXLC<br/>O3FDYd7r3yGPhEMctIMuJdG6aAHUg4GLLHLZmP8S1mzloABPMt/bGp2NFmgiCaSJZqMmgOyq<br/>BLLoFo1m4NC0dsybi5tsL63FtIJixt4R8PVurgXBuFcMiQ9pDtLHYPuVo8qhDsHoPgd49h8O<br/>4n4j8wY6w/CzGY3MYYihdDREMLcZ8XB1AlD+KkAIaxNKdhMGYTAUhNC7F6Ngcqixn3ZGZd4a<br/>MKaRjMUGNCnF+g+lypkNIONAwmNhEoMAapB8FjVVAJg11TcKVMwsruPcMhRDWHOO9oyNpI4h<br/>xEFLEg5cTHBOWKnFRBwn4tOWD7GA88ZDDxpJE3gBRpY5GZjsCGPTlr1A3JGXIh8HIDOWEnJB<br/>DQ+ZLOWI7JxCg+5ROWGPKhB2EBveiBMHGW0EAEy8/UAa8R6LvGcctdgGriM0tLae1AYGSsnZ<br/>SytlrL2Y2xzTncjY389HxDXW8dOeH/VrFxoPQGhdDaHnU7e6hDKgDYHQO+5FyBujrHkD9vQA<br/>oSmhL6J4DQeRSCkGUNvRw8BvDsHkNfR40xyjtGoOYdw0tV6tHcNFMmstaDtGyOkeA3NKDbHU<br/>PEaw5h3gYDuKMAtUcL4VqdssT4BQ3CcAyHkUo4x3j0aMMfbAiNtIKETtrb239vWMF/uNlrER<br/>AVyE0QrPwjN2VrruQfT4pLCBcz5MYchBxs75ZOtYKIad/Y0GGQqU+Qzui1IaMbhGQ2dDTIVw<br/>gY1jGhEGHvxM+YkQqcXl4eUbdvBY2MHZx9eY7duPHE47fRCTs15s<br/></pre></p> 
+
+            </div>
+
+
+        </td>
+    </tr>
+</table>
+<h2>Sample code</h2>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<style type="text/css">
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: Consolas, "Courier New", Courier, Monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+
+.csharpcode pre { margin: 0em; }
+
+.csharpcode .rem { color: #008000; }
+
+.csharpcode .kwrd { color: #0000ff; }
+
+.csharpcode .str { color: #a31515; }
+
+.csharpcode .op { color: #0000c0; }
+
+.csharpcode .preproc { color: #cc6633; }
+
+.csharpcode .asp { background-color: #ffff00; }
+
+.csharpcode .html { color: #800000; }
+
+.csharpcode .attr { color: #ff0000; }
+
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+
+.csharpcode .lnum { color: #606060; }
+</style>
+<pre class="csharpcode">
+ <span class="kwrd">public</span> <span class="kwrd">string</span> getTif(System.IO.Stream file)
+        {
+            <span class="kwrd">string</span> TextBox1 = <span class="str">""</span>;
+
+            <span class="kwrd">byte</span>[] b = ReadFully(file, file.Length);
+
+            TextBox1 = <span class="str">"Starting tag (should be II - Big Indian): "</span> + (<span class="kwrd">char</span>)b[0] + (<span class="kwrd">char</span>)b[1] + <span class="str">"&lt;br/&gt;"</span>;
+            TextBox1 += <span class="str">"Version: "</span> + Global.intToHex(b[2]) + <span class="str">"&lt;br/&gt;"</span>;
+
+            <span class="kwrd">return</span> (TextBox1);
+        }</pre>
+            </div>
+
+           
+            <div id="footer">
+
+
+
+
+
+                <h2>Referencing this page</h2>
+                <div>This site is currently free to use and does not contain any advertisements, but should be properly referenced when used in the dissemination of knowledge, including within blogs, research papers and other related activities.Sample reference forms are given below.</div>
+                <p></p>
+                <div>Ref: Buchanan, William J (2025). <i>File Forensics (TIF)</i>. Asecuritysite.com. https://asecuritysite.com/magic/tif</div>
+                <p></p>
+                <div>
+                    Bib: @misc{asecuritysite_19312, title = {File Forensics (TIF)}, year={2025}, organization = {Asecuritysite.com}, author = {Buchanan, William J}, url = {https://asecuritysite.com/magic/tif}, note={Accessed: July 23, 2025}, howpublished={\url{https://asecuritysite.com/magic/tif}} }
+                </div>
+                <p></p>
+                <div>Licence: This site is intended for the education and advancement of humans, and no rights are given for AI and ML bots to crawl this site. All references to its content must be included.</div>
+
+                <a href="https://twitter.com/billatnapier?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @billatnapier</a>
+
+
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet Page</a>
+
+
+
+                <a href="https://twitter.com/intent/tweet?button_hashtag=Asecuritysite&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="false">Tweet #Asecuritysite</a>
+            </div>
+
+               
+
+        </div>
+
+ </div>
+  </div> 
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"0560c1b03e1f4193b64b54c27f7326e2","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

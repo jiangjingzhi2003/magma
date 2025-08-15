@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    
+
+    <title>File Forensics (TIF)</title>
+
+    <script src="/jquery.min.js" type="text/javascript"></script>
+
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" media="screen" />
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+
+    <script src="/Content/bootstrap.min.js" type="text/javascript"></script>
+
+    <script src="/Scripts/MicrosoftAjax.debug.js"
+            type="text/javascript"></script>
+
+    
+
+    <link href="/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/1.css" rel="stylesheet" type="text/css" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KX6DK1KK2X"></script>
+    <script>window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-KX6DK1KK2X');</script>
+
+</head>
+
+
+<body >
+<div id="page-wrap">
+    
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+
+
+    <div class="w3-container">
+
+        <div id="header" class="row">
+            <div id="title"></div>
+            <div id="logindisplay">
+                
+
+<text><strong>Welcome to Asecuritysite.com</strong></text>
+
+
+
+
+
+
+
+            </div>
+
+            <div id="tabs_container">
+
+
+                <div class="invertedshiftdown">
+                    <ul>
+                        <li ><a href="/">Home</a></li>
+
+                        <li ><a href="/index">Index</a></li>
+
+                        <li ><a href="/challenges">Cipher</a></li>
+                        <li ><a href="/blogs">Blogs</a></li>
+                        <li ><a href="/ip">IP</a></li>
+
+
+
+                        <li >
+                            <a href="/ids">IDS</a>
+
+
+                        <li class=current>
+                            <a href="/magic">Magic</a>
+
+                        <li >
+                            <a href="/forensics">Net</a>
+
+                            <!--  <li ><a href="/forensics">DigF</a></li>
+    -->
+                                 <li ><a href="/Cisco">Cisco</a></li> 
+
+
+
+
+<li ><a href="/cyberdata">Cyber</a></li>
+
+                        <li ><a href="/tests">Test</a></li>
+
+                        <li ><a href="/fun">Fun</a></li>
+                        <li ><a href="/subjects">Subj</a></li>
+
+
+
+                        <li ><a href="/Home/About">About</a></li>
+
+
+                    </ul>
+                </div>
+            </div>
+         
+            <div id="main" class="row">
+
+
+                
+
+<script src="/Scripts/jquery.unobtrusive-ajax.js" type="text/javascript"></script>
+<script src="/Scripts/jquery.validate.js" type="text/javascript"></script>
+<!--  -->
+
+
+<table width="100%" border="1" cellpadding="0" cellspacing="0">
+    <tr><td colspan="2"><h1 id="logo">TIF File</h1><p><script type="text/javascript">function UpdateMyStores() {
+
+        var oSubmitButton = document.getElementById('mybutton');
+        oSubmitButton.click();
+
+    }</script>
+
+<style>
+    div#home {
+        background-color: #5A0676;
+        color: #ffffff;
+        padding: 12px;
+    }
+
+        div#home a {
+            background-color: #5A0676;
+            color: #ffffff;
+        }
+
+            div#home a:link {
+                color: #ffffff;
+            }
+
+            div#home a:visited {
+                color: #ffffff;
+            }
+
+            div#home a:hover {
+                color: #aaaaaa;
+            }
+
+            div#home a:active {
+                color: #ffffff;
+            }
+
+    h2 {
+        background-image: none;
+        background-color: #5A0676;
+        color: #ffffff;
+        padding-right: 20px;
+        width: max-content;
+        margin-bottom: 16px;
+    }
+</style>
+
+
+<div id="home">
+    <img src="/public/header_magic.gif" align="right" width="200px" hspace=10 vspace="-5" alt="Pigpen" class="has-border" /><b>[<a href="/magic/index">Magic Home</a>][<a href="/" target="_top">Home</a>]</b>
+
+
+                                                                                                                                             <select name="sample" onchange="location = this.value;">
+
+                                                                                                                                                 <option value="#">-- Select a file type</option>
+                                                                                                                                                 <option value="/magic/ai">AI (Adobe Illustrator)</option>
+                                                                                                                                                 <option value="/magic/avi">AVI (Audio/Video Interleave)</option>
+                                                                                                                                                 <option value="/magic/bmp">BMP (Bitmap)</option>
+                                                                                                                                                 <option value="/magic/cab">CAB (Microsoft Cabinet)</option>
+                                                                                                                                                 <option value="/magic/cls">CLASS (Java Class)</option>
+                                                                                                                                                 <option value="/magic/dll">DLL (Dynamic Library)</option>
+                                                                                                                                                 <option value="/magic/doc">DOC (Microsoft DOC)</option>
+                                                                                                                                                 <option value="/magic/docx">DOCX (Microsoft DOCX)</option>
+                                                                                                                                                 <option value="/magic/elf">ELF (Exectable and Linkable File)</option>
+                                                                                                                                                 <option value="/magic/eps">EPS (Encapsulated PostScript)</option>
+
+                                                                                                                                                 <option value="/magic/exe">EXE</option>
+                                                                                                                                                 <option value="/magic/flv">FLV (Flash Video)</option>
+                                                                                                                                                 <option value="/magic/gif">GIF (Image format)</option>
+                                                                                                                                                 <option value="/magic/gz">GZ (Compressed Zip)</option>
+                                                                                                                                                 <option value="/magic/hlp">HLP (Help file)</option>
+                                                                                                                                                 <option value="/magic/ico">ICO (Icon)</option>
+                                                                                                                                                 <option value="/magic/indd">INDD (Adobe InDesign)</option>
+                                                                                                                                                 <option value="/magic/jar">JAR (Java Archive)</option>
+                                                                                                                                                 <option value="/magic/jp2">JP2 (JPEG 2000)</option>
+                                                                                                                                                 <option value="/magic/jpeg">JPEG (JPEG Image)</option>
+                                                                                                                                                 <option value="/magic/mdb">MDB (Microsoft Database)</option>
+                                                                                                                                                 <option value="/magic/mid">MID (Midi file)</option>
+                                                                                                                                                 <option value="/magic/mov">MOV (Apple Movie)</option>
+                                                                                                                                                 <option value="/magic/mp3">MP3</option>
+                                                                                                                                                 <option value="/magic/mp4">MP4</option>
+                                                                                                                                                 <option value="/magic/mpp">MPP (Microsoft Project)</option>
+                                                                                                                                                 <option value="/magic/msg">MSG (Outlook Message)</option>
+                                                                                                                                                 <option value="/magic/msi">MSI (Microsoft Installer)</option>
+                                                                                                                                                 <option value="/magic/obj">OBJ (Object Code)</option>
+                                                                                                                                                 <option value="/magic/pdf">PDF (Portable Document Format)</option>
+                                                                                                                                                 <option value="/magic/ppt">PPT (Microsoft PowerPoint)</option>
+                                                                                                                                                 <option value="/magic/pptx">PPTX (Microsoft PowerPoint)</option>
+                                                                                                                                                 <option value="/magic/png">PNG (Image format)</option>
+                                                                                                                                                 <option value="/magic/psd">PSD (Photoshop Design)</option>
+                                                                                                                                                 <option value="/magic/pst">PST (Post Office File)</option>
+                                                                                                                                                 <option value="/magic/ps">PS (PostScript)</option>
+
+                                                                                                                                                 <option value="/magic/raw">RAW</option>
+                                                                                                                                                 <option value="/magic/rtf">RTF (Rich Text Format)</option>
+                                                                                                                                                 <option value="/magic/sdf">SDF (SQL Server Compact)</option>
+                                                                                                                                                 <option value="/magic/sln">SLN (Microsoft Solution)</option>
+                                                                                                                                                 <option value="/magic/swf">SWF (Shockwave Flash)</option>
+
+                                                                                                                                                 <option value="/magic/sys">SYS</option>
+
+                                                                                                                                                 <option value="/magic/tar">TAR</option>
+                                                                                                                                                 <option value="/magic/tif">TIF</option>
+                                                                                                                                                 <option value="/magic/vm">VMDK (VMWare Disk)</option>
+                                                                                                                                                 <option value="/magic/vsd">VSD (Visio File)</option>
+                                                                                                                                                 <option value="/magic/wav">WAV</option>
+
+                                                                                                                                                 <option value="/magic/wma">WMA (Windows Audio)</option>
+
+                                                                                                                                                 <option value="/magic/vmf">WMF</option>
+                                                                                                                                                 <option value="/magic/wmv">WMV (Windows Movie)</option>
+                                                                                                                                                 <option value="/magic/xls">XLS</option>
+                                                                                                                                                 <option value="/magic/xlsx">XLSX</option>
+
+                                                                                                                                                 <option value="/magic/zip">ZIP</option>
+
+                                                                                                                                                 <option value="/magic/zlib">ZLIB</option>
+
+                                                                                                                                             </select>
+</div>
+ This is a page for TIF file analysis.</td></tr>
+
+    <tr>
+        <td width="25%" valign="top">
+
+<form action="/magic/tif?file=ColorPatch_GrayScale_best_resized.tif" data-ajax="true" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#dx_partial" id="form0" method="post">        <p>
+            File: <select id="p" name="p" onchange="UpdateMyStores()"><option value="#">-- Select file --</option>
+<option value="pics_cisco_graphic_side.tif">File 1</option>
+<option value="g11.tif">File 2</option>
+<option value="g12.tif">File 3</option>
+<option value="Patch_GrayScale_best_resized.tif">File 4</option>
+<option value="ScanMacbeth.TIF">File 5</option>
+</select>
+        </p>
+                        <h2>Try an example</h2> <ul>
+                            <li><strong>File 1</strong>. <a href="/magic/tif?file=pics_cisco_graphic_side.tif">File 1</a> <a target="_blank" href="/log/pics_cisco_graphic_side.tif">View</a></li>
+
+                            <li><strong>File 2</strong>. <a href="/magic/tif?file=g11.tif">File 2</a> <a target="_blank" href="/log/g11.tif">View</a></li>
+                            <li><strong>File 3</strong>. <a href="/magic/tif?file=g12.tif">File 3</a> <a target="_blank" href="/log/g12.tif">View</a></li>
+                         
+                            <li><strong>File 5</strong>. <a href="/magic/tif?file=ColorPatch_GrayScale_best_resized.tif">File 4</a> <a target="_blank" href="http://www.carlmcmillan.com/images/Test/ColorPatch_GrayScale_best_resized.tif">View</a></li>
+                            <li><strong>File 6</strong>. <a href="/magic/tif?file=ScanMacbeth.TIF">File 5</a> <a target="_blank" href="http://www.carlmcmillan.com/images/Test/ScanMacbeth.TIF">View</a></li>
+                            <li><strong>File 7</strong>. <a href="/magic/tif?file=sample.tif">File 6</a> <a target="_blank" href="http://www.alternatiff.com/sample.tif">View</a></li>
+
+
+
+                        </ul>
+                                        <img src="/log/ColorPatch_GrayScale_best_resized.tif" width="100px" />
+                                                        <h2>What are we looking for?</h2>
+                                                                        <p>For a TIF file, we look for the byte sequence <b>4949</b> or the ASCII sequence of <b>II</b></p>
+<script>function keypressevent() {
+        document.getElementById("mybutton").click();
+    }</script>
+
+<style>
+    button {
+        visibility: hidden;
+    }
+</style>
+
+<div id="target">  <form action="" method="get"><button id="mybutton" name="mybutton" type="submit" onclick="$('#target').toggle();" class="btn btn-primary btn-lg" data-container="body">Determine</button> </form></div></form>
+
+        </td>
+        <td width="75%" valign="top">
+
+         
+
+            <div id="dx_partial">
+                <p>Starting tag (should be II - Big Indian): II<br/>Version: 2A<br/><h2>File signature analysis (Header analysis)</h2>TIF file (Starts with 0x49 0x49)<BR/><h2>Additional scanning signature analysis</h2><p>Possible: [TIF files, sig: 4949] Count: 1<BR/>Possible: [JPEG files, sig: FFD8FF] Count: 1<BR/>Possible: [JPEG files, sig: 4A464946] Count: 1<BR/>Possible: [ICO file, sig: 00000100] Count: 30<BR/>Possible: [TIF graphics, sig: 4949] Count: 1<BR/></p><h2>File hex characters</h2><pre>[00000000] 49 49 2A 00 08 00 00 00 13 00 FE 00 04 00 01 00   II*.............<BR/>[00000016] 00 00 00 00 00 00 00 01 03 00 01 00 00 00 80 02   ................<BR/>[00000032] 00 00 01 01 03 00 01 00 00 00 61 04 00 00 02 01   ..........a.....<BR/>[00000048] 03 00 03 00 00 00 F2 00 00 00 03 01 03 00 01 00   ................<BR/>[00000064] 00 00 01 00 00 00 06 01 03 00 01 00 00 00 02 00   ................<BR/>[00000080] 00 00 11 01 04 00 01 00 00 00 1A 26 00 00 15 01   ...........&amp;....<BR/>[00000096] 03 00 01 00 00 00 03 00 00 00 16 01 03 00 01 00   ................<BR/>[00000112] 00 00 61 04 00 00 17 01 04 00 01 00 00 00 80 D7   ..a.............<BR/>[00000128] 20 00 1A 01 05 00 01 00 00 00 F8 00 00 00 1B 01   ................<BR/>[00000144] 05 00 01 00 00 00 00 01 00 00 1C 01 03 00 01 00   ................<BR/>[00000160] 00 00 01 00 00 00 28 01 03 00 01 00 00 00 02 00   ......(.........<BR/>[00000176] 00 00 31 01 02 00 1D 00 00 00 08 01 00 00 32 01   ..1...........2.<BR/>[00000192] 02 00 14 00 00 00 26 01 00 00 BC 02 01 00 AC 13   ......&amp;.........<BR/>[00000208] 00 00 3A 01 00 00 49 86 01 00 34 11 00 00 E6 14   ..:...I...4.....<BR/>[00000224] 00 00 69 87 04 00 01 00 00 00 9C FD 20 00 00 00   ..i.............<BR/>[00000240] 00 00 08 00 08 00 08 00 C0 C6 2D 00 10 27 00 00   ..........-..'..<BR/>[00000256] C0 C6 2D 00 10 27 00 00 41 64 6F 62 65 20 50 68   ..-..'..Adobe.Ph<BR/>[00000272] 6F 74 6F 73 68 6F 70 20 45 6C 65 6D 65 6E 74 73   otoshop.Elements<BR/>[00000288] 20 32 2E 30 00 00 32 30 30 34 3A 30 36 3A 31 31   .2.0..2004:06:11<BR/>[00000304] 20 30 39 3A 30 37 3A 33 35 00 3C 3F 78 70 61 63   .09:07:35.&lt;?xpac<BR/>[00000320] 6B 65 74 20 62 65 67 69 6E 3D 27 EF BB BF 27 20   ket.begin='...'.<BR/>[00000336] 69 64 3D 27 57 35 4D 30 4D 70 43 65 68 69 48 7A   id='W5M0MpCehiHz<BR/>[00000352] 72 65 53 7A 4E 54 63 7A 6B 63 39 64 27 3F 3E 0A   reSzNTczkc9d'?&gt;.<BR/>[00000368] 3C 3F 61 64 6F 62 65 2D 78 61 70 2D 66 69 6C 74   &lt;?adobe-xap-filt<BR/>[00000384] 65 72 73 20 65 73 63 3D 22 43 52 22 3F 3E 0A 3C   ers.esc="CR"?&gt;.&lt;<BR/>[00000400] 78 3A 78 61 70 6D 65 74 61 20 78 6D 6C 6E 73 3A   x:xapmeta.xmlns:<BR/>[00000416] 78 3D 27 61 64 6F 62 65 3A 6E 73 3A 6D 65 74 61   x='adobe:ns:meta<BR/>[00000432] 2F 27 20 78 3A 78 61 70 74 6B 3D 27 58 4D 50 20   /'.x:xaptk='XMP.<BR/>[00000448] 74 6F 6F 6C 6B 69 74 20 32 2E 38 2E 32 2D 33 33   toolkit.2.8.2-33<BR/>[00000464] 2C 20 66 72 61 6D 65 77 6F 72 6B 20 31 2E 35 27   ,.framework.1.5'<BR/>[00000480] 3E 0A 3C 72 64 66 3A 52 44 46 20 78 6D 6C 6E 73   &gt;.&lt;rdf:RDF.xmlns<BR/>[00000496] 3A 72 64 66 3D 27 68 74 74 70 3A 2F 2F 77 77 77   :rdf='http://www<BR/>[00000512] <br/>-- Sector 1 -- Assuming 512 Bytes ---<br/>[00000512] 2E 77 33 2E 6F 72 67 2F 31 39 39 39 2F 30 32 2F   .w3.org/1999/02/<BR/>[00000528] 32 32 2D 72 64 66 2D 73 79 6E 74 61 78 2D 6E 73   22-rdf-syntax-ns<BR/>[00000544] 23 27 20 78 6D 6C 6E 73 3A 69 58 3D 27 68 74 74   #'.xmlns:iX='htt<BR/>[00000560] 70 3A 2F 2F 6E 73 2E 61 64 6F 62 65 2E 63 6F 6D   p://ns.adobe.com<BR/>[00000576] 2F 69 58 2F 31 2E 30 2F 27 3E 0A 0A 20 3C 72 64   /iX/1.0/'&gt;...&lt;rd<BR/>[00000592] 66 3A 44 65 73 63 72 69 70 74 69 6F 6E 20 61 62   f:Description.ab<BR/>[00000608] 6F 75 74 3D 27 75 75 69 64 3A 35 37 37 61 34 61   out='uuid:577a4a<BR/>[00000624] 32 33 2D 62 62 62 30 2D 31 31 64 38 2D 61 66 33   23-bbb0-11d8-af3<BR/>[00000640] 33 2D 63 34 61 65 32 34 62 33 39 39 30 61 27 0A   3-c4ae24b3990a'.<BR/>[00000656] 20 20 78 6D 6C 6E 73 3A 70 64 66 3D 27 68 74 74   ..xmlns:pdf='htt<BR/>[00000672] 70 3A 2F 2F 6E 73 2E 61 64 6F 62 65 2E 63 6F 6D   p://ns.adobe.com<BR/>[00000688] 2F 70 64 66 2F 31 2E 33 2F 27 3E 0A 20 20 3C 21   /pdf/1.3/'&gt;...&lt;!<BR/>[00000704] 2D 2D 20 70 64 66 3A 43 72 65 61 74 6F 72 20 69   --.pdf:Creator.i<BR/>[00000720] 73 20 61 6C 69 61 73 65 64 20 2D 2D 3E 0A 20 3C   s.aliased.--&gt;..&lt;<BR/>[00000736] 2F 72 64 66 3A 44 65 73 63 72 69 70 74 69 6F 6E   /rdf:Description<BR/>[00000752] 3E 0A 0A 20 3C 72 64 66 3A 44 65 73 63 72 69 70   &gt;...&lt;rdf:Descrip<BR/>[00000768] 74 69 6F 6E 20 61 62 6F 75 74 3D 27 75 75 69 64   tion.about='uuid<BR/>[00000784] 3A 35 37 37 61 34 61 32 33 2D 62 62 62 30 2D 31   :577a4a23-bbb0-1<BR/>[00000800] 31 64 38 2D 61 66 33 33 2D 63 34 61 65 32 34 62   1d8-af33-c4ae24b<BR/>[00000816] 33 39 39 30 61 27 0A 20 20 78 6D 6C 6E 73 3A 78   3990a'...xmlns:x<BR/>[00000832] 61 70 3D 27 68 74 74 70 3A 2F 2F 6E 73 2E 61 64   ap='http://ns.ad<BR/>[00000848] 6F 62 65 2E 63 6F 6D 2F 78 61 70 2F 31 2E 30 2F   obe.com/xap/1.0/<BR/>[00000864] 27 3E 0A 20 20 3C 78 61 70 3A 43 72 65 61 74 6F   '&gt;...&lt;xap:Creato<BR/>[00000880] 72 54 6F 6F 6C 3E 41 64 6F 62 65 20 50 68 6F 74   rTool&gt;Adobe.Phot<BR/>[00000896] 6F 73 68 6F 70 20 45 6C 65 6D 65 6E 74 73 20 66   oshop.Elements.f<BR/>[00000912] 6F 72 20 57 69 6E 64 6F 77 73 2C 20 76 65 72 73   or.Windows,.vers<BR/>[00000928] 69 6F 6E 20 32 2E 30 3C 2F 78 61 70 3A 43 72 65   ion.2.0&lt;/xap:Cre<BR/>[00000944] 61 74 6F 72 54 6F 6F 6C 3E 0A 20 3C 2F 72 64 66   atorTool&gt;..&lt;/rdf<BR/>[00000960] 3A 44 65 73 63 72 69 70 74 69 6F 6E 3E 0A 0A 20   :Description&gt;...<BR/>[00000976] 3C 72 64 66 3A 44 65 73 63 72 69 70 74 69 6F 6E   &lt;rdf:Description<BR/>[00000992] 20 61 62 6F 75 74 3D 27 75 75 69 64 3A 35 37 37   .about='uuid:577<BR/>[00001008] 61 34 61 32 33 2D 62 62 62 30 2D 31 31 64 38 2D<br/>-- Sector 2 -- Assuming 512 Bytes ---<br/>[00001024] 61 66 33 33 2D 63 34 61 65 32 34 62 33 39 39 30   af33-c4ae24b3990<BR/>[00001040] 61 27 0A 20 20 78 6D 6C 6E 73 3A 78 61 70 4D 4D   a'...xmlns:xapMM<BR/>[00001056] 3D 27 68 74 74 70 3A 2F 2F 6E 73 2E 61 64 6F 62   ='http://ns.adob<BR/>[00001072] 65 2E 63 6F 6D 2F 78 61 70 2F 31 2E 30 2F 6D 6D   e.com/xap/1.0/mm<BR/>[00001088] 2F 27 3E 0A 20 20 3C 78 61 70 4D 4D 3A 44 6F 63   /'&gt;...&lt;xapMM:Doc<BR/>[00001104] 75 6D 65 6E 74 49 44 3E 61 64 6F 62 65 3A 64 6F   umentID&gt;adobe:do<BR/>[00001120] 63 69 64 3A 70 68 6F 74 6F 73 68 6F 70 3A 35 37   cid:photoshop:57<BR/>[00001136] 37 61 34 61 32 30 2D 62 62 62 30 2D 31 31 64 38   7a4a20-bbb0-11d8<BR/>[00001152] 2D 61 66 33 33 2D 63 34 61 65 32 34 62 33 39 39   -af33-c4ae24b399<BR/>[00001168] 30 61 3C 2F 78 61 70 4D 4D 3A 44 6F 63 75 6D 65   0a&lt;/xapMM:Docume<BR/>[00001184] 6E 74 49 44 3E 0A 20 3C 2F 72 64 66 3A 44 65 73   ntID&gt;..&lt;/rdf:Des<BR/>[00001200] 63 72 69 70 74 69 6F 6E 3E 0A 0A 3C 2F 72 64 66   cription&gt;..&lt;/rdf<BR/>[00001216] 3A 52 44 46 3E 0A 3C 2F 78 3A 78 61 70 6D 65 74   :RDF&gt;.&lt;/x:xapmet<BR/>[00001232] 61 3E 0A 20 20 20 20 20 20 20 20 20 20 20 20 20   a&gt;..............<BR/>[00001248] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001264] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001280] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001296] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001312] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001328] 20 20 20 20 20 20 20 0A 20 20 20 20 20 20 20 20   ................<BR/>[00001344] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001360] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001376] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001392] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001408] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001424] 20 20 20 20 20 20 20 20 20 20 20 20 0A 20 20 20   ................<BR/>[00001440] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001456] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001472] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001488] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001504] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001520] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001536] <br/>-- Sector 3 -- Assuming 512 Bytes ---<br/>[00001536] 20 0A 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001552] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001568] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001584] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001600] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001616] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001632] 20 20 20 20 20 20 0A 20 20 20 20 20 20 20 20 20   ................<BR/>[00001648] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001664] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001680] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001696] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001712] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001728] 20 20 20 20 20 20 20 20 20 20 20 0A 20 20 20 20   ................<BR/>[00001744] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001760] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001776] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001792] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001808] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001824] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001840] 0A 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001856] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001872] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001888] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001904] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001920] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001936] 20 20 20 20 20 0A 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001952] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001968] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00001984] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002000] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002016] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002032] 20 20 20 20 20 20 20 20 20 20 0A 20 20 20 20 20   ................<BR/>[00002048] <br/>-- Sector 4 -- Assuming 512 Bytes ---<br/>[00002048] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002064] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002080] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002096] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002112] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002128] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 0A   ................<BR/>[00002144] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002160] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002176] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002192] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002208] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002224] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002240] 20 20 20 20 0A 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002256] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002272] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002288] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002304] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002320] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002336] 20 20 20 20 20 20 20 20 20 0A 20 20 20 20 20 20   ................<BR/>[00002352] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002368] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002384] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002400] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002416] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002432] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 0A 20   ................<BR/>[00002448] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002464] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002480] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002496] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002512] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002528] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002544] 20 20 20 0A 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002560] <br/>-- Sector 5 -- Assuming 512 Bytes ---<br/>[00002560] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002576] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002592] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002608] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002624] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002640] 20 20 20 20 20 20 20 20 0A 20 20 20 20 20 20 20   ................<BR/>[00002656] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002672] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002688] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002704] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002720] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002736] 20 20 20 20 20 20 20 20 20 20 20 20 20 0A 20 20   ................<BR/>[00002752] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002768] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002784] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002800] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002816] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002832] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002848] 20 20 0A 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002864] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002880] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002896] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002912] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002928] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002944] 20 20 20 20 20 20 20 0A 20 20 20 20 20 20 20 20   ................<BR/>[00002960] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002976] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00002992] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003008] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003024] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003040] 20 20 20 20 20 20 20 20 20 20 20 20 0A 20 20 20   ................<BR/>[00003056] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003072] <br/>-- Sector 6 -- Assuming 512 Bytes ---<br/>[00003072] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003088] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003104] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003120] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003136] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003152] 20 0A 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003168] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003184] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003200] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003216] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003232] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003248] 20 20 20 20 20 20 0A 20 20 20 20 20 20 20 20 20   ................<BR/>[00003264] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003280] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003296] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003312] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003328] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003344] 20 20 20 20 20 20 20 20 20 20 20 0A 20 20 20 20   ................<BR/>[00003360] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003376] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003392] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003408] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003424] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003440] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003456] 0A 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003472] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003488] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003504] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003520] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003536] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003552] 20 20 20 20 20 0A 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003568] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003584] <br/>-- Sector 7 -- Assuming 512 Bytes ---<br/>[00003584] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003600] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003616] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003632] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003648] 20 20 20 20 20 20 20 20 20 20 0A 20 20 20 20 20   ................<BR/>[00003664] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003680] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003696] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003712] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003728] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003744] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 0A   ................<BR/>[00003760] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003776] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003792] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003808] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003824] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003840] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003856] 20 20 20 20 0A 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003872] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003888] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003904] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003920] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003936] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003952] 20 20 20 20 20 20 20 20 20 0A 20 20 20 20 20 20   ................<BR/>[00003968] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00003984] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004000] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004016] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004032] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004048] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 0A 20   ................<BR/>[00004064] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004080] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004096] <br/>-- Sector 8 -- Assuming 512 Bytes ---<br/>[00004096] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004112] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004128] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004144] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004160] 20 20 20 0A 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004176] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004192] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004208] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004224] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004240] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004256] 20 20 20 20 20 20 20 20 0A 20 20 20 20 20 20 20   ................<BR/>[00004272] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004288] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004304] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004320] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004336] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004352] 20 20 20 20 20 20 20 20 20 20 20 20 20 0A 20 20   ................<BR/>[00004368] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004384] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004400] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004416] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004432] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004448] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004464] 20 20 0A 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004480] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004496] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004512] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004528] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004544] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004560] 20 20 20 20 20 20 20 0A 20 20 20 20 20 20 20 20   ................<BR/>[00004576] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004592] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004608] <br/>-- Sector 9 -- Assuming 512 Bytes ---<br/>[00004608] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004624] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004640] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004656] 20 20 20 20 20 20 20 20 20 20 20 20 0A 20 20 20   ................<BR/>[00004672] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004688] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004704] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004720] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004736] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004752] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004768] 20 0A 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004784] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004800] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004816] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004832] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004848] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004864] 20 20 20 20 20 20 0A 20 20 20 20 20 20 20 20 20   ................<BR/>[00004880] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004896] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004912] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004928] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004944] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004960] 20 20 20 20 20 20 20 20 20 20 20 0A 20 20 20 20   ................<BR/>[00004976] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00004992] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00005008] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00005024] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00005040] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00005056] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00005072] 0A 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00005088] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00005104] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00005120] <br/>-- Sector 10 -- Assuming 512 Bytes ---<br/>[00005120] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00005136] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00005152] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00005168] 20 20 20 20 20 0A 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00005184] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00005200] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00005216] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00005232] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00005248] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00005264] 20 20 20 20 20 20 20 20 20 20 0A 20 20 20 20 20   ................<BR/>[00005280] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00005296] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00005312] 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20   ................<BR/>[00005328] 20 20 0A 3C 3F 78 70 61 63 6B 65 74 20 65 6E 64   ...&lt;?xpacket.end<BR/>[00005344] 3D 27 77 27 3F 3E 38 42 49 4D 04 25 00 00 00 00   ='w'?&gt;8BIM.%....<BR/>[00005360] 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................<BR/>[00005376] 00 00 38 42 49 4D 03 ED 00 00 00 00 00 10 01 2C   ..8BIM.........,<BR/>[00005392] 00 00 00 01 00 01 01 2C 00 00 00 01 00 01 38 42   .......,......8B<BR/>[00005408] 49 4D 04 26 00 00 00 00 00 0E 00 00 00 00 00 00   IM.&amp;............<BR/>[00005424] 00 00 00 00 3F 80 00 00 38 42 49 4D 04 0D 00 00   ....?...8BIM....<BR/>[00005440] 00 00 00 04 00 00 00 1E 38 42 49 4D 04 19 00 00   ........8BIM....<BR/>[00005456] 00 00 00 04 00 00 00 1E 38 42 49 4D 03 F3 00 00   ........8BIM....<BR/>[00005472] 00 00 00 09 00 00 00 00 00 00 00 01 01 00 38 42   ..............8B<BR/>[00005488] 49 4D 04 0A 00 00 00 00 00 01 00 00 38 42 49 4D   IM..........8BIM<BR/>[00005504] 27 10 00 00 00 00 00 0A 00 01 00 00 00 00 00 00   '...............<BR/>[00005520] 00 02 38 42 49 4D 03 F5 00 00 00 00 00 48 00 2F   ..8BIM.......H./<BR/>[00005536] 66 66 00 01 00 6C 66 66 00 06 00 00 00 00 00 01   ff...lff........<BR/>[00005552] 00 2F 66 66 00 01 00 A1 99 9A 00 06 00 00 00 00   ./ff............<BR/>[00005568] 00 01 00 32 00 00 00 01 00 5A 00 00 00 06 00 00   ...2.....Z......<BR/>[00005584] 00 00 00 01 00 35 00 00 00 01 00 2D 00 00 00 06   .....5.....-....<BR/>[00005600] 00 00 00 00 00 01 38 42 49 4D 03 F8 00 00 00 00   ......8BIM......<BR/>[00005616] 00 70 00 00 FF FF FF FF FF FF FF FF FF FF FF FF   .p..............<BR/>[00005632] <br/>-- Sector 11 -- Assuming 512 Bytes ---<br/>[00005632] FF FF FF FF FF FF FF FF FF FF 03 E8 00 00 00 00   ................<BR/>[00005648] FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF   ................<BR/>[00005664] FF FF FF FF FF FF 03 E8 00 00 00 00 FF FF FF FF   ................<BR/>[00005680] FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF   ................<BR/>[00005696] FF FF 03 E8 00 00 00 00 FF FF FF FF FF FF FF FF   ................<BR/>[00005712] FF FF FF FF FF FF FF FF FF FF FF FF FF FF 03 E8   ................<BR/>[00005728] 00 00 38 42 49 4D 04 08 00 00 00 00 00 10 00 00   ..8BIM..........<BR/>[00005744] 00 01 00 00 02 40 00 00 02 40 00 00 00 00 38 42   .....@<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7c5252523c52525252443e">[email&#160;protected]</a><BR/>[00005760] 49 4D 04 1E 00 00 00 00 00 04 00 00 00 00 38 42   IM............8B<BR/>[00005776] 49 4D 04 1A 00 00 00 00 03 67 00 00 00 06 00 00   IM.......g......<BR/>[00005792] 00 00 00 00 00 00 00 00 04 61 00 00 02 80 00 00   .........a......<BR/>[00005808] 00 19 00 43 00 6F 00 6C 00 6F 00 72 00 50 00 61   ...C.o.l.o.r.P.a<BR/>[00005824] 00 74 00 63 00 68 00 5F 00 47 00 72 00 61 00 79   .t.c.h._.G.r.a.y<BR/>[00005840] 00 53 00 63 00 61 00 6C 00 65 00 5F 00 62 00 65   .S.c.a.l.e._.b.e<BR/>[00005856] 00 73 00 74 00 00 00 01 00 00 00 00 00 00 00 00   .s.t............<BR/>[00005872] 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00 00   ................<BR/>[00005888] 00 00 00 00 00 00 02 80 00 00 04 61 00 00 00 00   ...........a....<BR/>[00005904] 00 00 00 00 00 00 00 00 00 00 00 00 01 00 00 00   ................<BR/>[00005920] 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................<BR/>[00005936] 10 00 00 00 01 00 00 00 00 00 00 6E 75 6C 6C 00   ...........null.<BR/>[00005952] 00 00 02 00 00 00 06 62 6F 75 6E 64 73 4F 62 6A   .......boundsObj<BR/>[00005968] 63 00 00 00 01 00 00 00 00 00 00 52 63 74 31 00   c..........Rct1.<BR/>[00005984] 00 00 04 00 00 00 00 54 6F 70 20 6C 6F 6E 67 00   .......Top.long.<BR/>[00006000] 00 00 00 00 00 00 00 4C 65 66 74 6C 6F 6E 67 00   .......Leftlong.<BR/>[00006016] 00 00 00 00 00 00 00 42 74 6F 6D 6C 6F 6E 67 00   .......Btomlong.<BR/>[00006032] 00 04 61 00 00 00 00 52 67 68 74 6C 6F 6E 67 00   ..a....Rghtlong.<BR/>[00006048] 00 02 80 00 00 00 06 73 6C 69 63 65 73 56 6C 4C   .......slicesVlL<BR/>[00006064] 73 00 00 00 01 4F 62 6A 63 00 00 00 01 00 00 00   s....Objc.......<BR/>[00006080] 00 00 05 73 6C 69 63 65 00 00 00 12 00 00 00 07   ...slice........<BR/>[00006096] 73 6C 69 63 65 49 44 6C 6F 6E 67 00 00 00 00 00   sliceIDlong.....<BR/>[00006112] 00 00 07 67 72 6F 75 70 49 44 6C 6F 6E 67 00 00   ...groupIDlong..<BR/>[00006128] 00 00 00 00 00 06 6F 72 69 67 69 6E 65 6E 75 6D   ......originenum<BR/>[00006144] <br/>-- Sector 12 -- Assuming 512 Bytes ---<br/>[00006144] 00 00 00 0C 45 53 6C 69 63 65 4F 72 69 67 69 6E   ....ESliceOrigin<BR/>[00006160] 00 00 00 0D 61 75 74 6F 47 65 6E 65 72 61 74 65   ....autoGenerate<BR/>[00006176] 64 00 00 00 00 54 79 70 65 65 6E 75 6D 00 00 00   d....Typeenum...<BR/>[00006192] 0A 45 53 6C 69 63 65 54 79 70 65 00 00 00 00 49   .ESliceType....I<BR/>[00006208] 6D 67 20 00 00 00 06 62 6F 75 6E 64 73 4F 62 6A   mg.....boundsObj<BR/>[00006224] 63 00 00 00 01 00 00 00 00 00 00 52 63 74 31 00   c..........Rct1.<BR/>[00006240] 00 00 04 00 00 00 00 54 6F 70 20 6C 6F 6E 67 00   .......Top.long.<BR/>[00006256] 00 00 00 00 00 00 00 4C 65 66 74 6C 6F 6E 67 00   .......Leftlong.<BR/>[00006272] 00 00 00 00 00 00 00 42 74 6F 6D 6C 6F 6E 67 00   .......Btomlong.<BR/>[00006288] 00 04 61 00 00 00 00 52 67 68 74 6C 6F 6E 67 00   ..a....Rghtlong.<BR/>[00006304] 00 02 80 00 00 00 03 75 72 6C 54 45 58 54 00 00   .......urlTEXT..<BR/>[00006320] 00 01 00 00 00 00 00 00 6E 75 6C 6C 54 45 58 54   ........nullTEXT<BR/>[00006336] 00 00 00 01 00 00 00 00 00 00 4D 73 67 65 54 45   ..........MsgeTE<BR/>[00006352] 58 54 00 00 00 01 00 00 00 00 00 06 61 6C 74 54   XT..........altT<BR/>[00006368] 61 67 54 45 58 54 00 00 00 01 00 00 00 00 00 0E   agTEXT..........<BR/>[00006384] 63 65 6C 6C 54 65 78 74 49 73 48 54 4D 4C 62 6F   cellTextIsHTMLbo<BR/>[00006400] 6F 6C 01 00 00 00 08 63 65 6C 6C 54 65 78 74 54   ol.....cellTextT<BR/>[00006416] 45 58 54 00 00 00 01 00 00 00 00 00 09 68 6F 72   EXT..........hor<BR/>[00006432] 7A 41 6C 69 67 6E 65 6E 75 6D 00 00 00 0F 45 53   zAlignenum....ES<BR/>[00006448] 6C 69 63 65 48 6F 72 7A 41 6C 69 67 6E 00 00 00   liceHorzAlign...<BR/>[00006464] 07 64 65 66 61 75 6C 74 00 00 00 09 76 65 72 74   .default....vert<BR/>[00006480] 41 6C 69 67 6E 65 6E 75 6D 00 00 00 0F 45 53 6C   Alignenum....ESl<BR/>[00006496] 69 63 65 56 65 72 74 41 6C 69 67 6E 00 00 00 07   iceVertAlign....<BR/>[00006512] 64 65 66 61 75 6C 74 00 00 00 0B 62 67 43 6F 6C   default....bgCol<BR/>[00006528] 6F 72 54 79 70 65 65 6E 75 6D 00 00 00 11 45 53   orTypeenum....ES<BR/>[00006544] 6C 69 63 65 42 47 43 6F 6C 6F 72 54 79 70 65 00   liceBGColorType.<BR/>[00006560] 00 00 00 4E 6F 6E 65 00 00 00 09 74 6F 70 4F 75   ...None....topOu<BR/>[00006576] 74 73 65 74 6C 6F 6E 67 00 00 00 00 00 00 00 0A   tsetlong........<BR/>[00006592] 6C 65 66 74 4F 75 74 73 65 74 6C 6F 6E 67 00 00   leftOutsetlong..<BR/>[00006608] 00 00 00 00 00 0C 62 6F 74 74 6F 6D 4F 75 74 73   ......bottomOuts<BR/>[00006624] 65 74 6C 6F 6E 67 00 00 00 00 00 00 00 0B 72 69   etlong........ri<BR/>[00006640] 67 68 74 4F 75 74 73 65 74 6C 6F 6E 67 00 00 00   ghtOutsetlong...<BR/>[00006656] <br/>-- Sector 13 -- Assuming 512 Bytes ---<br/>[00006656] 00 00 38 42 49 4D 04 11 00 00 00 00 00 01 01 00   ..8BIM..........<BR/>[00006672] 38 42 49 4D 04 14 00 00 00 00 00 04 00 00 00 01   8BIM............<BR/>[00006688] 38 42 49 4D 04 0C 00 00 00 00 0B 68 00 00 00 01   8BIM.......h....<BR/>[00006704] 00 00 00 49 00 00 00 80 00 00 00 DC 00 00 6E 00   ...I..........n.<BR/>[00006720] 00 00 0B 4C 00 18 00 01 FF D8 FF E0 00 10 4A 46   ...L..........JF<BR/>[00006736] 49 46 00 01 02 01 00 48 00 48 00 00 FF ED 00 0C   IF.....H.H......<BR/>[00006752] 41 64 6F 62 65 5F 43 4D 00 02 FF EE 00 0E 41 64   Adobe_CM......Ad<BR/>[00006768] 6F 62 65 00 64 80 00 00 00 01 FF DB 00 84 00 0C   obe.d...........<BR/>[00006784] 08 08 08 09 08 0C 09 09 0C 11 0B 0A 0B 11 15 0F   ................<BR/>[00006800] 0C 0C 0F 15 18 13 13 15 13 13 18 11 0C 0C 0C 0C   ................<BR/>[00006816] 0C 0C 11 0C 0C 0C 0C 0C 0C 0C 0C 0C 0C 0C 0C 0C   ................<BR/>[00006832] 0C 0C 0C 0C 0C 0C 0C 0C 0C 0C 0C 0C 0C 0C 0C 01   ................<BR/>[00006848] 0D 0B 0B 0D 0E 0D 10 0E 0E 10 14 0E 0E 0E 14 14   ................<BR/>[00006864] 0E 0E 0E 0E 14 11 0C 0C 0C 0C 0C 11 11 0C 0C 0C   ................<BR/>[00006880] 0C 0C 0C 11 0C 0C 0C 0C 0C 0C 0C 0C 0C 0C 0C 0C   ................<BR/>[00006896] 0C 0C 0C 0C 0C 0C 0C 0C 0C 0C 0C 0C 0C 0C 0C 0C   ................<BR/>[00006912] FF C0 00 11 08 00 80 00 49 03 01 22 00 02 11 01   ........I.."....<BR/>[00006928] 03 11 01 FF DD 00 04 00 05 FF C4 01 3F 00 00 01   ............?...<BR/>[00006944] 05 01 01 01 01 01 01 00 00 00 00 00 00 00 03 00   ................<BR/>[00006960] 01 02 04 05 06 07 08 09 0A 0B 01 00 01 05 01 01   ................<BR/>[00006976] 01 01 01 01 00 00 00 00 00 00 00 01 00 02 03 04   ................<BR/>[00006992] 05 06 07 08 09 0A 0B 10 00 01 04 01 03 02 04 02   ................<BR/>[00007008] 05 07 06 08 05 03 0C 33 01 00 02 11 03 04 21 12   .......3......!.<BR/>[00007024] 31 05 41 51 61 13 22 71 81 32 06 14 91 A1 B1 42   1.AQa."q.2.....B<BR/>[00007040] 23 24 15 52 C1 62 33 34 72 82 D1 43 07 25 92 53   #$.R.b34r..C.%.S<BR/>[00007056] F0 E1 F1 63 73 35 16 A2 B2 83 26 44 93 54 64 45   ...cs5....&amp;D.TdE<BR/>[00007072] C2 A3 74 36 17 D2 55 E2 65 F2 B3 84 C3 D3 75 E3   ..t6..U.e.....u.<BR/>[00007088] F3 46 27 94 A4 85 B4 95 C4 D4 E4 F4 A5 B5 C5 D5   .F'.............<BR/>[00007104] E5 F5 56 66 76 86 96 A6 B6 C6 D6 E6 F6 37 47 57   ..Vfv........7GW<BR/>[00007120] 67 77 87 97 A7 B7 C7 D7 E7 F7 11 00 02 02 01 02   gw..............<BR/>[00007136] 04 04 03 04 05 06 07 07 06 05 35 01 00 02 11 03   ..........5.....<BR/>[00007152] 21 31 12 04 41 51 61 71 22 13 05 32 81 91 14 A1   !1..AQaq"..2....<BR/>[00007168] <br/>-- Sector 14 -- Assuming 512 Bytes ---<br/>[00007168] B1 42 23 C1 52 D1 F0 33 24 62 E1 72 82 92 43 53   .B#.R..3$b.r..CS<BR/>[00007184] 15 63 73 34 F1 25 06 16 A2 B2 83 07 26 35 C2 D2   .cs4.%......&amp;5..<BR/>[00007200] 44 93 54 A3 17 64 45 55 36 74 65 E2 F2 B3 84 C3   D.T..dEU6te.....<BR/>[00007216] D3 75 E3 F3 46 94 A4 85 B4 95 C4 D4 E4 F4 A5 B5   .u..F...........<BR/>[00007232] C5 D5 E5 F5 56 66 76 86 96 A6 B6 C6 D6 E6 F6 27   ....Vfv........'<BR/>[00007248] 37 47 57 67 77 87 97 A7 B7 C7 FF DA 00 0C 03 01   7GWgw...........<BR/>[00007264] 00 02 11 03 11 00 3F 00 F4 17 9B 05 6F F4 A0 D8   ......?.....o...<BR/>[00007280] 1A 76 07 12 1A 5D 1E DD C4 7E 6E E5 52 BB 3A D9   .v...]...~n.R.:.<BR/>[00007296] A9 C6 CA B1 45 A2 36 35 B6 3C B4 FB 86 ED CF D9   ....E.65.&lt;......<BR/>[00007312] ED FD 16 EF FA E2 DA 02 52 05 A7 B1 8F 81 59 03   ........R.....Y.<BR/>[00007328] E1 72 1F E5 6F FC 0F FD 78 CE 72 78 38 6F B3 AE   .r..o...x.rx8o..<BR/>[00007344] FA 12 CA 31 7E D1 B8 0D A6 D7 EC 0C DA DD CE DE   ...1~...........<BR/>[00007360] 2B DC F7 FA 9B FD BE C4 AE B3 AE 82 7E CF 56 29   +...........~.V)<BR/>[00007376] 1B 5B 1B EC 78 F7 C0 F5 07 B5 9F CD EE DF B1 6D   .[..x..........m<BR/>[00007392] 97 09 1A 1D 7F 92 50 B2 72 B1 71 58 2C CA BE BC   ......P.r.qX,...<BR/>[00007408] 76 38 ED 6B AD 73 58 0B 88 2E DA 1C F2 DF 76 D6   v8.k.sX.......v.<BR/>[00007424] A3 FE 8C 3F E7 07 F8 87 FF 00 56 23 DC 72 EE 7F   ...?......V#.r..<BR/>[00007440] 5D F5 1E 31 AB C4 35 0F E6 CD 8F B0 38 EB C3 83   ]..1..5.....8...<BR/>[00007456] 1A EF A4 CF F3 3F E1 12 DF D7 76 D7 0C C5 DC 77   .....?....v....w<BR/>[00007472] 0B 81 7D 90 35 7F A6 6A F6 FB FD 9E 96 FD DF F0   ..}.5..j........<BR/>[00007488] 8A F0 EB 5D 17 FF 00 2C 31 7F ED EA FF 00 F2 69   ...]...,1......i<BR/>[00007504] FF 00 6D F4 6F FB 9F 8B FF 00 6F 57 FF 00 92 44   ..m.o.....oW...D<BR/>[00007520] 7C 32 55 FC E0 FF 00 13 FF 00 5E 20 E5 1F C8 B5   |2U.......^.....<BR/>[00007536] B0 9D D4 CE FF 00 B7 B6 86 6B FA 2F 41 CE 76 9F   .........k./A.v.<BR/>[00007552] F0 9E A0 6F B9 59 1F 14 FF 00 B6 FA 2F FD CF C5   ...o.Y....../...<BR/>[00007568] FF 00 B7 AB FF 00 C9 27 FD B7 D1 7F EE 7E 2F FD   .......'.....~/.<BR/>[00007584] BD 5F FE 49 2F F4 59 BF E7 7F E6 7F E8 6A F7 87   ._.I/.Y......j..<BR/>[00007600] F2 2C 7E 69 7C D5 9C 6C DC 2C B0 E3 8B 7D 59 01   .,~i|..l.,...}Y.<BR/>[00007616] 90 1E 6A 7B 5F 04 F1 BB 61 76 D4 6D 3C 11 FF 00   ..j{_...av.m&lt;...<BR/>[00007632] 45 9F F3 BF F3 7F F4 35 7B DA 6D F8 BF FF D0 F4   E......5{.m.....<BR/>[00007648] F6 BC 1B 5D 5C 19 60 6B A7 B1 DD BB 8F F3 11 1A   ...]\.`k........<BR/>[00007664] D0 1A 07 82 40 2C BB 3A D3 EB B1 EC F4 01 D8 E2   ....@,.:........<BR/>[00007680] <br/>-- Sector 15 -- Assuming 512 Bytes ---<br/>[00007680] D9 DD CC 18 FD D4 00 49 2E 9B 98 08 EF D9 71 FF   .......I......q.<BR/>[00007696] 00 E3 38 03 D0 F1 24 4F EB AD FF 00 CF 39 2B 7A   ..8...$O.....9+z<BR/>[00007712] 8E B0 EB AF AE AF 44 34 3D C1 B3 BA 63 FE 8A CE   ......D4=...c...<BR/>[00007728] FA F5 D2 73 3A BF 4E C4 C3 C3 F4 C5 BF 6A 16 7E   ...s:.N......j.~<BR/>[00007744] 95 C5 AD DA DA B2 03 BD CD 6D 9F BF FB A8 4C 88   .........m....L.<BR/>[00007760] 83 29 1A 00 6A 56 CC 13 02 06 A4 BE 53 B5 9F BA   .)..jV......S...<BR/>[00007776] 3E E0 9F 6B 23 E8 8F B8 2E 93 FF 00 1B DF AC 7E   &gt;..k#..........~<BR/>[00007792] 38 BF F6 EB FF 00 F4 82 7F FC 6F 7E B1 47 38 BF   8.........o~.G8.<BR/>[00007808] F6 EB FF 00 F4 82 83 EF 38 3F CE 45 A9 EC 64 FD   ........8?.E..d.<BR/>[00007824] C2 F3 5B 59 FB A3 EE 4B 6B 3F 74 7D C1 74 9F F8   ..[Y...Kk?t}.t..<BR/>[00007840] DE FD 63 F1 C5 FF 00 B7 5F FF 00 A4 12 FF 00 C6   ..c....._.......<BR/>[00007856] F7 EB 1F 8E 2F FD BA EF FD 20 97 DE 70 7F 9C 8A   ..../.......p...<BR/>[00007872] BD 8C 9F B8 5D CF F1 5A 1A 28 EA 50 00 FD 2D 5C   ....]..Z.(.P..-\<BR/>[00007888] 7F 51 CB BA 5C AF D4 5E 83 D4 3A 2B 33 AB CE F4   .Q..\..^..:+3...<BR/>[00007904] F7 5C FA DE CF 49 C5 C2 03 5C CF 76 E6 56 BA A5   .\...I...\.v.V..<BR/>[00007920] 27 B9 0E 0E 3E 21 C1 FB DD 19 F8 25 EC F0 57 AB   '...&gt;!.....%..W.<BR/>[00007936] B3 FF D1 F5 06 0B 7D 57 12 E0 6A 2D 6E C6 F7 0E   ......}W..j-n...<BR/>[00007952] 1B BD 42 4F F2 BF 46 B9 DC 8F E9 16 FF 00 C6 3B   ..BO..F........;<BR/>[00007968] FE A8 AE 94 11 C7 71 CA F3 CC EE A1 9A DC EC A6   ......q.........<BR/>[00007984] B6 F7 00 DB ED 00 69 C0 7B B4 E1 20 A2 F4 18 44   ......i.{......D<BR/>[00008000] 7D B6 8F EB 85 B1 9F FC EE 2F FC 63 BF F3 DD 8B   }......../.c....<BR/>[00008016] 8B E9 19 F9 AF EA D8 6C 7D EE 73 5D 73 43 9A 63   .......l}.s]sC.c<BR/>[00008032] 51 07 C9 74 5F 5B B2 B2 71 71 31 6D C6 B0 D5 67   Q..t_[..qq1m...g<BR/>[00008048] DA 36 EE 01 AE D0 D5 7C 88 B1 AF 6F 65 17 31 13   .6.....|...oe.1.<BR/>[00008064] 2C 53 88 EB 12 C9 82 07 26 48 42 35 72 34 2D D2   ,S......&amp;HB5r4-.<BR/>[00008080] 94 A4 2E 2C 75 CE B5 FF 00 73 1D FF 00 6D D5 FF   ...,u....s...m..<BR/>[00008096] 00 A4 92 FD B9 D6 BF EE 63 BF ED BA BF F4 92 C8   ........c.......<BR/>[00008112] 1C A4 FB C7 F1 FF 00 BD 74 FF 00 D1 5C C7 78 7F   ........t...\.x.<BR/>[00008128] 8D 2F FB C7 B5 90 94 85 C5 7E DC EB 5F F7 31 DF   ./.......~.._.1.<BR/>[00008144] F6 DD 5F FA 49 2F DB BD 6F FE E6 3B FE DB AB FF   .._.I/..o..;....<BR/>[00008160] 00 49 25 F7 59 F7 8F E3 FF 00 7A AF F4 57 31 DE   .I%.Y.....z..W1.<BR/>[00008176] 1F E3 4B FE F1 EE 31 8F E9 6C FE AB 3F 2B D1 A5   ..K...1..l..?+..<BR/>[00008192] <br/>-- Sector 16 -- Assuming 512 Bytes ---<br/></pre><h2>Base-64 conversion</h2><pre>SUkqAAgAAAATAP4ABAABAAAAAAAAAAABAwABAAAAgAIAAAEBAwABAAAAYQQAAAIBAwADAAAA<br/>8gAAAAMBAwABAAAAAQAAAAYBAwABAAAAAgAAABEBBAABAAAAGiYAABUBAwABAAAAAwAAABYB<br/>AwABAAAAYQQAABcBBAABAAAAgNcgABoBBQABAAAA+AAAABsBBQABAAAAAAEAABwBAwABAAAA<br/>AQAAACgBAwABAAAAAgAAADEBAgAdAAAACAEAADIBAgAUAAAAJgEAALwCAQCsEwAAOgEAAEmG<br/>AQA0EQAA5hQAAGmHBAABAAAAnP0gAAAAAAAIAAgACADAxi0AECcAAMDGLQAQJwAAQWRvYmUg<br/>UGhvdG9zaG9wIEVsZW1lbnRzIDIuMAAAMjAwNDowNjoxMSAwOTowNzozNQA8P3hwYWNrZXQg<br/>YmVnaW49J++7vycgaWQ9J1c1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCc/Pgo8P2Fkb2JlLXhh<br/>cC1maWx0ZXJzIGVzYz0iQ1IiPz4KPHg6eGFwbWV0YSB4bWxuczp4PSdhZG9iZTpuczptZXRh<br/>LycgeDp4YXB0az0nWE1QIHRvb2xraXQgMi44LjItMzMsIGZyYW1ld29yayAxLjUnPgo8cmRm<br/>OlJERiB4bWxuczpyZGY9J2h0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRh<br/>eC1ucyMnIHhtbG5zOmlYPSdodHRwOi8vbnMuYWRvYmUuY29tL2lYLzEuMC8nPgoKIDxyZGY6<br/>RGVzY3JpcHRpb24gYWJvdXQ9J3V1aWQ6NTc3YTRhMjMtYmJiMC0xMWQ4LWFmMzMtYzRhZTI0<br/>YjM5OTBhJwogIHhtbG5zOnBkZj0naHR0cDovL25zLmFkb2JlLmNvbS9wZGYvMS4zLyc+CiAg<br/>PCEtLSBwZGY6Q3JlYXRvciBpcyBhbGlhc2VkIC0tPgogPC9yZGY6RGVzY3JpcHRpb24+Cgog<br/>PHJkZjpEZXNjcmlwdGlvbiBhYm91dD0ndXVpZDo1NzdhNGEyMy1iYmIwLTExZDgtYWYzMy1j<br/>NGFlMjRiMzk5MGEnCiAgeG1sbnM6eGFwPSdodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAv<br/>Jz4KICA8eGFwOkNyZWF0b3JUb29sPkFkb2JlIFBob3Rvc2hvcCBFbGVtZW50cyBmb3IgV2lu<br/>ZG93cywgdmVyc2lvbiAyLjA8L3hhcDpDcmVhdG9yVG9vbD4KIDwvcmRmOkRlc2NyaXB0aW9u<br/>PgoKIDxyZGY6RGVzY3JpcHRpb24gYWJvdXQ9J3V1aWQ6NTc3YTRhMjMtYmJiMC0xMWQ4LWFm<br/>MzMtYzRhZTI0YjM5OTBhJwogIHhtbG5zOnhhcE1NPSdodHRwOi8vbnMuYWRvYmUuY29tL3hh<br/>cC8xLjAvbW0vJz4KICA8eGFwTU06RG9jdW1lbnRJRD5hZG9iZTpkb2NpZDpwaG90b3Nob3A6<br/>NTc3YTRhMjAtYmJiMC0xMWQ4LWFmMzMtYzRhZTI0YjM5OTBhPC94YXBNTTpEb2N1bWVudElE<br/>PgogPC9yZGY6RGVzY3JpcHRpb24+Cgo8L3JkZjpSREY+CjwveDp4YXBtZXRhPgogICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAog<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAg<br/>ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKPD94cGFja2V0IGVuZD0n<br/>dyc/PjhCSU0EJQAAAAAAEAAAAAAAAAAAAAAAAAAAAAA4QklNA+0AAAAAABABLAAAAAEAAQEs<br/>AAAAAQABOEJJTQQmAAAAAAAOAAAAAAAAAAAAAD+AAAA4QklNBA0AAAAAAAQAAAAeOEJJTQQZ<br/>AAAAAAAEAAAAHjhCSU0D8wAAAAAACQAAAAAAAAABAQA4QklNBAoAAAAAAAEAADhCSU0nEAAA<br/>AAAACgABAAAAAAAAAAI4QklNA/UAAAAAAEgAL2ZmAAEAbGZmAAYAAAAAAAEAL2ZmAAEAoZma<br/>AAYAAAAAAAEAMgAAAAEAWgAAAAYAAAAAAAEANQAAAAEALQAAAAYAAAAAAAE4QklNA/gAAAAA<br/>AHAAAP////////////////////////////8D6AAAAAD/////////////////////////////<br/>A+gAAAAA/////////////////////////////wPoAAAAAP//////////////////////////<br/>//8D6AAAOEJJTQQIAAAAAAAQAAAAAQAAAkAAAAJAAAAAADhCSU0EHgAAAAAABAAAAAA4QklN<br/>BBoAAAAAA2cAAAAGAAAAAAAAAAAAAARhAAACgAAAABkAQwBvAGwAbwByAFAAYQB0AGMAaABf<br/>AEcAcgBhAHkAUwBjAGEAbABlAF8AYgBlAHMAdAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAQAA<br/>AAAAAAAAAAACgAAABGEAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA<br/>AQAAAAAAAG51bGwAAAACAAAABmJvdW5kc09iamMAAAABAAAAAAAAUmN0MQAAAAQAAAAAVG9w<br/>IGxvbmcAAAAAAAAAAExlZnRsb25nAAAAAAAAAABCdG9tbG9uZwAABGEAAAAAUmdodGxvbmcA<br/>AAKAAAAABnNsaWNlc1ZsTHMAAAABT2JqYwAAAAEAAAAAAAVzbGljZQAAABIAAAAHc2xpY2VJ<br/>RGxvbmcAAAAAAAAAB2dyb3VwSURsb25nAAAAAAAAAAZvcmlnaW5lbnVtAAAADEVTbGljZU9y<br/>aWdpbgAAAA1hdXRvR2VuZXJhdGVkAAAAAFR5cGVlbnVtAAAACkVTbGljZVR5cGUAAAAASW1n<br/>IAAAAAZib3VuZHNPYmpjAAAAAQAAAAAAAFJjdDEAAAAEAAAAAFRvcCBsb25nAAAAAAAAAABM<br/>ZWZ0bG9uZwAAAAAAAAAAQnRvbWxvbmcAAARhAAAAAFJnaHRsb25nAAACgAAAAAN1cmxURVhU<br/>AAAAAQAAAAAAAG51bGxURVhUAAAAAQAAAAAAAE1zZ2VURVhUAAAAAQAAAAAABmFsdFRhZ1RF<br/>WFQAAAABAAAAAAAOY2VsbFRleHRJc0hUTUxib29sAQAAAAhjZWxsVGV4dFRFWFQAAAABAAAA<br/>AAAJaG9yekFsaWduZW51bQAAAA9FU2xpY2VIb3J6QWxpZ24AAAAHZGVmYXVsdAAAAAl2ZXJ0<br/>QWxpZ25lbnVtAAAAD0VTbGljZVZlcnRBbGlnbgAAAAdkZWZhdWx0AAAAC2JnQ29sb3JUeXBl<br/>ZW51bQAAABFFU2xpY2VCR0NvbG9yVHlwZQAAAABOb25lAAAACXRvcE91dHNldGxvbmcAAAAA<br/>AAAACmxlZnRPdXRzZXRsb25nAAAAAAAAAAxib3R0b21PdXRzZXRsb25nAAAAAAAAAAtyaWdo<br/>dE91dHNldGxvbmcAAAAAADhCSU0EEQAAAAAAAQEAOEJJTQQUAAAAAAAEAAAAAThCSU0EDAAA<br/>AAALaAAAAAEAAABJAAAAgAAAANwAAG4AAAALTAAYAAH/2P/gABBKRklGAAECAQBIAEgAAP/t<br/>AAxBZG9iZV9DTQAC/+4ADkFkb2JlAGSAAAAAAf/bAIQADAgICAkIDAkJDBELCgsRFQ8MDA8V<br/>GBMTFRMTGBEMDAwMDAwRDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAENCwsNDg0QDg4Q<br/>FA4ODhQUDg4ODhQRDAwMDAwREQwMDAwMDBEMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwM<br/>/8AAEQgAgABJAwEiAAIRAQMRAf/dAAQABf/EAT8AAAEFAQEBAQEBAAAAAAAAAAMAAQIEBQYH<br/>CAkKCwEAAQUBAQEBAQEAAAAAAAAAAQACAwQFBgcICQoLEAABBAEDAgQCBQcGCAUDDDMBAAIR<br/>AwQhEjEFQVFhEyJxgTIGFJGhsUIjJBVSwWIzNHKC0UMHJZJT8OHxY3M1FqKygyZEk1RkRcKj<br/>dDYX0lXiZfKzhMPTdePzRieUpIW0lcTU5PSltcXV5fVWZnaGlqa2xtbm9jdHV2d3h5ent8fX<br/>5/cRAAICAQIEBAMEBQYHBwYFNQEAAhEDITESBEFRYXEiEwUygZEUobFCI8FS0fAzJGLhcoKS<br/>Q1MVY3M08SUGFqKygwcmNcLSRJNUoxdkRVU2dGXi8rOEw9N14/NGlKSFtJXE1OT0pbXF1eX1<br/>VmZ2hpamtsbW5vYnN0dXZ3eHl6e3x//aAAwDAQACEQMRAD8A9BebBW/0oNgadgcSGl0e3cR+<br/>buVSuzrZqcbKsUWiNjW2PLT7hu3P2e39Fu/64toCUgWnsY+BWQPhch/lb/wP/XjOcng4b7Ou<br/>+hLKMX7RuA2m1+wM2t3O3ivc9/qb/b7ErrOugn7PVikbWxvsePfA9Qe1n83u37FtlwkaHX+S<br/>ULJysXFYLMq+vHY47Wutc1gLiC7aHPLfdtaj/ow/5wf4h/8AViPccu5/XfUeMavENQ/mzY+w<br/>OOvDgxrvpM/zP+ES39d21wzF3HcLgX2QNX+mavb7/Z6W/d/wivDrXRf/ACwxf+3q/wDyaf8A<br/>bfRv+5+L/wBvV/8AkkR8MlX84P8AE/8AXiDlH8i1sJ3Uzv8At7aGa/ovQc52n/CeoG+5WR8U<br/>/wC2+i/9z8X/ALer/wDJJ/230X/ufi/9vV/+SS/0Wb/nf+Z/6Gr3h/Isfml81Zxs3Cyw44t9<br/>WQGQHmp7XwTxu2F21G08Ef8ARZ/zv/N/9DV72m34v//Q9Pa8G11cGWBrp7Hdu4/zERrQGgeC<br/>QCy7OtPrsez0Adji2d3MGP3UAEkum5gI79lx/wDjOAPQ8SRP663/AM85K3qOsOuvrq9END3B<br/>s7pj/orO+vXSczq/TsTDw/TFv2oWfpXFrdrasgO9zW2fv/uoTIiDKRoAalbMEwIGpL5TtZ+6<br/>PuCfayPoj7guk/8AG9+sfji/9uv/APSCf/xvfrFHOL/26/8A9IKD7zg/zkWp7GT9wvNbWfuj<br/>7ktrP3R9wXSf+N79Y/HF/wC3X/8ApBL/AMb36x+OL/267/0gl95wf5yKvYyfuF3P8VoaKOpQ<br/>AP0tXH9Ry7pcr9Reg9Q6KzOrzvT3XPrez0nFwgNcz3bmVrqlJ7kODj4hwfvdGfgl7PBXq7P/<br/>0fUGC31XEuBqLW7G9w4bvUJP8r9GudyP6Rb/AMY7/qiulBHHccrzzO6hmtzsprb3ANvtAGnA<br/>e7ThIKL0GER9to/rhbGf/O4v/GO/892Li+kZ+a/q2Gx97nNdc0OaY1EHyXRfW7KycXExbcaw<br/>1WfaNu4BrtDVfIixr29lFzETLFOI6xLJggcmSEI1cjQt0pSkLix1zrX/AHMd/wBt1f8ApJL9<br/>uda/7mO/7bq/9JLIHKT7x/H/AL10/wDRXMd4f40v+8e1kJSFxX7c61/3Md/23V/6SS/bvW/+<br/>5jv+26v/AEkl91n3j+P/AHqv9Fcx3h/jS/7x7jGP6Wz+qz8r0aVz<br/></pre></p> 
+
+            </div>
+
+
+        </td>
+    </tr>
+</table>
+<h2>Sample code</h2>
+<!-- code formatted by http://manoli.net/csharpformat/ -->
+<style type="text/css">
+.csharpcode, .csharpcode pre
+{
+	font-size: small;
+	color: black;
+	font-family: Consolas, "Courier New", Courier, Monospace;
+	background-color: #ffffff;
+	/*white-space: pre;*/
+}
+
+.csharpcode pre { margin: 0em; }
+
+.csharpcode .rem { color: #008000; }
+
+.csharpcode .kwrd { color: #0000ff; }
+
+.csharpcode .str { color: #a31515; }
+
+.csharpcode .op { color: #0000c0; }
+
+.csharpcode .preproc { color: #cc6633; }
+
+.csharpcode .asp { background-color: #ffff00; }
+
+.csharpcode .html { color: #800000; }
+
+.csharpcode .attr { color: #ff0000; }
+
+.csharpcode .alt 
+{
+	background-color: #f4f4f4;
+	width: 100%;
+	margin: 0em;
+}
+
+.csharpcode .lnum { color: #606060; }
+</style>
+<pre class="csharpcode">
+ <span class="kwrd">public</span> <span class="kwrd">string</span> getTif(System.IO.Stream file)
+        {
+            <span class="kwrd">string</span> TextBox1 = <span class="str">""</span>;
+
+            <span class="kwrd">byte</span>[] b = ReadFully(file, file.Length);
+
+            TextBox1 = <span class="str">"Starting tag (should be II - Big Indian): "</span> + (<span class="kwrd">char</span>)b[0] + (<span class="kwrd">char</span>)b[1] + <span class="str">"&lt;br/&gt;"</span>;
+            TextBox1 += <span class="str">"Version: "</span> + Global.intToHex(b[2]) + <span class="str">"&lt;br/&gt;"</span>;
+
+            <span class="kwrd">return</span> (TextBox1);
+        }</pre>
+            </div>
+
+           
+            <div id="footer">
+
+
+
+
+
+                <h2>Referencing this page</h2>
+                <div>This site is currently free to use and does not contain any advertisements, but should be properly referenced when used in the dissemination of knowledge, including within blogs, research papers and other related activities.Sample reference forms are given below.</div>
+                <p></p>
+                <div>Ref: Buchanan, William J (2025). <i>File Forensics (TIF)</i>. Asecuritysite.com. https://asecuritysite.com/magic/tif</div>
+                <p></p>
+                <div>
+                    Bib: @misc{asecuritysite_05142, title = {File Forensics (TIF)}, year={2025}, organization = {Asecuritysite.com}, author = {Buchanan, William J}, url = {https://asecuritysite.com/magic/tif}, note={Accessed: July 23, 2025}, howpublished={\url{https://asecuritysite.com/magic/tif}} }
+                </div>
+                <p></p>
+                <div>Licence: This site is intended for the education and advancement of humans, and no rights are given for AI and ML bots to crawl this site. All references to its content must be included.</div>
+
+                <a href="https://twitter.com/billatnapier?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @billatnapier</a>
+
+
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet Page</a>
+
+
+
+                <a href="https://twitter.com/intent/tweet?button_hashtag=Asecuritysite&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-show-count="false">Tweet #Asecuritysite</a>
+            </div>
+
+               
+
+        </div>
+
+ </div>
+  </div> 
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"0560c1b03e1f4193b64b54c27f7326e2","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
