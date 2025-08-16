@@ -10,7 +10,7 @@
 WORKDIR=./workdir
 
 # REPEAT: number of campaigns to run per program (per fuzzer)
-REPEAT=10
+REPEAT=1
 
 # [WORKER_MODE]: defines the type of CPU resources to allocate (default: 1)
 # - 1: logical cores (possibly SMT-enabled)
