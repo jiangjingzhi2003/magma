@@ -238,28 +238,56 @@ for FUZZER in "${FUZZERS[@]}"; do
     done
 done
 
+<<<<<<< HEAD
+export LOCKDIR="$WORKDIR_NAME/lock"
+mkdir -p "$LOCKDIR"
+
+shopt -s nullglob
+rm -f "$LOCKDIR"/*
+shopt -u nullglob
+
+for CORPUS_DIR in "${CORPORA[@]}"; do
+	echo "Corpus Directory: $CORPUS_DIR"
+        export CORPUS="$CORPUS_DIR"
+	export WORKDIR="$CORPUS_DIR/$WORKDIR_NAME"
+	mkdir -p "$CORPUS_DIR"
+	mkdir -p "$WORKDIR"
+=======
 for CORPUS_DIR in "${CORPORA[@]}"; do
         echo "Corpus Directory: $CORPUS_DIR"
         export CORPUS="$CORPUS_DIR"
         export WORKDIR="$CORPUS_DIR/$WORKDIR_NAME"
         mkdir -p "$CORPUS_DIR"
         mkdir -p "$WORKDIR"
+>>>>>>> 367c8579ce08260022e07824a6ae130d62b12c02
 
 WORKDIR="$(realpath "$WORKDIR")"
 export ARDIR="$WORKDIR/ar"
 export CACHEDIR="$WORKDIR/cache"
 export LOGDIR="$WORKDIR/log"
 export POCDIR="$WORKDIR/poc"
+<<<<<<< HEAD
+#export LOCKDIR="$WORKDIR/lock"
+=======
 export LOCKDIR="$WORKDIR/lock"
+>>>>>>> 367c8579ce08260022e07824a6ae130d62b12c02
 mkdir -p "$ARDIR"
 mkdir -p "$CACHEDIR"
 mkdir -p "$LOGDIR"
 mkdir -p "$POCDIR"
+<<<<<<< HEAD
+#mkdir -p "$LOCKDIR"
+
+#shopt -s nullglob
+#rm -f "$LOCKDIR"/*
+#shopt -u nullglob
+=======
 mkdir -p "$LOCKDIR"
 
 shopt -s nullglob
 rm -f "$LOCKDIR"/*
 shopt -u nullglob
+>>>>>>> 367c8579ce08260022e07824a6ae130d62b12c02
 
 # schedule campaigns
 for FUZZER in "${FUZZERS[@]}"; do
@@ -273,21 +301,21 @@ for FUZZER in "${FUZZERS[@]}"; do
 
         # build the Docker image
         IMG_NAME="magma/$FUZZER/$TARGET"
+        
+	### Skip building existed images to avoid timeout issues
 
-        ### Skip building existed images to avoid timeout issues
-
-        if docker image inspect "$IMG_NAME" &>/dev/null; then
+	if docker image inspect "$IMG_NAME" &>/dev/null; then
             echo_time "Image $IMG_NAME already exists. Skipping build."
         else
-            echo_time "Building $IMG_NAME"
+	    echo_time "Building $IMG_NAME"
             if ! "$MAGMA"/tools/captain/build.sh &> \
                 "${LOGDIR}/${FUZZER}_${TARGET}_build.log"; then
                 echo_time "Failed to build $IMG_NAME. Check build log for info."
                 continue
             fi
 
-        fi
-        PROGRAMS=($(get_var_or_default $FUZZER $TARGET 'PROGRAMS'))
+	fi
+	PROGRAMS=($(get_var_or_default $FUZZER $TARGET 'PROGRAMS'))
         for PROGRAM in "${PROGRAMS[@]}"; do
             export PROGRAM
             export ARGS="$(get_var_or_default $FUZZER $TARGET $PROGRAM 'ARGS')"
