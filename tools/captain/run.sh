@@ -185,6 +185,16 @@ allocate_workers()
 }
 export -f allocate_workers
 
+export CACHEDIR="$WORKDIR/cache"
+mkdir -p "$CACHEDIR"
+
+export LOCKDIR="$WORKDIR_NAME/lock"
+mkdir -p "$LOCKDIR"
+
+shopt -s nullglob
+rm -f "$LOCKDIR"/*
+shopt -u nullglob
+
 # set up a RAM-backed fs for fast processing of canaries and crashes
 if [ -z $CACHE_ON_DISK ]; then
     echo_time "Obtaining sudo permissions to mount tmpfs"
@@ -238,13 +248,6 @@ for FUZZER in "${FUZZERS[@]}"; do
     done
 done
 
-export LOCKDIR="$WORKDIR_NAME/lock"
-mkdir -p "$LOCKDIR"
-
-shopt -s nullglob
-rm -f "$LOCKDIR"/*
-shopt -u nullglob
-
 for CORPUS_DIR in "${CORPORA[@]}"; do
 	echo "Corpus Directory: $CORPUS_DIR"
         export CORPUS="$CORPUS_DIR"
@@ -254,12 +257,12 @@ for CORPUS_DIR in "${CORPORA[@]}"; do
 
 WORKDIR="$(realpath "$WORKDIR")"
 export ARDIR="$WORKDIR/ar"
-export CACHEDIR="$WORKDIR/cache"
+#export CACHEDIR="$WORKDIR/cache"
 export LOGDIR="$WORKDIR/log"
 export POCDIR="$WORKDIR/poc"
 #export LOCKDIR="$WORKDIR/lock"
 mkdir -p "$ARDIR"
-mkdir -p "$CACHEDIR"
+#mkdir -p "$CACHEDIR"
 mkdir -p "$LOGDIR"
 mkdir -p "$POCDIR"
 #mkdir -p "$LOCKDIR"
