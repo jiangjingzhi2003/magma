@@ -24,6 +24,9 @@ mkdir -p "$MONITOR"
 # change working directory to somewhere accessible by the fuzzer and target
 cd "$SHARED"
 
+echo "start minimization"
+"$FUZZER/minimize.sh"
+
 # prune the seed corpus for any fault-triggering test-cases
 for seed in "$TARGET/$CORPUS/$PROGRAM"/*; do
     out="$("$MAGMA"/runonce.sh "$seed")"

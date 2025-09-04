@@ -1,0 +1,343 @@
+Corpus Directory: trial_1
+[2025-08-20 20:16] Obtaining sudo permissions to mount tmpfs
+[2025-08-20 20:16] Building magma/aflplusplus/libsndfile
+[2025-08-20 20:16] Starting campaigns for sndfile_fuzzer @@
+[2025-08-20 20:16] Container aflplusplus/libsndfile/sndfile_fuzzer/0 started on CPU 0
+[2025-08-20 20:16] Building magma/aflplusplus/libtiff
+[2025-08-20 20:19] Starting campaigns for tiff_read_rgba_fuzzer 
+[2025-08-20 20:19] Starting campaigns for tiffcp -M @@ tmp.out
+[2025-08-20 20:19] Container aflplusplus/libtiff/tiff_read_rgba_fuzzer/0 started on CPU 1
+[2025-08-20 20:19] Container aflplusplus/libtiff/tiffcp/0 started on CPU 2
+[2025-08-20 20:19] Building magma/aflplusplus/libxml2
+[2025-08-20 20:19] Starting campaigns for libxml2_xml_read_memory_fuzzer 
+[2025-08-20 20:19] Starting campaigns for xmllint --valid --oldxml10 --push --memory @@
+[2025-08-20 20:19] Container aflplusplus/libxml2/libxml2_xml_read_memory_fuzzer/0 started on CPU 3
+[2025-08-20 20:19] Container aflplusplus/libxml2/xmllint/0 started on CPU 4
+[2025-08-20 20:19] Building magma/aflplusplus/php
+[2025-08-20 20:19] Starting campaigns for exif 
+[2025-08-20 20:19] Container aflplusplus/php/exif/0 started on CPU 5
+[2025-08-20 20:19] Building magma/aflplusplus/poppler
+[2025-08-20 20:20] Starting campaigns for pdf_fuzzer 
+[2025-08-20 20:20] Starting campaigns for pdfimages @@ /tmp/out
+[2025-08-20 20:20] Starting campaigns for pdftoppm -mono -cropbox @@
+[2025-08-20 20:20] Container aflplusplus/poppler/pdf_fuzzer/0 started on CPU 6
+Corpus Directory: trial_2
+[2025-08-20 20:20] Container aflplusplus/poppler/pdfimages/0 started on CPU 7
+[2025-08-20 20:20] Obtaining sudo permissions to mount tmpfs
+[2025-08-20 20:20] Container aflplusplus/poppler/pdftoppm/0 started on CPU 8
+[2025-08-20 20:20] Image magma/aflplusplus/libsndfile already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for sndfile_fuzzer @@
+[2025-08-20 20:20] Container aflplusplus/libsndfile/sndfile_fuzzer/0 started on CPU 9
+[2025-08-20 20:20] Image magma/aflplusplus/libtiff already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for tiff_read_rgba_fuzzer 
+[2025-08-20 20:20] Starting campaigns for tiffcp -M @@ tmp.out
+[2025-08-20 20:20] Container aflplusplus/libtiff/tiff_read_rgba_fuzzer/0 started on CPU 10
+[2025-08-20 20:20] Container aflplusplus/libtiff/tiffcp/0 started on CPU 11
+[2025-08-20 20:20] Image magma/aflplusplus/libxml2 already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for libxml2_xml_read_memory_fuzzer 
+[2025-08-20 20:20] Starting campaigns for xmllint --valid --oldxml10 --push --memory @@
+[2025-08-20 20:20] Container aflplusplus/libxml2/libxml2_xml_read_memory_fuzzer/0 started on CPU 12
+[2025-08-20 20:20] Container aflplusplus/libxml2/xmllint/0 started on CPU 13
+[2025-08-20 20:20] Image magma/aflplusplus/php already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for exif 
+[2025-08-20 20:20] Container aflplusplus/php/exif/0 started on CPU 14
+[2025-08-20 20:20] Image magma/aflplusplus/poppler already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for pdf_fuzzer 
+[2025-08-20 20:20] Starting campaigns for pdfimages @@ /tmp/out
+[2025-08-20 20:20] Container aflplusplus/poppler/pdf_fuzzer/0 started on CPU 15
+[2025-08-20 20:20] Starting campaigns for pdftoppm -mono -cropbox @@
+[2025-08-20 20:20] Container aflplusplus/poppler/pdfimages/0 started on CPU 16
+Corpus Directory: trial_3
+[2025-08-20 20:20] Obtaining sudo permissions to mount tmpfs
+[2025-08-20 20:20] Container aflplusplus/poppler/pdftoppm/0 started on CPU 17
+[2025-08-20 20:20] Image magma/aflplusplus/libsndfile already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for sndfile_fuzzer @@
+[2025-08-20 20:20] Container aflplusplus/libsndfile/sndfile_fuzzer/0 started on CPU 18
+[2025-08-20 20:20] Image magma/aflplusplus/libtiff already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for tiff_read_rgba_fuzzer 
+[2025-08-20 20:20] Starting campaigns for tiffcp -M @@ tmp.out
+[2025-08-20 20:20] Container aflplusplus/libtiff/tiff_read_rgba_fuzzer/0 started on CPU 19
+[2025-08-20 20:20] Container aflplusplus/libtiff/tiffcp/0 started on CPU 20
+[2025-08-20 20:20] Image magma/aflplusplus/libxml2 already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for libxml2_xml_read_memory_fuzzer 
+[2025-08-20 20:20] Starting campaigns for xmllint --valid --oldxml10 --push --memory @@
+[2025-08-20 20:20] Container aflplusplus/libxml2/libxml2_xml_read_memory_fuzzer/0 started on CPU 21
+[2025-08-20 20:20] Container aflplusplus/libxml2/xmllint/0 started on CPU 22
+[2025-08-20 20:20] Image magma/aflplusplus/php already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for exif 
+[2025-08-20 20:20] Container aflplusplus/php/exif/0 started on CPU 23
+[2025-08-20 20:20] Image magma/aflplusplus/poppler already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for pdf_fuzzer 
+[2025-08-20 20:20] Starting campaigns for pdfimages @@ /tmp/out
+[2025-08-20 20:20] Container aflplusplus/poppler/pdf_fuzzer/0 started on CPU 24
+[2025-08-20 20:20] Starting campaigns for pdftoppm -mono -cropbox @@
+[2025-08-20 20:20] Container aflplusplus/poppler/pdfimages/0 started on CPU 25
+Corpus Directory: trial_4
+[2025-08-20 20:20] Obtaining sudo permissions to mount tmpfs
+[2025-08-20 20:20] Container aflplusplus/poppler/pdftoppm/0 started on CPU 26
+[2025-08-20 20:20] Image magma/aflplusplus/libsndfile already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for sndfile_fuzzer @@
+[2025-08-20 20:20] Container aflplusplus/libsndfile/sndfile_fuzzer/0 started on CPU 27
+[2025-08-20 20:20] Image magma/aflplusplus/libtiff already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for tiff_read_rgba_fuzzer 
+[2025-08-20 20:20] Starting campaigns for tiffcp -M @@ tmp.out
+[2025-08-20 20:20] Container aflplusplus/libtiff/tiff_read_rgba_fuzzer/0 started on CPU 28
+[2025-08-20 20:20] Container aflplusplus/libtiff/tiffcp/0 started on CPU 29
+[2025-08-20 20:20] Image magma/aflplusplus/libxml2 already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for libxml2_xml_read_memory_fuzzer 
+[2025-08-20 20:20] Starting campaigns for xmllint --valid --oldxml10 --push --memory @@
+[2025-08-20 20:20] Container aflplusplus/libxml2/libxml2_xml_read_memory_fuzzer/0 started on CPU 30
+[2025-08-20 20:20] Container aflplusplus/libxml2/xmllint/0 started on CPU 31
+[2025-08-20 20:20] Image magma/aflplusplus/php already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for exif 
+[2025-08-20 20:20] Container aflplusplus/php/exif/0 started on CPU 32
+[2025-08-20 20:20] Image magma/aflplusplus/poppler already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for pdf_fuzzer 
+[2025-08-20 20:20] Starting campaigns for pdfimages @@ /tmp/out
+[2025-08-20 20:20] Container aflplusplus/poppler/pdf_fuzzer/0 started on CPU 33
+[2025-08-20 20:20] Starting campaigns for pdftoppm -mono -cropbox @@
+[2025-08-20 20:20] Container aflplusplus/poppler/pdfimages/0 started on CPU 34
+Corpus Directory: trial_5
+[2025-08-20 20:20] Obtaining sudo permissions to mount tmpfs
+[2025-08-20 20:20] Container aflplusplus/poppler/pdftoppm/0 started on CPU 35
+[2025-08-20 20:20] Image magma/aflplusplus/libsndfile already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for sndfile_fuzzer @@
+[2025-08-20 20:20] Container aflplusplus/libsndfile/sndfile_fuzzer/0 started on CPU 36
+[2025-08-20 20:20] Image magma/aflplusplus/libtiff already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for tiff_read_rgba_fuzzer 
+[2025-08-20 20:20] Starting campaigns for tiffcp -M @@ tmp.out
+[2025-08-20 20:20] Container aflplusplus/libtiff/tiff_read_rgba_fuzzer/0 started on CPU 37
+[2025-08-20 20:20] Image magma/aflplusplus/libxml2 already exists. Skipping build.
+[2025-08-20 20:20] Container aflplusplus/libtiff/tiffcp/0 started on CPU 38
+[2025-08-20 20:20] Starting campaigns for libxml2_xml_read_memory_fuzzer 
+[2025-08-20 20:20] Starting campaigns for xmllint --valid --oldxml10 --push --memory @@
+[2025-08-20 20:20] Container aflplusplus/libxml2/libxml2_xml_read_memory_fuzzer/0 started on CPU 39
+[2025-08-20 20:20] Container aflplusplus/libxml2/xmllint/0 started on CPU 40
+[2025-08-20 20:20] Image magma/aflplusplus/php already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for exif 
+[2025-08-20 20:20] Container aflplusplus/php/exif/0 started on CPU 41
+[2025-08-20 20:20] Image magma/aflplusplus/poppler already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for pdf_fuzzer 
+[2025-08-20 20:20] Starting campaigns for pdfimages @@ /tmp/out
+[2025-08-20 20:20] Container aflplusplus/poppler/pdf_fuzzer/0 started on CPU 42
+[2025-08-20 20:20] Starting campaigns for pdftoppm -mono -cropbox @@
+[2025-08-20 20:20] Container aflplusplus/poppler/pdfimages/0 started on CPU 43
+Corpus Directory: trial_6
+[2025-08-20 20:20] Obtaining sudo permissions to mount tmpfs
+[2025-08-20 20:20] Container aflplusplus/poppler/pdftoppm/0 started on CPU 44
+[2025-08-20 20:20] Image magma/aflplusplus/libsndfile already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for sndfile_fuzzer @@
+[2025-08-20 20:20] Container aflplusplus/libsndfile/sndfile_fuzzer/0 started on CPU 45
+[2025-08-20 20:20] Image magma/aflplusplus/libtiff already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for tiff_read_rgba_fuzzer 
+[2025-08-20 20:20] Starting campaigns for tiffcp -M @@ tmp.out
+[2025-08-20 20:20] Container aflplusplus/libtiff/tiff_read_rgba_fuzzer/0 started on CPU 46
+[2025-08-20 20:20] Image magma/aflplusplus/libxml2 already exists. Skipping build.
+[2025-08-20 20:20] Container aflplusplus/libtiff/tiffcp/0 started on CPU 47
+[2025-08-20 20:20] Starting campaigns for libxml2_xml_read_memory_fuzzer 
+[2025-08-20 20:20] Starting campaigns for xmllint --valid --oldxml10 --push --memory @@
+[2025-08-20 20:20] Container aflplusplus/libxml2/libxml2_xml_read_memory_fuzzer/0 started on CPU 48
+[2025-08-20 20:20] Container aflplusplus/libxml2/xmllint/0 started on CPU 49
+[2025-08-20 20:20] Image magma/aflplusplus/php already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for exif 
+[2025-08-20 20:20] Container aflplusplus/php/exif/0 started on CPU 50
+[2025-08-20 20:20] Image magma/aflplusplus/poppler already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for pdf_fuzzer 
+[2025-08-20 20:20] Starting campaigns for pdfimages @@ /tmp/out
+[2025-08-20 20:20] Container aflplusplus/poppler/pdf_fuzzer/0 started on CPU 51
+[2025-08-20 20:20] Starting campaigns for pdftoppm -mono -cropbox @@
+[2025-08-20 20:20] Container aflplusplus/poppler/pdfimages/0 started on CPU 52
+Corpus Directory: trial_7
+[2025-08-20 20:20] Obtaining sudo permissions to mount tmpfs
+[2025-08-20 20:20] Container aflplusplus/poppler/pdftoppm/0 started on CPU 53
+[2025-08-20 20:20] Image magma/aflplusplus/libsndfile already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for sndfile_fuzzer @@
+[2025-08-20 20:20] Container aflplusplus/libsndfile/sndfile_fuzzer/0 started on CPU 54
+[2025-08-20 20:20] Image magma/aflplusplus/libtiff already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for tiff_read_rgba_fuzzer 
+[2025-08-20 20:20] Starting campaigns for tiffcp -M @@ tmp.out
+[2025-08-20 20:20] Container aflplusplus/libtiff/tiff_read_rgba_fuzzer/0 started on CPU 55
+[2025-08-20 20:20] Container aflplusplus/libtiff/tiffcp/0 started on CPU 56
+[2025-08-20 20:20] Image magma/aflplusplus/libxml2 already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for libxml2_xml_read_memory_fuzzer 
+[2025-08-20 20:20] Starting campaigns for xmllint --valid --oldxml10 --push --memory @@
+[2025-08-20 20:20] Container aflplusplus/libxml2/libxml2_xml_read_memory_fuzzer/0 started on CPU 57
+[2025-08-20 20:20] Container aflplusplus/libxml2/xmllint/0 started on CPU 58
+[2025-08-20 20:20] Image magma/aflplusplus/php already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for exif 
+[2025-08-20 20:20] Container aflplusplus/php/exif/0 started on CPU 59
+[2025-08-20 20:20] Image magma/aflplusplus/poppler already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for pdf_fuzzer 
+[2025-08-20 20:20] Starting campaigns for pdfimages @@ /tmp/out
+[2025-08-20 20:20] Container aflplusplus/poppler/pdf_fuzzer/0 started on CPU 60
+[2025-08-20 20:20] Starting campaigns for pdftoppm -mono -cropbox @@
+[2025-08-20 20:20] Container aflplusplus/poppler/pdfimages/0 started on CPU 61
+Corpus Directory: trial_8
+[2025-08-20 20:20] Obtaining sudo permissions to mount tmpfs
+[2025-08-20 20:20] Container aflplusplus/poppler/pdftoppm/0 started on CPU 62
+[2025-08-20 20:20] Image magma/aflplusplus/libsndfile already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for sndfile_fuzzer @@
+[2025-08-20 20:20] Container aflplusplus/libsndfile/sndfile_fuzzer/0 started on CPU 63
+[2025-08-20 20:20] Image magma/aflplusplus/libtiff already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for tiff_read_rgba_fuzzer 
+[2025-08-20 20:20] Starting campaigns for tiffcp -M @@ tmp.out
+[2025-08-20 20:20] Container aflplusplus/libtiff/tiff_read_rgba_fuzzer/0 started on CPU 64
+[2025-08-20 20:20] Container aflplusplus/libtiff/tiffcp/0 started on CPU 65
+[2025-08-20 20:20] Image magma/aflplusplus/libxml2 already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for libxml2_xml_read_memory_fuzzer 
+[2025-08-20 20:20] Starting campaigns for xmllint --valid --oldxml10 --push --memory @@
+[2025-08-20 20:20] Container aflplusplus/libxml2/libxml2_xml_read_memory_fuzzer/0 started on CPU 66
+[2025-08-20 20:20] Container aflplusplus/libxml2/xmllint/0 started on CPU 67
+[2025-08-20 20:20] Image magma/aflplusplus/php already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for exif 
+[2025-08-20 20:20] Container aflplusplus/php/exif/0 started on CPU 68
+[2025-08-20 20:20] Image magma/aflplusplus/poppler already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for pdf_fuzzer 
+[2025-08-20 20:20] Starting campaigns for pdfimages @@ /tmp/out
+[2025-08-20 20:20] Container aflplusplus/poppler/pdf_fuzzer/0 started on CPU 69
+[2025-08-20 20:20] Starting campaigns for pdftoppm -mono -cropbox @@
+[2025-08-20 20:20] Container aflplusplus/poppler/pdfimages/0 started on CPU 70
+Corpus Directory: trial_9
+[2025-08-20 20:20] Obtaining sudo permissions to mount tmpfs
+[2025-08-20 20:20] Container aflplusplus/poppler/pdftoppm/0 started on CPU 71
+[2025-08-20 20:20] Image magma/aflplusplus/libsndfile already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for sndfile_fuzzer @@
+[2025-08-20 20:20] Container aflplusplus/libsndfile/sndfile_fuzzer/0 started on CPU 72
+[2025-08-20 20:20] Image magma/aflplusplus/libtiff already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for tiff_read_rgba_fuzzer 
+[2025-08-20 20:20] Starting campaigns for tiffcp -M @@ tmp.out
+[2025-08-20 20:20] Container aflplusplus/libtiff/tiff_read_rgba_fuzzer/0 started on CPU 73
+[2025-08-20 20:20] Container aflplusplus/libtiff/tiffcp/0 started on CPU 74
+[2025-08-20 20:20] Image magma/aflplusplus/libxml2 already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for libxml2_xml_read_memory_fuzzer 
+[2025-08-20 20:20] Starting campaigns for xmllint --valid --oldxml10 --push --memory @@
+[2025-08-20 20:20] Container aflplusplus/libxml2/libxml2_xml_read_memory_fuzzer/0 started on CPU 75
+[2025-08-20 20:20] Container aflplusplus/libxml2/xmllint/0 started on CPU 76
+[2025-08-20 20:20] Image magma/aflplusplus/php already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for exif 
+[2025-08-20 20:20] Container aflplusplus/php/exif/0 started on CPU 77
+[2025-08-20 20:20] Image magma/aflplusplus/poppler already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for pdf_fuzzer 
+[2025-08-20 20:20] Starting campaigns for pdfimages @@ /tmp/out
+[2025-08-20 20:20] Container aflplusplus/poppler/pdf_fuzzer/0 started on CPU 78
+[2025-08-20 20:20] Starting campaigns for pdftoppm -mono -cropbox @@
+[2025-08-20 20:20] Container aflplusplus/poppler/pdfimages/0 started on CPU 79
+Corpus Directory: trial_10
+[2025-08-20 20:20] Obtaining sudo permissions to mount tmpfs
+[2025-08-20 20:20] Container aflplusplus/poppler/pdftoppm/0 started on CPU 80
+[2025-08-20 20:20] Image magma/aflplusplus/libsndfile already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for sndfile_fuzzer @@
+[2025-08-20 20:20] Container aflplusplus/libsndfile/sndfile_fuzzer/0 started on CPU 81
+[2025-08-20 20:20] Image magma/aflplusplus/libtiff already exists. Skipping build.
+[2025-08-20 20:20] Starting campaigns for tiff_read_rgba_fuzzer 
+[2025-08-20 20:20] Starting campaigns for tiffcp -M @@ tmp.out
+[2025-08-20 20:20] Container aflplusplus/libtiff/tiff_read_rgba_fuzzer/0 started on CPU 82
+[2025-08-20 20:20] Image magma/aflplusplus/libxml2 already exists. Skipping build.
+[2025-08-20 20:20] Container aflplusplus/libtiff/tiffcp/0 started on CPU 83
+[2025-08-20 20:20] Starting campaigns for libxml2_xml_read_memory_fuzzer 
+[2025-08-20 20:20] Starting campaigns for xmllint --valid --oldxml10 --push --memory @@
+[2025-08-20 20:20] Container aflplusplus/libxml2/libxml2_xml_read_memory_fuzzer/0 started on CPU 84
+[2025-08-20 20:20] Image magma/aflplusplus/php already exists. Skipping build.
+[2025-08-20 20:20] Container aflplusplus/libxml2/xmllint/0 started on CPU 85
+[2025-08-20 20:20] Starting campaigns for exif 
+[2025-08-20 20:20] Image magma/aflplusplus/poppler already exists. Skipping build.
+[2025-08-20 20:20] Container aflplusplus/php/exif/0 started on CPU 86
+[2025-08-20 20:20] Starting campaigns for pdf_fuzzer 
+[2025-08-20 20:20] Starting campaigns for pdfimages @@ /tmp/out
+[2025-08-20 20:20] Container aflplusplus/poppler/pdf_fuzzer/0 started on CPU 87
+[2025-08-20 20:20] Starting campaigns for pdftoppm -mono -cropbox @@
+[2025-08-20 20:20] Container aflplusplus/poppler/pdfimages/0 started on CPU 88
+[2025-08-20 20:20] Waiting for jobs to finish
+[2025-08-20 20:20] Container aflplusplus/poppler/pdftoppm/0 started on CPU 89
+[2025-08-20 20:20] Container aflplusplus/poppler/pdftoppm/0 stopped
+[2025-08-20 20:20] Container aflplusplus/poppler/pdftoppm/0 stopped
+[2025-08-20 20:20] Container aflplusplus/poppler/pdf_fuzzer/0 stopped
+[2025-08-20 20:20] Container aflplusplus/poppler/pdf_fuzzer/0 stopped
+[2025-08-20 20:20] Container aflplusplus/poppler/pdf_fuzzer/0 stopped
+[2025-08-20 20:20] Container aflplusplus/poppler/pdf_fuzzer/0 stopped
+[2025-08-20 20:20] Container aflplusplus/poppler/pdftoppm/0 stopped
+[2025-08-20 20:21] Container aflplusplus/poppler/pdf_fuzzer/0 stopped
+[2025-08-20 20:21] Container aflplusplus/poppler/pdftoppm/0 stopped
+[2025-08-20 20:22] Container aflplusplus/poppler/pdftoppm/0 stopped
+[2025-08-21 20:16] Container aflplusplus/libsndfile/sndfile_fuzzer/0 stopped
+[2025-08-21 20:19] Container aflplusplus/libtiff/tiff_read_rgba_fuzzer/0 stopped
+[2025-08-21 20:19] Container aflplusplus/libtiff/tiffcp/0 stopped
+[2025-08-21 20:19] Container aflplusplus/php/exif/0 stopped
+[2025-08-21 20:19] Container aflplusplus/libxml2/xmllint/0 stopped
+[2025-08-21 20:19] Container aflplusplus/libxml2/libxml2_xml_read_memory_fuzzer/0 stopped
+[2025-08-21 20:20] Container aflplusplus/poppler/pdfimages/0 stopped
+[2025-08-21 20:20] Container aflplusplus/poppler/pdfimages/0 stopped
+[2025-08-21 20:20] Container aflplusplus/poppler/pdfimages/0 stopped
+[2025-08-21 20:20] Container aflplusplus/poppler/pdfimages/0 stopped
+[2025-08-21 20:20] Container aflplusplus/poppler/pdfimages/0 stopped
+[2025-08-21 20:20] Container aflplusplus/poppler/pdfimages/0 stopped
+[2025-08-21 20:20] Container aflplusplus/poppler/pdfimages/0 stopped
+[2025-08-21 20:20] Container aflplusplus/poppler/pdfimages/0 stopped
+[2025-08-21 20:20] Container aflplusplus/poppler/pdfimages/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libsndfile/sndfile_fuzzer/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libsndfile/sndfile_fuzzer/0 stopped
+[2025-08-21 20:20] Container aflplusplus/php/exif/0 stopped
+[2025-08-21 20:20] Container aflplusplus/php/exif/0 stopped
+[2025-08-21 20:20] Container aflplusplus/poppler/pdfimages/0 stopped
+[2025-08-21 20:20] Container aflplusplus/php/exif/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libsndfile/sndfile_fuzzer/0 stopped
+[2025-08-21 20:20] Container aflplusplus/php/exif/0 stopped
+[2025-08-21 20:20] Container aflplusplus/php/exif/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libsndfile/sndfile_fuzzer/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libsndfile/sndfile_fuzzer/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libsndfile/sndfile_fuzzer/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libsndfile/sndfile_fuzzer/0 stopped
+[2025-08-21 20:20] Container aflplusplus/php/exif/0 stopped
+[2025-08-21 20:20] Container aflplusplus/php/exif/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libsndfile/sndfile_fuzzer/0 stopped
+[2025-08-21 20:20] Container aflplusplus/php/exif/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libtiff/tiff_read_rgba_fuzzer/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libsndfile/sndfile_fuzzer/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libtiff/tiff_read_rgba_fuzzer/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libtiff/tiff_read_rgba_fuzzer/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libtiff/tiff_read_rgba_fuzzer/0 stopped
+[2025-08-21 20:20] Container aflplusplus/php/exif/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libxml2/libxml2_xml_read_memory_fuzzer/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libtiff/tiff_read_rgba_fuzzer/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libxml2/xmllint/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libtiff/tiff_read_rgba_fuzzer/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libtiff/tiffcp/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libtiff/tiffcp/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libxml2/xmllint/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libtiff/tiffcp/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libtiff/tiffcp/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libtiff/tiffcp/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libtiff/tiff_read_rgba_fuzzer/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libtiff/tiffcp/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libtiff/tiff_read_rgba_fuzzer/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libxml2/xmllint/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libxml2/xmllint/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libxml2/xmllint/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libtiff/tiff_read_rgba_fuzzer/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libtiff/tiffcp/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libtiff/tiffcp/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libxml2/xmllint/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libxml2/libxml2_xml_read_memory_fuzzer/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libxml2/libxml2_xml_read_memory_fuzzer/0 stopped
+[2025-08-21 20:20] Container aflplusplus/libtiff/tiffcp/0 stopped
+[2025-08-21 20:21] Container aflplusplus/libxml2/xmllint/0 stopped
+[2025-08-21 20:21] Container aflplusplus/libxml2/xmllint/0 stopped
+[2025-08-21 20:21] Container aflplusplus/libxml2/xmllint/0 stopped
+[2025-08-21 20:21] Container aflplusplus/libxml2/libxml2_xml_read_memory_fuzzer/0 stopped
+[2025-08-21 20:21] Container aflplusplus/libxml2/libxml2_xml_read_memory_fuzzer/0 stopped
+[2025-08-21 20:21] Container aflplusplus/libxml2/libxml2_xml_read_memory_fuzzer/0 stopped
+[2025-08-21 20:21] Container aflplusplus/libxml2/libxml2_xml_read_memory_fuzzer/0 stopped
+[2025-08-21 20:21] Container aflplusplus/libxml2/libxml2_xml_read_memory_fuzzer/0 stopped
+[2025-08-21 20:21] Container aflplusplus/libxml2/libxml2_xml_read_memory_fuzzer/0 stopped
+[2025-08-21 20:22] Container aflplusplus/poppler/pdftoppm/0 stopped
+[2025-08-21 20:22] Container aflplusplus/poppler/pdftoppm/0 stopped
+[2025-08-21 20:22] Container aflplusplus/poppler/pdftoppm/0 stopped
+[2025-08-21 20:22] Container aflplusplus/poppler/pdf_fuzzer/0 stopped
+[2025-08-21 20:22] Container aflplusplus/poppler/pdftoppm/0 stopped
+[2025-08-21 20:22] Container aflplusplus/poppler/pdf_fuzzer/0 stopped
+[2025-08-21 20:23] Container aflplusplus/poppler/pdf_fuzzer/0 stopped
+[2025-08-21 20:23] Container aflplusplus/poppler/pdftoppm/0 stopped
+[2025-08-21 20:23] Container aflplusplus/poppler/pdf_fuzzer/0 stopped
+[2025-08-21 20:23] Container aflplusplus/poppler/pdf_fuzzer/0 stopped
+[2025-08-21 20:23] Obtaining sudo permissions to umount tmpfs
+sudo: a terminal is required to read the password; either use the -S option to read from standard input or configure an askpass helper

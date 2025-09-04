@@ -185,21 +185,6 @@ allocate_workers()
 }
 export -f allocate_workers
 
-# set up a RAM-backed fs for fast processing of canaries and crashes
-if [ -z $CACHE_ON_DISK ]; then
-    echo_time "Obtaining sudo permissions to mount tmpfs"
-    if mountpoint -q -- "$CACHEDIR"; then
-        sudo umount -f "$CACHEDIR"
-    fi
-    sudo mount -t tmpfs -o size=$TMPFS_SIZE,uid=$(id -u $USER),gid=$(id -g $USER) \
-        tmpfs "$CACHEDIR"
-fi
-
-#if [ -z "$CACHE_ON_DISK" ]; then
-#    echo_time "No sudo/ramfs: using disk cache at $CACHEDIR"
-#    export CACHE_ON_DISK=1
-#fi
-
 cleanup()
 {
     trap 'echo Cleaning up...' SIGINT
@@ -224,7 +209,6 @@ cleanup()
 
 trap cleanup EXIT
 
-export WORKDIR_NAME="$WORKDIR"
 
 ### Remove existing Docker images for rebuilding
 for FUZZER in "${FUZZERS[@]}"; do
@@ -238,7 +222,8 @@ for FUZZER in "${FUZZERS[@]}"; do
     done
 done
 
-export LOCKDIR="$WORKDIR_NAME/lock"
+export WORKDIR_NAME=$(basename "$WORKDIR")
+export LOCKDIR="$WORKDIR/lock"
 mkdir -p "$LOCKDIR"
 
 shopt -s nullglob
@@ -248,65 +233,66 @@ shopt -u nullglob
 for CORPUS_DIR in "${CORPORA[@]}"; do
 	echo "Corpus Directory: $CORPUS_DIR"
         export CORPUS="$CORPUS_DIR"
-	export WORKDIR="$CORPUS_DIR/$WORKDIR_NAME"
-	mkdir -p "$CORPUS_DIR"
-	mkdir -p "$WORKDIR"
+	export WORKDIR="./$CORPUS_DIR/$WORKDIR_NAME"
+    mkdir -p "$WORKDIR"
 
-WORKDIR="$(realpath "$WORKDIR")"
-export ARDIR="$WORKDIR/ar"
-export CACHEDIR="$WORKDIR/cache"
-export LOGDIR="$WORKDIR/log"
-export POCDIR="$WORKDIR/poc"
-#export LOCKDIR="$WORKDIR/lock"
-mkdir -p "$ARDIR"
-mkdir -p "$CACHEDIR"
-mkdir -p "$LOGDIR"
-mkdir -p "$POCDIR"
-#mkdir -p "$LOCKDIR"
+    WORKDIR="$(realpath "$WORKDIR")"
+    export ARDIR="$WORKDIR/ar"
+    export CACHEDIR="$WORKDIR/cache"
+    export LOGDIR="$WORKDIR/log"
+    export POCDIR="$WORKDIR/poc"
+    mkdir -p "$ARDIR"
+    mkdir -p "$CACHEDIR"
+    mkdir -p "$LOGDIR"
+    mkdir -p "$POCDIR"
 
-#shopt -s nullglob
-#rm -f "$LOCKDIR"/*
-#shopt -u nullglob
+    # set up a RAM-backed fs for fast processing of canaries and crashes
+    if [ -z $CACHE_ON_DISK ]; then
+        echo_time "Obtaining sudo permissions to mount tmpfs"
+        if mountpoint -q -- "$CACHEDIR"; then
+            sudo umount -f "$CACHEDIR"
+        fi
+        sudo mount -t tmpfs -o size=$TMPFS_SIZE,uid=$(id -u $USER),gid=$(id -g $USER) \
+            tmpfs "$CACHEDIR"
+    fi
 
-# schedule campaigns
-for FUZZER in "${FUZZERS[@]}"; do
-    export FUZZER
+    for FUZZER in "${FUZZERS[@]}"; do
+        export FUZZER
 
-    TARGETS=($(get_var_or_default $FUZZER 'TARGETS'))
-    for TARGET in "${TARGETS[@]}"; do
-        export TARGET
+        TARGETS=($(get_var_or_default $FUZZER 'TARGETS'))
+        for TARGET in "${TARGETS[@]}"; do
+            export TARGET
 
-        export FUZZARGS="$(get_var_or_default $FUZZER $TARGET 'FUZZARGS')"
+            export FUZZARGS="$(get_var_or_default $FUZZER $TARGET 'FUZZARGS')"
 
-        # build the Docker image
-        IMG_NAME="magma/$FUZZER/$TARGET"
-        
-	### Skip building existed images to avoid timeout issues
+            # build the Docker image
+            IMG_NAME="magma/$FUZZER/$TARGET"
+            
+        ### Skip building existed images to avoid timeout issues
 
-	if docker image inspect "$IMG_NAME" &>/dev/null; then
-            echo_time "Image $IMG_NAME already exists. Skipping build."
-        else
-	    echo_time "Building $IMG_NAME"
-            if ! "$MAGMA"/tools/captain/build.sh &> \
-                "${LOGDIR}/${FUZZER}_${TARGET}_build.log"; then
-                echo_time "Failed to build $IMG_NAME. Check build log for info."
-                continue
-            fi
+        if docker image inspect "$IMG_NAME" &>/dev/null; then
+                echo_time "Image $IMG_NAME already exists. Skipping build."
+            else
+            echo_time "Building $IMG_NAME"
+                if ! "$MAGMA"/tools/captain/build.sh &> \
+                    "${LOGDIR}/${FUZZER}_${TARGET}_build.log"; then
+                    echo_time "Failed to build $IMG_NAME. Check build log for info."
+                    continue
+                fi
 
-	fi
-	PROGRAMS=($(get_var_or_default $FUZZER $TARGET 'PROGRAMS'))
-        for PROGRAM in "${PROGRAMS[@]}"; do
-            export PROGRAM
-            export ARGS="$(get_var_or_default $FUZZER $TARGET $PROGRAM 'ARGS')"
+        fi
+        PROGRAMS=($(get_var_or_default $FUZZER $TARGET 'PROGRAMS'))
+            for PROGRAM in "${PROGRAMS[@]}"; do
+                export PROGRAM
+                export ARGS="$(get_var_or_default $FUZZER $TARGET $PROGRAM 'ARGS')"
 
-            echo_time "Starting campaigns for $PROGRAM $ARGS"
-            for ((i=0; i<$REPEAT; i++)); do
-                export NUMWORKERS="$(get_var_or_default $FUZZER 'CAMPAIGN_WORKERS')"
-                export AFFINITY=$(allocate_workers)
-                start_ex &
+                echo_time "Starting campaigns for $PROGRAM $ARGS"
+                for ((i=0; i<$REPEAT; i++)); do
+                    export NUMWORKERS="$(get_var_or_default $FUZZER 'CAMPAIGN_WORKERS')"
+                    export AFFINITY=$(allocate_workers)
+                    start_ex &
+                done
             done
         done
     done
-done
-
 done
