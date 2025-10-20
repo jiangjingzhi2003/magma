@@ -52,7 +52,8 @@ ENV FUZZER_BIN=/out/tiff_read_rgba_fuzzer
 # # Copy the entrypoint script into the image and grant executable permissions
 COPY entrypoint.sh /entrypoint.sh
 COPY minimize.sh /minimize.sh
-RUN chmod +x /entrypoint.sh /minimize.sh
+COPY quick_minimize.sh /quick_minimize.sh
+RUN chmod +x /entrypoint.sh /minimize.sh /quick_minimize.sh
 
 # # Create a non-root user "fuzz" for running fuzzing tasks
 RUN useradd -ms /bin/bash fuzz \

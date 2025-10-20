@@ -51,7 +51,7 @@ echo "Running afl-cmin with edge-only coverage at $(date)..."
 
 # Run afl-cmin in edge-coverage mode
 mkdir -p ./cmin-output
-AFL_DEBUG=1 afl-cmin -i "$CORPUS_DIR" -o "./cmin-output" -t 1000 -- "$FUZZ_BIN" @@
+AFL_DEBUG=1 afl-cmin -T 10 -i "$CORPUS_DIR" -o "./cmin-output" -t 1000 -- "$FUZZ_BIN" -
 cp ./cmin-output/* $MINIMIZED_DIR
 rm -rf ./cmin-output
 

@@ -12,6 +12,15 @@ if [[ -z "$FUZZER_BIN" ]]; then
     exit 1
 fi
 
-# Generate minimized corpus
-./minimize.sh "$CORPUS_DIR" "$MINIMIZED_DIR" "$FUZZER_BIN"
 
+# Generate minimized corpus
+# ./minimize.sh "$CORPUS_DIR" "$MINIMIZED_DIR" "$FUZZER_BIN"
+
+# Loop through each subdirectory in CORPUS_DIR
+for dir in "$CORPUS_DIR"/*/; do
+    subdir_name=$(basename "$dir")
+    echo "Minimizing corpus for $subdir_name..."
+    mkdir -p "$MINIMIZED_DIR/$dir"
+
+    ./minimize.sh "$dir" "$MINIMIZED_DIR/$dir" "$FUZZER_BIN"
+done

@@ -10,7 +10,8 @@ services:
       OUT: /out
       MINIMIZED_DIR: /corpus_min
       FUZZER_ID: master
-      FUZZER_BIN: /out/pdf_fuzzer
+      FUZZER_BIN: /out/pdfimages
+      FUZZ_TARGET: pdfimages
     volumes:
       - ./corpus:/corpus:rw
       - output-volume:/afl-output:rw

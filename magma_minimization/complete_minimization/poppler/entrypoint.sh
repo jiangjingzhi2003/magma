@@ -15,8 +15,9 @@ fi
 ./build.sh
 # Generate minimized corpus
 if [[ "$#" -eq 1 && "$1" -eq "minimize" ]]; then
-    /minimize.sh "$CORPUS_DIR" "$MINIMIZED_DIR" "$FUZZER_BIN"
-    FUZZ_CORPUS="$MINIMIZED_DIR"
+    # /minimize.sh "$CORPUS_DIR" "$MINIMIZED_DIR" "$FUZZER_BIN"
+    # FUZZ_CORPUS="$MINIMIZED_DIR"
+    /quick_minimize.sh
 else
     FUZZ_CORPUS="$CORPUS_DIR"
 fi

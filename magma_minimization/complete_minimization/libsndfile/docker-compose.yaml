@@ -10,9 +10,8 @@ services:
       OUT: /out
       MINIMIZED_DIR: /corpus_min
       FUZZER_ID: master
-      STACK_FRAMES: 3
-      SHOW_GDB: "false"
-      AFL_DISABLE_COREFILE: "1"  
+      FUZZ_BIN: /out/sndfile_fuzzer
+      FUZZ_TARGET: sndfile_fuzzer
     volumes:
       - ./corpus:/corpus:rw
       - output-volume:/afl-output:rw
@@ -31,8 +30,6 @@ services:
       CORPUS_DIR: /corpus
       OUTPUT_DIR: /afl-output
       FUZZER_ID: master
-      STACK_FRAMES: 3
-      SHOW_GDB: "false"
     volumes:
       - ./corpus:/corpus:rw
       - unmin-output-volume:/afl-output:rw

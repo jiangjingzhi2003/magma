@@ -10,9 +10,6 @@ services:
       OUT: /out
       MINIMIZED_DIR: /corpus_min
       FUZZER_ID: master
-      STACK_FRAMES: 3
-      SHOW_GDB: "false"
-      AFL_DISABLE_COREFILE: "1"
       FUZZER_BIN: /out/asn1
     volumes:
       - ./corpus:/corpus:rw

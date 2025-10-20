@@ -10,7 +10,8 @@ services:
       OUT: /out
       MINIMIZED_DIR: /corpus_min
       FUZZER_ID: master
-      FUZZER_BIN: /out/tiffcp
+      FUZZER_BIN: /out/tiff_read_rgba_fuzzer
+      FUZZ_TARGET: tiff_read_rgba_fuzzer
     volumes:
       - ./corpus:/corpus:rw
       - ./corpus_min:/corpus_min:rw

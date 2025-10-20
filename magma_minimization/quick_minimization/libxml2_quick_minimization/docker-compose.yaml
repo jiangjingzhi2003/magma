@@ -10,7 +10,8 @@ services:
       OUT: /out
       MINIMIZED_DIR: /corpus_min
       FUZZER_ID: master
-      FUZZER_BIN: /out/libxml2_xml_read_memory_fuzzer
+      FUZZER_BIN: /out/libxml2_xml_reader_for_file_fuzzer
+      FUZZ_TARGET: libxml2_xml_reader_for_file_fuzzer
     volumes:
       - ./corpus:/corpus:rw
       - ./corpus_min:/corpus_min:rw

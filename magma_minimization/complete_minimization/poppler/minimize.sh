@@ -32,7 +32,9 @@ FUZZ_BIN=$3
 CORPUS_DIR=$(realpath $CORPUS_DIR)
 MINIMIZED_DIR=$(realpath $MINIMIZED_DIR)
 FUZZ_BIN=$(realpath $FUZZ_BIN)
-
+export pdfimages_ARGS="@@ /tmp/out"
+export pdftoppm_ARGS="-mono -cropbox @@"
+export pdf_fuzzer_ARGS="-"
 # Constants
 CORPUS_SIZE=$(ls $CORPUS_DIR | wc -l)  # Number of files in the initial corpus
 
@@ -51,7 +53,7 @@ echo "Running afl-cmin with edge-only coverage at $(date)..."
 
 # Run afl-cmin in edge-coverage mode
 mkdir -p ./cmin-output
-AFL_DEBUG=1 afl-cmin -i "$CORPUS_DIR" -o "./cmin-output" -t 1000 -- "$FUZZ_BIN" @@
+afl-cmin -T 5 -i "$CORPUS_DIR" -o "./cmin-output" -t 1000 -- "$FUZZ_BIN" "-"
 cp ./cmin-output/* $MINIMIZED_DIR
 rm -rf ./cmin-output
 

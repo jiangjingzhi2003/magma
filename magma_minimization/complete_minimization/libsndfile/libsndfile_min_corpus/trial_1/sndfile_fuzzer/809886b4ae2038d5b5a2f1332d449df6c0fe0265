@@ -1,0 +1,7 @@
+<h2>You are now leaving IRATA - Live</h2>
+<h4>Not automatically redirecting to: http://www.urbanabseiler.com.au</h4>
+<p>Click this link to go to <a href="http://www.urbanabseiler.com.au">http://www.urbanabseiler.com.au</a></p>
+
+<script type="text/javascript">
+    window.location.href="http://www.urbanabseiler.com.au";
+</script>
